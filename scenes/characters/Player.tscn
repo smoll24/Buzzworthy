@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://2jc4e4q5f0rc"]
+
+[ext_resource type="Texture2D" uid="uid://bpqxbsnucghs" path="res://assets/characters/lunamoth.png" id="1_3wwe1"]
+[ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_mkrog"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n01n3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3wwe1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blscd"]
+size = Vector2(14, 32)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_mkrog")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n01n3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_blscd")
