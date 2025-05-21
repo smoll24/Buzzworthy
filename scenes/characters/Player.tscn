@@ -27,3 +27,9 @@ sprite_frames = SubResource("SpriteFrames_n01n3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_blscd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+drag_vertical_offset = -0.3
+drag_bottom_margin = 1.0

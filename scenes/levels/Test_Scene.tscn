@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://dkjdwfhfs38d4"]
+[gd_scene load_steps=7 format=4 uid="uid://dkjdwfhfs38d4"]
 
-[ext_resource type="Texture2D" uid="uid://duc5xsll7sj14" path="res://icon.svg" id="1_1okjv"]
+[ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_1okjv"]
+[ext_resource type="Script" path="res://scripts/levels/test_scene.gd" id="1_gyqdb"]
 [ext_resource type="PackedScene" uid="uid://2jc4e4q5f0rc" path="res://scenes/characters/Player.tscn" id="2_phqok"]
+[ext_resource type="PackedScene" uid="uid://c8qtmicicbaw2" path="res://scenes/characters/NPC_Test.tscn" id="3_i8arx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pf6h"]
 texture = ExtResource("1_1okjv")
@@ -137,6 +139,7 @@ physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_7pf6h")
 
 [node name="TestScene" type="Node2D"]
+script = ExtResource("1_gyqdb")
 
 [node name="Back_TilemapLayer" type="TileMapLayer" parent="."]
 position = Vector2(1, 88)
@@ -152,3 +155,8 @@ tile_set = SubResource("TileSet_paph8")
 [node name="Player" parent="." instance=ExtResource("2_phqok")]
 position = Vector2(47, 251)
 collision_mask = 6
+
+[node name="NpcTest" parent="." instance=ExtResource("3_i8arx")]
+position = Vector2(564, 296)
+scale = Vector2(-1, 1)
+collision_mask = 1

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8qtmicicbaw2"]
+
+[ext_resource type="Script" path="res://scripts/characters/npc_test.gd" id="1_gb1rf"]
+[ext_resource type="Texture2D" uid="uid://bpqxbsnucghs" path="res://assets/characters/lunamoth.png" id="1_lpmcs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43isp"]
+atlas = ExtResource("1_lpmcs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7nmsh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43isp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd6o3"]
+size = Vector2(28, 58)
+
+[node name="NpcTest" type="Area2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_gb1rf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_7nmsh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 3)
+shape = SubResource("RectangleShape2D_kd6o3")
