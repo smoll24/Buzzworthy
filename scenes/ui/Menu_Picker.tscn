@@ -1,3 +1,69 @@
-[gd_scene format=3 uid="uid://b2ihwmogw350x"]
+[gd_scene load_steps=3 format=3 uid="uid://b2ihwmogw350x"]
 
-[node name="MenuPicker" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_lo5h0"]
+[ext_resource type="Script" path="res://scripts/ui/menu_picker.gd" id="1_yj77o"]
+
+[node name="MenuPicker" type="CanvasLayer"]
+script = ExtResource("1_yj77o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Up_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../HBoxContainer/Left_Button")
+focus_neighbor_right = NodePath("../HBoxContainer/Right_Button")
+focus_neighbor_bottom = NodePath("../Down_Button")
+focus_next = NodePath("../HBoxContainer/Left_Button")
+focus_previous = NodePath("../HBoxContainer/Right_Button")
+text = "But1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Left_Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Up_Button")
+focus_neighbor_right = NodePath("../Right_Button")
+focus_neighbor_bottom = NodePath("../../Down_Button")
+focus_next = NodePath("../../Down_Button")
+focus_previous = NodePath("../../Up_Button")
+text = "But2"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_lo5h0")
+expand_mode = 3
+
+[node name="Right_Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Left_Button")
+focus_neighbor_top = NodePath("../../Up_Button")
+focus_neighbor_bottom = NodePath("../../Down_Button")
+focus_next = NodePath("../../Up_Button")
+focus_previous = NodePath("../../Down_Button")
+text = "But4"
+
+[node name="Down_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../HBoxContainer/Left_Button")
+focus_neighbor_top = NodePath("../Up_Button")
+focus_neighbor_right = NodePath("../HBoxContainer/Right_Button")
+focus_next = NodePath("../HBoxContainer/Right_Button")
+focus_previous = NodePath("../HBoxContainer/Left_Button")
+text = "But3"
