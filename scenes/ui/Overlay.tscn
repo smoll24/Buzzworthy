@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuka1chubvkbq"]
+
+[ext_resource type="Script" path="res://scripts/ui/overlay.gd" id="1_v82of"]
+
+[node name="Overlay" type="CanvasLayer"]
+script = ExtResource("1_v82of")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.028
+anchor_right = 0.987
+anchor_bottom = 0.981
+offset_left = -0.160001
+offset_top = -0.0799999
+offset_right = 0.319946
+offset_bottom = -0.160034
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+max_value = 10.0
+value = 5.0
+show_percentage = false

@@ -1,7 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://2jc4e4q5f0rc"]
+[gd_scene load_steps=10 format=3 uid="uid://2jc4e4q5f0rc"]
 
 [ext_resource type="Texture2D" uid="uid://bpqxbsnucghs" path="res://assets/characters/lunamoth.png" id="1_3wwe1"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_mkrog"]
+[ext_resource type="Texture2D" uid="uid://clgvru454n4wk" path="res://assets/characters/luna_walk2.png" id="3_4pxvq"]
+[ext_resource type="Texture2D" uid="uid://cwsmy0hxtnx36" path="res://assets/characters/luna_walk3.png" id="4_veekp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syftv"]
+atlas = ExtResource("1_3wwe1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4po6"]
+atlas = ExtResource("3_4pxvq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mpa8"]
+atlas = ExtResource("4_veekp")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n01n3"]
 animations = [{
@@ -11,6 +25,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syftv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4po6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mpa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4po6")
+}],
+"loop": true,
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -23,6 +54,7 @@ script = ExtResource("1_mkrog")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n01n3")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
