@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhmprhympvq4w"]
+
+[ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_06qgg"]
+[ext_resource type="Script" path="res://scripts/objects/damage_plant.gd" id="1_cyblt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgj77"]
+atlas = ExtResource("1_06qgg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k4muo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgj77")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv8se"]
+size = Vector2(126.667, 126.667)
+
+[node name="DamagePlant" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+collision_layer = 8
+script = ExtResource("1_cyblt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k4muo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.17891e-06, -1.39077e-06)
+shape = SubResource("RectangleShape2D_gv8se")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

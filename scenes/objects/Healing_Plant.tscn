@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bykc0clpltyeo"]
+
+[ext_resource type="Script" path="res://scripts/objects/healing_plant.gd" id="1_0cxpx"]
+[ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_pfq61"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1edm1"]
+atlas = ExtResource("1_pfq61")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0exc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1edm1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atfvm"]
+size = Vector2(126.667, 126.667)
+
+[node name="HealingPlant" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+collision_layer = 8
+script = ExtResource("1_0cxpx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o0exc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.17891e-06, 0)
+shape = SubResource("RectangleShape2D_atfvm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

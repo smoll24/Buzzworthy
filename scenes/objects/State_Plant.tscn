@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://c02j18sellmfd"]
+
+[ext_resource type="Script" path="res://scripts/objects/state_plant.gd" id="1_681ku"]
+[ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_bqb78"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtjcw"]
+atlas = ExtResource("1_bqb78")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iarju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtjcw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awobx"]
+size = Vector2(126.667, 126.667)
+
+[node name="StatePlant" type="StaticBody2D"]
+scale = Vector2(0.3, 0.3)
+collision_layer = 8
+script = ExtResource("1_681ku")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iarju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.17891e-06, 3.17891e-06)
+shape = SubResource("RectangleShape2D_awobx")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -96.6667
+offset_right = 20.0
+offset_bottom = -73.6667
+text = "State"
+horizontal_alignment = 1

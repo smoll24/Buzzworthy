@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://yt2df3jc2r64"]
+
+[ext_resource type="Script" path="res://scripts/objects/boost_plant.gd" id="1_i7cml"]
+[ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_oifjx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtjcw"]
+atlas = ExtResource("1_oifjx")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iarju"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtjcw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awobx"]
+size = Vector2(126.667, 126.667)
+
+[node name="BoostPlant" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+collision_layer = 8
+script = ExtResource("1_i7cml")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iarju")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.17891e-06, 3.17891e-06)
+shape = SubResource("RectangleShape2D_awobx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

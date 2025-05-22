@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=4 uid="uid://dkjdwfhfs38d4"]
+[gd_scene load_steps=13 format=4 uid="uid://dkjdwfhfs38d4"]
 
 [ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_1okjv"]
 [ext_resource type="Script" path="res://scripts/levels/test_scene.gd" id="1_gyqdb"]
 [ext_resource type="PackedScene" uid="uid://2jc4e4q5f0rc" path="res://scenes/characters/Player.tscn" id="2_phqok"]
 [ext_resource type="PackedScene" uid="uid://c8qtmicicbaw2" path="res://scenes/characters/NPC_Test.tscn" id="3_i8arx"]
 [ext_resource type="PackedScene" uid="uid://cuka1chubvkbq" path="res://scenes/ui/Overlay.tscn" id="5_j26ut"]
+[ext_resource type="PackedScene" uid="uid://bhmprhympvq4w" path="res://scenes/objects/Damage_Plant.tscn" id="6_pkyvs"]
+[ext_resource type="PackedScene" uid="uid://bykc0clpltyeo" path="res://scenes/objects/Healing_Plant.tscn" id="7_48ecj"]
+[ext_resource type="PackedScene" uid="uid://c02j18sellmfd" path="res://scenes/objects/State_Plant.tscn" id="8_a8270"]
+[ext_resource type="PackedScene" uid="uid://cpprx4rkdcvl4" path="res://scenes/objects/Pause_Plant.tscn" id="9_0o3qe"]
+[ext_resource type="PackedScene" uid="uid://yt2df3jc2r64" path="res://scenes/objects/Boost_Plant.tscn" id="10_sq0v2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pf6h"]
 texture = ExtResource("1_1okjv")
@@ -155,10 +160,24 @@ tile_set = SubResource("TileSet_paph8")
 
 [node name="Player" parent="." instance=ExtResource("2_phqok")]
 position = Vector2(47, 251)
-collision_mask = 6
 
 [node name="NpcTest" parent="." instance=ExtResource("3_i8arx")]
 position = Vector2(564, 273)
 scale = Vector2(-1, 1)
 
 [node name="Overlay" parent="." instance=ExtResource("5_j26ut")]
+
+[node name="DamagePlant" parent="." instance=ExtResource("6_pkyvs")]
+position = Vector2(378, 309)
+
+[node name="HealingPlant" parent="." instance=ExtResource("7_48ecj")]
+position = Vector2(173, 308)
+
+[node name="StatePlant" parent="." instance=ExtResource("8_a8270")]
+position = Vector2(491, 309)
+
+[node name="PausePlant" parent="." instance=ExtResource("9_0o3qe")]
+position = Vector2(272, 310)
+
+[node name="BoostPlant" parent="." instance=ExtResource("10_sq0v2")]
+position = Vector2(96, 309)
