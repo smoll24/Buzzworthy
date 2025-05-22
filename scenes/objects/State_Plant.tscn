@@ -19,24 +19,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awobx"]
-size = Vector2(126.667, 126.667)
+size = Vector2(38, 38)
 
 [node name="StatePlant" type="StaticBody2D"]
-scale = Vector2(0.3, 0.3)
 collision_layer = 8
 script = ExtResource("1_681ku")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_iarju")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.17891e-06, 3.17891e-06)
 shape = SubResource("RectangleShape2D_awobx")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -20.0
-offset_top = -96.6667
+offset_top = -48.6667
 offset_right = 20.0
-offset_bottom = -73.6667
+offset_bottom = -25.6667
 text = "State"
 horizontal_alignment = 1

@@ -43,30 +43,19 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * current_speed
-		sprite.animation = "walk"
-		sprite.play()
+		sprite.play("walk")
+		sprite.scale.x = direction * abs(sprite.scale.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
-		sprite.animation = "default"
-		
-	#Chaning Sprite Direction
-	if Input.is_action_pressed("ui_left"):
-		if is_facing_right:
-			is_facing_right = false
-			scale.x = -abs(scale.x)
-
-	if Input.is_action_pressed("ui_right"):
-		if not is_facing_right:
-			is_facing_right = true
-			scale.x = -abs(scale.x) #Debug this later, sometimes gets caught up in opposite
+		sprite.play("default")
 	
 	#Control Hit Cooldown
 	if hit == true:
@@ -95,21 +84,19 @@ func _physics_process(delta: float) -> void:
 			speed = false
 			speed_time = 0
 			current_speed = SPEED
-
+	
+	print(velocity)
 	move_and_slide()
 
 func apply_hit_effect():
 	if hit == false and dash == false:
 		hit = true
-		
 		var hp = Globals.get_health()
 		if hp != 0:
 			hp = hp - 1
 			Globals.set_health(hp)
-		
 		sprite.modulate = Color(10,10,10,10)
 		tween = create_tween()
-		
 		if is_facing_right:
 			knockback_hit_distance = -abs(knockback_hit_distance)
 		else:
@@ -120,12 +107,10 @@ func apply_hit_effect():
 func apply_heal_effect():
 	if heal == false and dash == false:
 		heal = true
-		
 		var hp = Globals.get_health()
 		if hp != Globals.get("max_health"):
 			hp = hp + 1
 			Globals.set_health(hp)
-		
 		sprite.modulate = Color(0,1,0.5,10)
 		tween = create_tween()
 		if is_facing_right:
@@ -135,7 +120,6 @@ func apply_heal_effect():
 		tween.tween_property(self, "position:x", self.global_position.x + knockback_heal_distance, knockback_heal_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 
 func apply_speed_effect():
-	print("speedy")
 	if speed == false and dash == false:
 		speed = true
 		current_speed = SPEED * 1.5

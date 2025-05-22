@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dkjdwfhfs38d4"]
+[gd_scene load_steps=14 format=4 uid="uid://dkjdwfhfs38d4"]
 
 [ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_1okjv"]
 [ext_resource type="Script" path="res://scripts/levels/test_scene.gd" id="1_gyqdb"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c02j18sellmfd" path="res://scenes/objects/State_Plant.tscn" id="8_a8270"]
 [ext_resource type="PackedScene" uid="uid://cpprx4rkdcvl4" path="res://scenes/objects/Pause_Plant.tscn" id="9_0o3qe"]
 [ext_resource type="PackedScene" uid="uid://yt2df3jc2r64" path="res://scenes/objects/Boost_Plant.tscn" id="10_sq0v2"]
+[ext_resource type="PackedScene" uid="uid://b2ihwmogw350x" path="res://scenes/ui/Menu_Picker.tscn" id="11_7yxtk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pf6h"]
 texture = ExtResource("1_1okjv")
@@ -165,8 +166,6 @@ position = Vector2(47, 251)
 position = Vector2(564, 273)
 scale = Vector2(-1, 1)
 
-[node name="Overlay" parent="." instance=ExtResource("5_j26ut")]
-
 [node name="DamagePlant" parent="." instance=ExtResource("6_pkyvs")]
 position = Vector2(378, 309)
 
@@ -181,3 +180,8 @@ position = Vector2(272, 310)
 
 [node name="BoostPlant" parent="." instance=ExtResource("10_sq0v2")]
 position = Vector2(96, 309)
+
+[node name="Overlay" parent="." instance=ExtResource("5_j26ut")]
+
+[node name="MenuPicker" parent="." instance=ExtResource("11_7yxtk")]
+visible = false

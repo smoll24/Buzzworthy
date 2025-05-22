@@ -19,18 +19,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv8se"]
-size = Vector2(126.667, 126.667)
+size = Vector2(38, 38)
 
 [node name="DamagePlant" type="Area2D"]
-scale = Vector2(0.3, 0.3)
 collision_layer = 8
 script = ExtResource("1_cyblt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_k4muo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.17891e-06, -1.39077e-06)
+position = Vector2(0, 1.90735e-06)
 shape = SubResource("RectangleShape2D_gv8se")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
