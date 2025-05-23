@@ -46,23 +46,24 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blscd"]
-size = Vector2(28, 64)
+size = Vector2(14, 29)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 14
 script = ExtResource("1_mkrog")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_n01n3")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 0)
+position = Vector2(-1, 1.5)
 shape = SubResource("RectangleShape2D_blscd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(1, 1.12605)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 drag_vertical_enabled = true
-drag_vertical_offset = -0.3
-drag_bottom_margin = 1.0
+drag_vertical_offset = -1.0
+drag_bottom_margin = 0.36

@@ -85,7 +85,6 @@ func _physics_process(delta: float) -> void:
 			speed_time = 0
 			current_speed = SPEED
 	
-	print(velocity)
 	move_and_slide()
 
 func apply_hit_effect():
