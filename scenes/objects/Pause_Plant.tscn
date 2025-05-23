@@ -147,6 +147,7 @@ collision_layer = 8
 script = ExtResource("1_vej26")
 
 [node name="Timer" type="Label" parent="."]
+visible = false
 offset_left = 26.0
 offset_top = -31.0
 offset_right = 71.0003
@@ -154,6 +155,7 @@ offset_bottom = -8.0
 text = "Timer"
 
 [node name="TimerClosed" type="Label" parent="."]
+visible = false
 offset_left = 26.0
 offset_top = -55.0
 offset_right = 71.0003

@@ -20,22 +20,22 @@ func _ready() -> void:
 	sprite.play("open")
 
 func _process(delta):
-	$Timer.text = str(timer)
-	$TimerClosed.text = str(timer_closed)
-
-	if sprite.animation == "closed":
-			timer_closed += delta
+	#$Timer.text = str(timer)
+	#$TimerClosed.text = str(timer_closed)
 	
+	#If Player is on Plant and plant is open, add to Timer
 	if player_on_platform:
 		if sensitive:
 			timer += delta
 		if timer >= stand_time:
+			sensitive = false
 			sprite.play("closing")
-			print(sprite.frame)
+			timer = 0
 	else:
 		timer = 0
-
-	if sensitive:
+	
+	#If the Plant is open and it is closing, change Collision boxes
+	if sprite.animation == "closing":
 		if sprite.frame == 1:
 			collision_0.disabled = true
 			collision_1.disabled = false
@@ -51,25 +51,32 @@ func _process(delta):
 		if sprite.frame == 5:
 			sprite.play("closed")
 			collision_4.disabled = true
-			sensitive = false
 	
+	#Adds to the timer_closed Timer if the Plant is Closed
+	if sprite.animation == "closed":
+			timer_closed += delta
+		
+	#If the Plant is Closed for too long, it opens again
 	if timer_closed >= stand_time:
-		timer_closed = 0
 		sprite.play("opening")
-		if sprite.frame == 0:
-			collision_1.disabled = true
-			collision_0.disabled = false
+		timer_closed = 0
+		
+	if sprite.animation == "opening":
 		if sprite.frame == 1:
-			collision_2.disabled = true
-			collision_1.disabled = false
+			collision_4.disabled = false
 		if sprite.frame == 2:
-			collision_3.disabled = true
-			collision_2.disabled = false
-		if sprite.frame == 3:
 			collision_4.disabled = true
 			collision_3.disabled = false
+		if sprite.frame == 3:
+			collision_3.disabled = true
+			collision_2.disabled = false
 		if sprite.frame == 4:
-			collision_4.disabled = false
+			collision_2.disabled = true
+			collision_1.disabled = false
+		if sprite.frame == 5:
+			collision_1.disabled = true
+			collision_0.disabled = false
+			sprite.play("open")
 			sensitive = true
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
