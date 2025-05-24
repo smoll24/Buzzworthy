@@ -18,19 +18,19 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://scripts/globals.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
-"NPC_Test": "res://addons/dialogic_entries/NPC_Test.dch",
-"Player": "res://addons/dialogic_entries/Player.dch"
+"test_character": "res://assets/dialogic/test_character.dch"
 }
 directories/dtl_directory={
-"npc_test": "res://addons/dialogic_entries/npc_test.dtl"
+"test_timeline": "res://assets/dialogic/test_timeline.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://addons/dialogic_styles/Speech_Bubble.tres", "res://addons/dialogic_styles/VN_Style.tres"]
-layout/default_style="res://addons/dialogic_styles/Speech_Bubble.tres"
+layout/style_list=["res://assets/dialogic/dialogic_style.tres"]
+layout/default_style="res://assets/dialogic/dialogic_style.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -60,6 +60,10 @@ window/size/viewport_height=360
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [input]
 

@@ -69,9 +69,9 @@ func _physics_process(delta: float) -> void:
 	#Control Heal Cooldown
 	if heal == true:
 		heal_time += delta
-		if heal_time > 0.3:
+		if heal_time > 0.6:
 			sprite.modulate = Color(1,1,1,1)
-		if heal_time > 0.5:
+		if heal_time > 1:
 			heal = false
 			heal_time = 0
 			

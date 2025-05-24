@@ -8,7 +8,7 @@ extends StaticBody2D
 @onready var collision_4 = $CollisionShape2D_4
 @onready var area = $Area2D
 
-@export var stand_time: float = 1.0 
+@export var stand_time: float = 0.5 
 
 var timer: float = 0.0
 var timer_closed: float = 0.0

@@ -1,21 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://bykc0clpltyeo"]
+[gd_scene load_steps=7 format=3 uid="uid://bykc0clpltyeo"]
 
 [ext_resource type="Script" path="res://scripts/objects/healing_plant.gd" id="1_0cxpx"]
-[ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_pfq61"]
+[ext_resource type="Texture2D" uid="uid://cakwkpm7b0lml" path="res://assets/objects/4clover.png" id="2_cl3t6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1edm1"]
-atlas = ExtResource("1_pfq61")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7cg"]
+atlas = ExtResource("2_cl3t6")
+region = Rect2(0, 0, 248, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk3xo"]
+atlas = ExtResource("2_cl3t6")
+region = Rect2(0, 168, 248, 168)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o0exc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1edm1")
+"texture": SubResource("AtlasTexture_ur7cg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk3xo")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atfvm"]
@@ -26,11 +33,13 @@ collision_layer = 8
 script = ExtResource("1_0cxpx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_o0exc")
+autoplay = "default"
+frame_progress = 0.18204
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.90735e-06)
+position = Vector2(3, 7)
 shape = SubResource("RectangleShape2D_atfvm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

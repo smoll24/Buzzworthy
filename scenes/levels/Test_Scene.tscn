@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dkjdwfhfs38d4"]
+[gd_scene load_steps=19 format=4 uid="uid://dkjdwfhfs38d4"]
 
 [ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_1okjv"]
 [ext_resource type="Script" path="res://scripts/levels/test_scene.gd" id="1_gyqdb"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cpprx4rkdcvl4" path="res://scenes/objects/Pause_Plant.tscn" id="9_0o3qe"]
 [ext_resource type="PackedScene" uid="uid://yt2df3jc2r64" path="res://scenes/objects/Boost_Plant.tscn" id="10_sq0v2"]
 [ext_resource type="PackedScene" uid="uid://b2ihwmogw350x" path="res://scenes/ui/Menu_Picker.tscn" id="11_7yxtk"]
+[ext_resource type="Texture2D" uid="uid://cs2dn7fhgxdhd" path="res://assets/temp/moths.png" id="14_s5syp"]
+[ext_resource type="Texture2D" uid="uid://nlraguiegyh" path="res://assets/temp/unnamed (12).png" id="15_p8hdw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pf6h"]
 texture = ExtResource("1_1okjv")
@@ -147,6 +149,9 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_7pf6h")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rqkq"]
+size = Vector2(220, 166.667)
+
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_gyqdb")
 
@@ -194,19 +199,19 @@ tile_set = SubResource("TileSet_paph8")
 offset_left = -406.0
 offset_top = 320.0
 offset_right = 691.0
-offset_bottom = 336.0
+offset_bottom = 346.0
 color = Color(0.247059, 0.145098, 0.145098, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 offset_left = -406.0
 offset_top = 320.0
 offset_right = 687.0
-offset_bottom = 330.0
+offset_bottom = 336.0
 color = Color(0.556863, 0.392157, 0.392157, 1)
 
 [node name="Tower5" type="Sprite2D" parent="."]
-position = Vector2(-174, 319)
-scale = Vector2(1.27244, 1.28943)
+position = Vector2(-242, 319)
+scale = Vector2(2, 2)
 texture = ExtResource("3_4b6gg")
 
 [node name="NpcTest" parent="." instance=ExtResource("3_i8arx")]
@@ -217,7 +222,7 @@ scale = Vector2(-1, 1)
 position = Vector2(355, 135)
 
 [node name="HealingPlant" parent="." instance=ExtResource("7_48ecj")]
-position = Vector2(150, 134)
+position = Vector2(207, 294)
 
 [node name="StatePlant" parent="." instance=ExtResource("8_a8270")]
 position = Vector2(468, 135)
@@ -248,3 +253,21 @@ texture = ExtResource("4_3mfrs")
 
 [node name="MenuPicker" parent="." instance=ExtResource("11_7yxtk")]
 visible = false
+
+[node name="Moths" type="Sprite2D" parent="."]
+position = Vector2(840, 207)
+scale = Vector2(0.188542, 0.180556)
+texture = ExtResource("14_s5syp")
+
+[node name="Test_Dialog" type="Area2D" parent="."]
+position = Vector2(-124, 303)
+scale = Vector2(0.3, 0.3)
+
+[node name="Unnamed(12)" type="Sprite2D" parent="Test_Dialog"]
+texture = ExtResource("15_p8hdw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test_Dialog"]
+position = Vector2(3.33328, 3.33331)
+shape = SubResource("RectangleShape2D_4rqkq")
+
+[connection signal="body_entered" from="Test_Dialog" to="." method="_on_test_dialog_body_entered"]
