@@ -31,6 +31,9 @@ var knockback_heal_duration = 0.5
 var speed = false
 var speed_time = 0
 
+var jumping = false
+var jump_time = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,9 +44,19 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
+	if jumping:
+		jump_time += delta
+		if jump_time > 0.1:
+			if is_on_floor():
+				sprite.play_backwards("jump")
+				if sprite.frame == 0:
+					jumping = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		jumping = true
+		sprite.play("jump")
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -51,11 +64,13 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * current_speed
-		sprite.play("walk")
+		if not jumping:
+			sprite.play("walk")
 		sprite.scale.x = direction * abs(sprite.scale.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
-		sprite.play("default")
+		if not jumping:
+			sprite.play("default")
 	
 	#Control Hit Cooldown
 	if hit == true:

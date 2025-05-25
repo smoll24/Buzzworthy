@@ -17,10 +17,12 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if state == 1:
 		collision.disabled = false
-		$Label.text = "Closed"
+		#$Label.text = "Closed"
+		sprite.play("closed")
 	else:
 		collision.disabled = true
-		$Label.text = "Open"
+		#$Label.text = "Open"
+		sprite.play("open")
 	
 	
 func switch_state():

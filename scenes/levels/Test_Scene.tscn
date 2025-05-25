@@ -225,7 +225,7 @@ position = Vector2(355, 135)
 position = Vector2(207, 294)
 
 [node name="StatePlant" parent="." instance=ExtResource("8_a8270")]
-position = Vector2(468, 135)
+position = Vector2(339, 306)
 
 [node name="PausePlant2" parent="." instance=ExtResource("9_0o3qe")]
 position = Vector2(862, 322)

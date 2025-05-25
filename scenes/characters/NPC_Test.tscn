@@ -1,10 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8qtmicicbaw2"]
 
 [ext_resource type="Script" path="res://scripts/characters/npc_test.gd" id="1_gb1rf"]
-[ext_resource type="Texture2D" uid="uid://bpqxbsnucghs" path="res://assets/characters/lunamoth.png" id="1_lpmcs"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tya3q"]
+load_path = "res://.godot/imported/lunamoth.png-059f736802b6093d70cf42237bb2338e.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_43isp"]
-atlas = ExtResource("1_lpmcs")
+atlas = SubResource("CompressedTexture2D_tya3q")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7nmsh"]

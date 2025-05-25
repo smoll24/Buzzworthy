@@ -1,38 +1,76 @@
-[gd_scene load_steps=6 format=3 uid="uid://c02j18sellmfd"]
+[gd_scene load_steps=10 format=3 uid="uid://c02j18sellmfd"]
 
 [ext_resource type="Script" path="res://scripts/objects/state_plant.gd" id="1_681ku"]
-[ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_bqb78"]
+[ext_resource type="Texture2D" uid="uid://cd78s2rvk5igd" path="res://assets/objects/venus.png" id="2_o0qwt"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xtjcw"]
-atlas = ExtResource("1_bqb78")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ye7p"]
+atlas = ExtResource("2_o0qwt")
+region = Rect2(0, 0, 168, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcxax"]
+atlas = ExtResource("2_o0qwt")
+region = Rect2(168, 0, 168, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkb7l"]
+atlas = ExtResource("2_o0qwt")
+region = Rect2(0, 168, 168, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j54jd"]
+atlas = ExtResource("2_o0qwt")
+region = Rect2(168, 168, 168, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhrwu"]
+atlas = ExtResource("2_o0qwt")
+region = Rect2(0, 336, 168, 168)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iarju"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xtjcw")
+"texture": SubResource("AtlasTexture_6ye7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcxax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkb7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j54jd")
 }],
 "loop": true,
-"name": &"default",
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhrwu")
+}],
+"loop": true,
+"name": &"open",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awobx"]
-size = Vector2(38, 38)
+size = Vector2(38, 34)
 
 [node name="StatePlant" type="StaticBody2D"]
 collision_layer = 8
 script = ExtResource("1_681ku")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_iarju")
+animation = &"closed"
+autoplay = "closed"
+frame_progress = 0.895821
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_awobx")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -20.0
 offset_top = -48.6667
 offset_right = 20.0
