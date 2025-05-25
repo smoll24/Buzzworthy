@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dkjdwfhfs38d4"]
+[gd_scene load_steps=21 format=4 uid="uid://dkjdwfhfs38d4"]
 
 [ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_1okjv"]
 [ext_resource type="Script" path="res://scripts/levels/test_scene.gd" id="1_gyqdb"]
@@ -14,7 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://yt2df3jc2r64" path="res://scenes/objects/Boost_Plant.tscn" id="10_sq0v2"]
 [ext_resource type="PackedScene" uid="uid://b2ihwmogw350x" path="res://scenes/ui/Menu_Picker.tscn" id="11_7yxtk"]
 [ext_resource type="Texture2D" uid="uid://cs2dn7fhgxdhd" path="res://assets/temp/moths.png" id="14_s5syp"]
-[ext_resource type="Texture2D" uid="uid://nlraguiegyh" path="res://assets/temp/unnamed (12).png" id="15_p8hdw"]
+[ext_resource type="Texture2D" uid="uid://c4xwjyq12ulro" path="res://assets/temp/weevil2.png" id="15_th75x"]
+[ext_resource type="Texture2D" uid="uid://dvaervspeg4v" path="res://assets/temp/museum_beetle.png" id="16_fqys1"]
+[ext_resource type="Texture2D" uid="uid://cij3fog8d5f2l" path="res://assets/temp/click_bug.png" id="17_rb4o3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pf6h"]
 texture = ExtResource("1_1okjv")
@@ -150,7 +152,7 @@ physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_7pf6h")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4rqkq"]
-size = Vector2(220, 166.667)
+size = Vector2(201.333, 61.0001)
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_gyqdb")
@@ -196,6 +198,7 @@ tile_map_data = PackedByteArray("AAD6/w8AAAADAAIAAAD5/w8AAAADAAIAAAD4/w8AAAADAAI
 tile_set = SubResource("TileSet_paph8")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 offset_left = -406.0
 offset_top = 320.0
 offset_right = 691.0
@@ -203,6 +206,7 @@ offset_bottom = 346.0
 color = Color(0.247059, 0.145098, 0.145098, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
+visible = false
 offset_left = -406.0
 offset_top = 320.0
 offset_right = 687.0
@@ -210,6 +214,7 @@ offset_bottom = 336.0
 color = Color(0.556863, 0.392157, 0.392157, 1)
 
 [node name="Tower5" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-242, 319)
 scale = Vector2(2, 2)
 texture = ExtResource("3_4b6gg")
@@ -260,14 +265,24 @@ scale = Vector2(0.188542, 0.180556)
 texture = ExtResource("14_s5syp")
 
 [node name="Test_Dialog" type="Area2D" parent="."]
-position = Vector2(-124, 303)
-scale = Vector2(0.3, 0.3)
+position = Vector2(-117, 298)
 
 [node name="Unnamed(12)" type="Sprite2D" parent="Test_Dialog"]
-texture = ExtResource("15_p8hdw")
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("15_th75x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Test_Dialog"]
-position = Vector2(3.33328, 3.33331)
+position = Vector2(1, 0.499969)
 shape = SubResource("RectangleShape2D_4rqkq")
+
+[node name="Unnamed(12)" type="Sprite2D" parent="."]
+position = Vector2(136, 296)
+scale = Vector2(-1.2, 1.2)
+texture = ExtResource("16_fqys1")
+
+[node name="Unnamed(12)2" type="Sprite2D" parent="."]
+position = Vector2(23, 299)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("17_rb4o3")
 
 [connection signal="body_entered" from="Test_Dialog" to="." method="_on_test_dialog_body_entered"]

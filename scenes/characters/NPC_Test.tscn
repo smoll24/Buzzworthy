@@ -1,19 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8qtmicicbaw2"]
 
 [ext_resource type="Script" path="res://scripts/characters/npc_test.gd" id="1_gb1rf"]
+[ext_resource type="Texture2D" uid="uid://c70kfmsl6xe2d" path="res://assets/characters/mc.png" id="2_oju37"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tya3q"]
-load_path = "res://.godot/imported/lunamoth.png-059f736802b6093d70cf42237bb2338e.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_43isp"]
-atlas = SubResource("CompressedTexture2D_tya3q")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_irney"]
+atlas = ExtResource("2_oju37")
+region = Rect2(0, 0, 168, 168)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7nmsh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_43isp")
+"texture": SubResource("AtlasTexture_irney")
 }],
 "loop": true,
 "name": &"default",
@@ -21,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kd6o3"]
-size = Vector2(28, 58)
+size = Vector2(28, 49)
 
 [node name="NpcTest" type="CharacterBody2D"]
 collision_layer = 4
@@ -29,9 +27,9 @@ collision_mask = 7
 script = ExtResource("1_gb1rf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_7nmsh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 3)
+position = Vector2(-2, 0.5)
 shape = SubResource("RectangleShape2D_kd6o3")

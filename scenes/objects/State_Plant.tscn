@@ -63,7 +63,7 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_iarju")
 animation = &"closed"
 autoplay = "closed"
-frame_progress = 0.895821
+frame_progress = 0.00949116
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 1)
