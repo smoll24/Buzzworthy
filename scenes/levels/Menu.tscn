@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3th6cw1uqrjl"]
+[gd_scene load_steps=6 format=3 uid="uid://b3th6cw1uqrjl"]
 
 [ext_resource type="Script" path="res://scripts/levels/menu.gd" id="1_fdlwv"]
 [ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="1_vl6yx"]
 [ext_resource type="FontFile" uid="uid://dy80sxg0xvt4v" path="res://assets/fonts/C&C Red Alert [INET].ttf" id="2_y4w0q"]
+
+[sub_resource type="Gradient" id="Gradient_phy3a"]
+offsets = PackedFloat32Array(0, 0.987013)
+colors = PackedColorArray(0.308028, 0.0701783, 0.110991, 1, 0.690718, 0.318414, 0.322742, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h57hn"]
+gradient = SubResource("Gradient_phy3a")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -21,6 +28,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.29446, 0.139315, 0.17209, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 640.0
+offset_right = 360.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+texture = SubResource("GradientTexture2D_h57hn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

@@ -28,9 +28,10 @@ func _ready() -> void:
 	dialogbox.visible = false
 	text.visible = false
 	end.visible = false
-	tween2 = create_tween()
-	tween2.tween_property(fade, "modulate:a", 0, 1)
 	await get_tree().create_timer(1).timeout
+	tween2 = create_tween()
+	tween2.tween_property(fade, "modulate:a", 0, 2)
+	await get_tree().create_timer(2).timeout
 	
 	#dialogbox.self_modulate.a = 1
 	dialogbox.modulate = Color(0,0,0,1)
@@ -42,7 +43,7 @@ func _ready() -> void:
 			queue_text(["Our vegetation refuses to blossom as once it used to long ago.                      "])
 			queue_text(["The crops wither and the water spoils endlessly.                      "])
 			queue_text(["Please, if anyone hears this prayer, please come to our aid.                      "])
-			queue_text(["Help us, please, for we dearly need it to live on in peace.                 "])
+			queue_text(["Help us, please, for we dearly need it to live on in peace.                            "])
 			queue_text(['E'])
 			Globals.current_dialog = 2
 
