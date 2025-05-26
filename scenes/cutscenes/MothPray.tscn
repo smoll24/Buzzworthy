@@ -94,7 +94,8 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_orf1y")
 
 [node name="Moth" type="AnimatedSprite2D" parent="."]
-position = Vector2(319, 161)
+position = Vector2(319, 180)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1w4l8")
 autoplay = "default"
 frame = 7

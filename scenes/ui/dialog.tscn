@@ -40,6 +40,7 @@ bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid. "
 
 [node name="end" type="Label" parent="."]
+visible = false
 offset_left = 517.0
 offset_top = 291.0
 offset_right = 536.0
