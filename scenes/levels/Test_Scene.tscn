@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://dkjdwfhfs38d4"]
+[gd_scene load_steps=22 format=4 uid="uid://dkjdwfhfs38d4"]
 
 [ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_1okjv"]
 [ext_resource type="Script" path="res://scripts/levels/test_scene.gd" id="1_gyqdb"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cs2dn7fhgxdhd" path="res://assets/temp/moths.png" id="14_s5syp"]
 [ext_resource type="Texture2D" uid="uid://c4xwjyq12ulro" path="res://assets/temp/weevil2.png" id="15_th75x"]
 [ext_resource type="Texture2D" uid="uid://dvaervspeg4v" path="res://assets/temp/museum_beetle.png" id="16_fqys1"]
+[ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="16_jj3af"]
 [ext_resource type="Texture2D" uid="uid://cij3fog8d5f2l" path="res://assets/temp/click_bug.png" id="17_rb4o3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pf6h"]
@@ -275,6 +276,16 @@ texture = ExtResource("15_th75x")
 position = Vector2(1, 0.499969)
 shape = SubResource("RectangleShape2D_4rqkq")
 
+[node name="Label" type="Label" parent="Test_Dialog"]
+offset_left = -21.0
+offset_top = -63.0
+offset_right = 19.0
+offset_bottom = -37.0
+theme_override_fonts/font = ExtResource("16_jj3af")
+theme_override_font_sizes/font_size = 32
+text = "[!]"
+horizontal_alignment = 1
+
 [node name="Unnamed(12)" type="Sprite2D" parent="."]
 position = Vector2(136, 296)
 scale = Vector2(-1.2, 1.2)
@@ -286,3 +297,4 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("17_rb4o3")
 
 [connection signal="body_entered" from="Test_Dialog" to="." method="_on_test_dialog_body_entered"]
+[connection signal="body_exited" from="Test_Dialog" to="." method="_on_test_dialog_body_exited"]
