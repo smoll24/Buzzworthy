@@ -29,8 +29,8 @@ func _ready() -> void:
 	text.visible = false
 	end.visible = false
 	tween2 = create_tween()
-	tween2.tween_property(fade, "modulate:a", 0, 0.5)
-	await get_tree().create_timer(0.5).timeout
+	tween2.tween_property(fade, "modulate:a", 0, 1)
+	await get_tree().create_timer(1).timeout
 	
 	#dialogbox.self_modulate.a = 1
 	dialogbox.modulate = Color(0,0,0,1)
@@ -60,10 +60,10 @@ func _process(delta):
 				#text.visible_ratio = 1.0 
 				#change_state(State.FINISHED)
 		State.FINISHED:
-			end.text = 'v'
+			#end.text = 'v'
 			#if Input.is_action_just_pressed('ui_accept'):
 			change_state(State.READY)
-			dialogbox.hide()
+			#dialogbox.hide()
 		
 		
 func queue_text(next_text):
