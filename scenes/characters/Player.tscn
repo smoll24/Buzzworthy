@@ -100,4 +100,4 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 drag_vertical_enabled = true
 drag_vertical_offset = -1.0
-drag_bottom_margin = 0.36
+drag_bottom_margin = 0.27

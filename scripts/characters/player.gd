@@ -34,7 +34,6 @@ var speed_time = 0
 var jumping = false
 var jump_time = 0
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_speed = SPEED
@@ -145,5 +144,3 @@ func apply_speed_effect():
 		#else:
 			#knockback_heal_distance = abs(knockback_heal_distance)
 		#tween.tween_property(self, "position:x", self.global_position.x + knockback_heal_distance, knockback_heal_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
-
-		
