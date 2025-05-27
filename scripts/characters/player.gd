@@ -131,6 +131,15 @@ func apply_hit_effect():
 		
 		tween.tween_property(self, "position:x", self.global_position.x + knockback_hit_distance, knockback_hit_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 		
+func apply_hit2_effect():
+	if hit == false and dash == false:
+		hit = true
+		var hp = Globals.get_health()
+		if hp != 0:
+			hp -= 1
+			Globals.set_health(hp)
+		sprite.modulate = Color(3,1,1,1)
+		
 func apply_heal_effect():
 	if heal == false and dash == false:
 		heal = true

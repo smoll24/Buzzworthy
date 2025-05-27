@@ -1,12 +1,62 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuka1chubvkbq"]
+[gd_scene load_steps=9 format=3 uid="uid://cuka1chubvkbq"]
 
 [ext_resource type="Script" path="res://scripts/ui/overlay.gd" id="1_v82of"]
+[ext_resource type="Texture2D" uid="uid://buimjmv3y4b3y" path="res://assets/ui/health.png" id="2_2q5kd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ar4y"]
+atlas = ExtResource("2_2q5kd")
+region = Rect2(0, 496, 248, 248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2n5q"]
+atlas = ExtResource("2_2q5kd")
+region = Rect2(248, 248, 248, 248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6hdt"]
+atlas = ExtResource("2_2q5kd")
+region = Rect2(0, 248, 248, 248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxuxh"]
+atlas = ExtResource("2_2q5kd")
+region = Rect2(248, 0, 248, 248)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou3nq"]
+atlas = ExtResource("2_2q5kd")
+region = Rect2(0, 0, 248, 248)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_exla2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ar4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2n5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6hdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxuxh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou3nq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Overlay" type="CanvasLayer"]
 script = ExtResource("1_v82of")
 metadata/_edit_use_anchors_ = true
 
+[node name="ProgressBar" type="AnimatedSprite2D" parent="."]
+position = Vector2(97, 29)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_exla2")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 anchors_preset = -1
 anchor_left = 0.019
 anchor_top = 0.028
@@ -23,14 +73,8 @@ grow_vertical = 2
 layout_mode = 2
 alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(200, 20)
-layout_mode = 2
-max_value = 10.0
-value = 5.0
-show_percentage = false
-
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Frame Rate"

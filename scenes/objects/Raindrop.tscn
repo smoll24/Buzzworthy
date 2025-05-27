@@ -80,7 +80,7 @@ size = Vector2(11, 12)
 
 [node name="Raindrop" type="Area2D"]
 collision_layer = 16
-collision_mask = 10
+collision_mask = 11
 script = ExtResource("1_xnssh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
