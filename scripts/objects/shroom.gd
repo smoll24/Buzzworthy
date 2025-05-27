@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var player : CharacterBody2D
+@onready var sound = $Shroom
 
 const JUMP_VELOCITY = -400.0
 
@@ -15,10 +16,11 @@ func _process(delta: float) -> void:
 		sprite.play("default")
 
 func _on_body_entered(body: CharacterBody2D) -> void:
-	if body.velocity.y > 0:
-		body.velocity.y = JUMP_VELOCITY
-		body.sprite.frame = 2
-		body.sprite.play("jump")
+	#if body.velocity.y > 0:
+	body.velocity.y = JUMP_VELOCITY
+	body.sprite.frame = 2
+	body.sprite.play("jump")
+	sound.play()
 	sprite.play("bounce")
 
 

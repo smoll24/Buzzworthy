@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://do68acpxtbi7o"]
+
+[ext_resource type="AudioStream" uid="uid://dp6x5p1wid15q" path="res://assets/sounds/shroom1.wav" id="1_uxyfe"]
+
+[node name="Shroom1" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_uxyfe")
+volume_db = 20.0

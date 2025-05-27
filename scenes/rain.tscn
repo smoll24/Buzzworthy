@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6bt28gr3cts0"]
+[gd_scene load_steps=4 format=3 uid="uid://b6bt28gr3cts0"]
 
 [ext_resource type="Script" path="res://scripts/rain.gd" id="1_gm5cb"]
+[ext_resource type="PackedScene" uid="uid://baqbpg8455wws" path="res://scenes/sounds/Raining.tscn" id="2_jqe5y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bmub"]
 size = Vector2(277, 135)
@@ -11,3 +12,6 @@ script = ExtResource("1_gm5cb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 66)
 shape = SubResource("RectangleShape2D_6bmub")
+
+[node name="Raining" parent="." instance=ExtResource("2_jqe5y")]
+max_distance = 640.0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://g4qhs4r54vhc"]
+[gd_scene load_steps=10 format=3 uid="uid://g4qhs4r54vhc"]
 
 [ext_resource type="Script" path="res://scripts/objects/shroom.gd" id="1_htiaw"]
 [ext_resource type="Texture2D" uid="uid://b0enexrcyo2jt" path="res://assets/objects/shroom.png" id="2_1arn0"]
+[ext_resource type="PackedScene" uid="uid://do68acpxtbi7o" path="res://scenes/sounds/Shroom1.tscn" id="3_t1v32"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_26dou"]
 atlas = ExtResource("2_1arn0")
@@ -73,5 +74,7 @@ collision_layer = 8
 position = Vector2(-15.7457, 24.6049)
 scale = Vector2(0.245716, 1.8502)
 polygon = PackedVector2Array(84.4296, -19.2438, 108.848, -12.2175, 39.6626, -11.1366, 72.2205, 3.45643, 31.5231, 8.32076, -9.17435, 3.45643, 23.3836, -11.1366, -45.8021, -12.2175, -25.4534, -19.2438)
+
+[node name="Shroom" parent="." instance=ExtResource("3_t1v32")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
