@@ -118,6 +118,7 @@ pause={
 2d_physics/layer_2="Ground"
 2d_physics/layer_3="NPCs"
 2d_physics/layer_4="Plants"
+2d_physics/layer_5="Particles"
 
 [rendering]
 

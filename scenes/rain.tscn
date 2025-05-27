@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6bt28gr3cts0"]
+
+[ext_resource type="Script" path="res://scripts/rain.gd" id="1_gm5cb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bmub"]
+size = Vector2(277, 135)
+
+[node name="Rain" type="Area2D"]
+script = ExtResource("1_gm5cb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 66)
+shape = SubResource("RectangleShape2D_6bmub")

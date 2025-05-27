@@ -20,3 +20,7 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 		body.sprite.frame = 2
 		body.sprite.play("jump")
 	sprite.play("bounce")
+
+
+func _on_rain_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://g4qhs4r54vhc"]
+[gd_scene load_steps=9 format=3 uid="uid://g4qhs4r54vhc"]
 
 [ext_resource type="Script" path="res://scripts/objects/shroom.gd" id="1_htiaw"]
 [ext_resource type="Texture2D" uid="uid://b0enexrcyo2jt" path="res://assets/objects/shroom.png" id="2_1arn0"]
@@ -51,10 +51,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6vx7a"]
-radius = 16.5
-height = 48.0
-
 [node name="BrownShroom" type="Area2D"]
 script = ExtResource("1_htiaw")
 
@@ -65,10 +61,10 @@ animation = &"bounce"
 frame = 3
 frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-7, -13.5)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_6vx7a")
+polygon = PackedVector2Array(-11.5, 10, -3.49992, 21, 11.5001, 33, 12.4999, -33, -4.50007, -19, -11.5, -7.99996)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 8
@@ -76,6 +72,6 @@ collision_layer = 8
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-15.7457, 24.6049)
 scale = Vector2(0.245716, 1.8502)
-polygon = PackedVector2Array(145.476, -18.7033, 169.894, -12.758, 39.6626, -11.1366, 72.2205, 3.45643, 31.5231, 8.32076, -9.17435, 3.45643, 23.3836, -11.1366, -98.7087, -12.758, -70.2205, -18.7033)
+polygon = PackedVector2Array(84.4296, -19.2438, 108.848, -12.2175, 39.6626, -11.1366, 72.2205, 3.45643, 31.5231, 8.32076, -9.17435, 3.45643, 23.3836, -11.1366, -45.8021, -12.2175, -25.4534, -19.2438)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkvgjc283abme"]
+
+[ext_resource type="Script" path="res://scripts/objects/rain_plant.gd" id="1_t5fnf"]
+[ext_resource type="Texture2D" uid="uid://c4uu8lfk4dsfv" path="res://assets/objects/rainprotect2.png" id="2_q8eds"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lf1a"]
+atlas = ExtResource("2_q8eds")
+region = Rect2(0, 0, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uklvs"]
+atlas = ExtResource("2_q8eds")
+region = Rect2(0, 208, 208, 208)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0exc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lf1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uklvs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwyrc"]
+size = Vector2(96, 56)
+
+[node name="RainPlant" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_t5fnf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o0exc")
+autoplay = "default"
+frame_progress = 0.355044
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_hwyrc")

@@ -1,0 +1,120 @@
+[gd_scene load_steps=18 format=3 uid="uid://cuijbu05tfn80"]
+
+[ext_resource type="Script" path="res://scripts/objects/rain_plant.gd" id="1_2ef00"]
+[ext_resource type="Texture2D" uid="uid://bodgsgmo6faaf" path="res://assets/objects/rainprotect.png" id="2_lqbb6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p40bg"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(0, 0, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnwcl"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(208, 0, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_731ke"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(416, 0, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3dyt"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(624, 0, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsf4p"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(0, 208, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiwi8"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(208, 208, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h540p"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(416, 208, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx6vv"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(624, 208, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc7u4"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(0, 416, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx53w"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(208, 416, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt5fm"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(416, 416, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikbq1"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(624, 416, 208, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xnn4"]
+atlas = ExtResource("2_lqbb6")
+region = Rect2(0, 624, 208, 208)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0exc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p40bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnwcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_731ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3dyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsf4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiwi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h540p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx6vv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc7u4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx53w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt5fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikbq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xnn4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8ib4"]
+radius = 31.0161
+
+[node name="RainPlant" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_2ef00")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_o0exc")
+autoplay = "default"
+frame_progress = 0.750564
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 12)
+shape = SubResource("CircleShape2D_e8ib4")
