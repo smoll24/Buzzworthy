@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://ba4kdeeumnipu"]
+
+[ext_resource type="Script" path="res://scripts/objects/cobweb.gd" id="1_el60k"]
+[ext_resource type="Texture2D" uid="uid://ctd407182yh7m" path="res://assets/objects/web.png" id="1_g4ryp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3d40"]
+atlas = ExtResource("1_g4ryp")
+region = Rect2(0, 288, 288, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyygf"]
+atlas = ExtResource("1_g4ryp")
+region = Rect2(0, 0, 288, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pehyc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3d40")
+}],
+"loop": true,
+"name": &"caught",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyygf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bthoe"]
+size = Vector2(65, 62)
+
+[node name="Cobweb" type="Area2D"]
+script = ExtResource("1_el60k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.670588)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_pehyc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -3)
+shape = SubResource("RectangleShape2D_bthoe")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]

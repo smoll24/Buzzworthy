@@ -40,11 +40,18 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if Globals.slow:
+		current_speed = SPEED/10
+	else:
+		current_speed = SPEED
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
 	if jumping:
+		if Globals.slow:
+			jumping = false
 		jump_time += delta
 		if jump_time > 0.1:
 			if is_on_floor():
@@ -54,9 +61,10 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jumping = true
-		sprite.play("jump")
-		velocity.y = JUMP_VELOCITY
+		if not Globals.slow:
+			jumping = true
+			sprite.play("jump")
+			velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -64,12 +72,18 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * current_speed
 		if not jumping:
-			sprite.play("walk")
+			if Globals.slow:
+				sprite.play("web_walk")
+			else:
+				sprite.play("walk")
 		sprite.scale.x = direction * abs(sprite.scale.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		if not jumping:
-			sprite.play("default")
+			if Globals.slow:
+				sprite.play("web")
+			else:
+				sprite.play("default")
 	
 	#Control Hit Cooldown
 	if hit == true:
