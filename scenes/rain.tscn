@@ -10,8 +10,10 @@ size = Vector2(277, 135)
 script = ExtResource("1_gm5cb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 66)
+visible = false
+position = Vector2(138, 68)
 shape = SubResource("RectangleShape2D_6bmub")
 
 [node name="Raining" parent="." instance=ExtResource("2_jqe5y")]
+position = Vector2(139, 63)
 max_distance = 640.0

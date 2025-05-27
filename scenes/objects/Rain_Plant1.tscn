@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cuijbu05tfn80"]
+[gd_scene load_steps=17 format=3 uid="uid://cuijbu05tfn80"]
 
 [ext_resource type="Script" path="res://scripts/objects/rain_plant.gd" id="1_2ef00"]
 [ext_resource type="Texture2D" uid="uid://bodgsgmo6faaf" path="res://assets/objects/rainprotect.png" id="2_lqbb6"]
@@ -102,19 +102,17 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e8ib4"]
-radius = 31.0161
-
 [node name="RainPlant" type="Area2D"]
 collision_layer = 8
+collision_mask = 16
 script = ExtResource("1_2ef00")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_o0exc")
 autoplay = "default"
 frame_progress = 0.750564
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-7, 12)
-shape = SubResource("CircleShape2D_e8ib4")
+polygon = PackedVector2Array(-48, -14, -35, -17, -28, -39, -8, -50, 15, -50, 31, -28, 40, -4, 40, 42, 35, 44, 36, -1, 23, -29, -15, -5, -36, -5)

@@ -23,11 +23,11 @@ func _process(delta: float) -> void:
 
 
 func spawn_rain():
-	rand_x = randf_range(0,640)
+	rand_x = randf_range(-320,320)
 	rand_a = randf_range(0.00,1.00)
 	var raindrop = preload("res://scenes/objects/Raindrop.tscn").instantiate()
 	add_child(raindrop)
-	raindrop.position = Vector2(area.position.x+rand_x, area.position.y)
+	raindrop.position = Vector2(area.position.x+rand_x, area.position.y-100)
 	raindrop.get_node("AnimatedSprite2D").modulate = Color(1,1,1,rand_a)
 	
 
