@@ -17,4 +17,6 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: CharacterBody2D) -> void:
 	if body.velocity.y > 0:
 		body.velocity.y = JUMP_VELOCITY
+		body.sprite.frame = 2
+		body.sprite.play("jump")
 	sprite.play("bounce")

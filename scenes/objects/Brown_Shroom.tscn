@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://g4qhs4r54vhc"]
+
+[ext_resource type="Script" path="res://scripts/objects/shroom.gd" id="1_htiaw"]
+[ext_resource type="Texture2D" uid="uid://b0enexrcyo2jt" path="res://assets/objects/shroom.png" id="2_1arn0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26dou"]
+atlas = ExtResource("2_1arn0")
+region = Rect2(208, 0, 208, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nixjt"]
+atlas = ExtResource("2_1arn0")
+region = Rect2(0, 168, 208, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5b72"]
+atlas = ExtResource("2_1arn0")
+region = Rect2(208, 168, 208, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww5nq"]
+atlas = ExtResource("2_1arn0")
+region = Rect2(208, 168, 208, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl7ev"]
+atlas = ExtResource("2_1arn0")
+region = Rect2(0, 0, 208, 168)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p54as"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26dou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nixjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5b72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww5nq")
+}],
+"loop": false,
+"name": &"bounce",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl7ev")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6vx7a"]
+radius = 16.5
+height = 48.0
+
+[node name="BrownShroom" type="Area2D"]
+script = ExtResource("1_htiaw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_p54as")
+animation = &"bounce"
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, -13.5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6vx7a")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-15.7457, 24.6049)
+scale = Vector2(0.245716, 1.8502)
+polygon = PackedVector2Array(145.476, -18.7033, 169.894, -12.758, 39.6626, -11.1366, 72.2205, 3.45643, 31.5231, 8.32076, -9.17435, 3.45643, 23.3836, -11.1366, -98.7087, -12.758, -70.2205, -18.7033)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

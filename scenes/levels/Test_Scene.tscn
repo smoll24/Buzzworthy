@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dkjdwfhfs38d4"]
+[gd_scene load_steps=26 format=4 uid="uid://dkjdwfhfs38d4"]
 
 [ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_1okjv"]
 [ext_resource type="Script" path="res://scripts/levels/test_scene.gd" id="1_gyqdb"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cpprx4rkdcvl4" path="res://scenes/objects/Pause_Plant.tscn" id="9_0o3qe"]
 [ext_resource type="PackedScene" uid="uid://yt2df3jc2r64" path="res://scenes/objects/Boost_Plant.tscn" id="10_sq0v2"]
 [ext_resource type="PackedScene" uid="uid://b2ihwmogw350x" path="res://scenes/ui/Menu_Picker.tscn" id="11_7yxtk"]
+[ext_resource type="PackedScene" uid="uid://s2f6dxoy2dk7" path="res://scenes/objects/Red_Shroom.tscn" id="12_208oq"]
 [ext_resource type="Texture2D" uid="uid://cs2dn7fhgxdhd" path="res://assets/temp/moths.png" id="14_s5syp"]
 [ext_resource type="Texture2D" uid="uid://c4xwjyq12ulro" path="res://assets/temp/weevil2.png" id="15_th75x"]
 [ext_resource type="Texture2D" uid="uid://dvaervspeg4v" path="res://assets/temp/museum_beetle.png" id="16_fqys1"]
@@ -20,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cij3fog8d5f2l" path="res://assets/temp/click_bug.png" id="17_rb4o3"]
 [ext_resource type="Texture2D" uid="uid://b20nr5out4id5" path="res://assets/temp/stink_bug.png" id="18_6pc2m"]
 [ext_resource type="Texture2D" uid="uid://dhekdb0ujap7b" path="res://assets/temp/cockroach.png" id="20_on0fu"]
-[ext_resource type="PackedScene" uid="uid://s2f6dxoy2dk7" path="res://scenes/objects/Shroom.tscn" id="21_v4tg3"]
+[ext_resource type="PackedScene" uid="uid://g4qhs4r54vhc" path="res://scenes/objects/Brown_Shroom.tscn" id="21_v4tg3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pf6h"]
 texture = ExtResource("1_1okjv")
@@ -248,11 +249,14 @@ position = Vector2(1128, 322)
 [node name="PausePlant4" parent="." instance=ExtResource("9_0o3qe")]
 position = Vector2(994, 322)
 
+[node name="BrownShroom" parent="." instance=ExtResource("21_v4tg3")]
+position = Vector2(278, 298)
+
 [node name="BoostPlant" parent="." instance=ExtResource("10_sq0v2")]
 position = Vector2(73, 135)
 
-[node name="Shroom" parent="." instance=ExtResource("21_v4tg3")]
-position = Vector2(280, 296)
+[node name="RedShroom" parent="." instance=ExtResource("12_208oq")]
+position = Vector2(-191, 295)
 
 [node name="Player" parent="." instance=ExtResource("2_phqok")]
 position = Vector2(47, 251)

@@ -1,42 +1,42 @@
 [gd_scene load_steps=10 format=3 uid="uid://s2f6dxoy2dk7"]
 
 [ext_resource type="Script" path="res://scripts/objects/shroom.gd" id="1_htiaw"]
-[ext_resource type="Texture2D" uid="uid://b0enexrcyo2jt" path="res://assets/objects/shroom.png" id="2_1arn0"]
+[ext_resource type="Texture2D" uid="uid://dutms1nigqwog" path="res://assets/objects/redshroom.png" id="2_qbaf6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_26dou"]
-atlas = ExtResource("2_1arn0")
-region = Rect2(208, 0, 208, 168)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nixjt"]
-atlas = ExtResource("2_1arn0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlh7n"]
+atlas = ExtResource("2_qbaf6")
 region = Rect2(0, 168, 208, 168)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v5b72"]
-atlas = ExtResource("2_1arn0")
-region = Rect2(208, 168, 208, 168)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmgrr"]
+atlas = ExtResource("2_qbaf6")
+region = Rect2(0, 0, 208, 168)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ww5nq"]
-atlas = ExtResource("2_1arn0")
-region = Rect2(208, 168, 208, 168)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx34r"]
+atlas = ExtResource("2_qbaf6")
+region = Rect2(0, 0, 208, 168)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vl7ev"]
-atlas = ExtResource("2_1arn0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqmnb"]
+atlas = ExtResource("2_qbaf6")
+region = Rect2(0, 0, 208, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wmmj"]
+atlas = ExtResource("2_qbaf6")
 region = Rect2(0, 0, 208, 168)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p54as"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_26dou")
+"texture": SubResource("AtlasTexture_dlh7n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nixjt")
+"texture": SubResource("AtlasTexture_rmgrr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v5b72")
+"texture": SubResource("AtlasTexture_jx34r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ww5nq")
+"texture": SubResource("AtlasTexture_cqmnb")
 }],
 "loop": false,
 "name": &"bounce",
@@ -44,7 +44,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vl7ev")
+"texture": SubResource("AtlasTexture_0wmmj")
 }],
 "loop": true,
 "name": &"default",
@@ -52,21 +52,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6vx7a"]
-radius = 16.5
+radius = 11.0
 height = 48.0
 
-[node name="Shroom" type="Area2D"]
+[node name="RedShroom" type="Area2D"]
 script = ExtResource("1_htiaw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_p54as")
 animation = &"bounce"
-frame = 3
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7, -13.5)
+position = Vector2(-6, -7)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_6vx7a")
 
@@ -76,6 +74,6 @@ collision_layer = 8
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-15.7457, 24.6049)
 scale = Vector2(0.245716, 1.8502)
-polygon = PackedVector2Array(96.639, -24.1081, 165.825, -14.3794, 39.6626, -11.1366, 72.2205, 3.45643, 31.5231, 8.32076, -9.17435, 3.45643, 23.3836, -11.1366, -98.7087, -13.839, -21.3836, -24.1081)
+polygon = PackedVector2Array(121.057, -13.839, 51.8717, -11.1366, 76.2901, -6.81272, 80.3598, 3.45644, 31.523, 5.07788, -9.17442, 3.45644, -1.03493, -6.81272, 23.3836, -11.1366, -37.6626, -13.839)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
