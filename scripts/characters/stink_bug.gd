@@ -22,10 +22,10 @@ func _process(delta: float) -> void:
 	else:
 		interact_label.hide()
 		
-func _on_interact_area_body_entered(body: Node2D) -> void:
+func _on_interact_area_body_entered(body: CharacterBody2D) -> void:
 	in_body = true
 
-func _on_interact_area_body_exited(body: Node2D) -> void:
+func _on_interact_area_body_exited(body: CharacterBody2D) -> void:
 	in_body = false
 
 func move_label(delta):

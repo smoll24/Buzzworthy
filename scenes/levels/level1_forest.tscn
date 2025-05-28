@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bodmq0acgkncu"]
+[gd_scene load_steps=15 format=4 uid="uid://bodmq0acgkncu"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_1_forest.gd" id="1_bcayv"]
 [ext_resource type="Texture2D" uid="uid://darhyvd5gt6t5" path="res://assets/tilemaps/forest_tilemap.png" id="1_dw1q2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cuijbu05tfn80" path="res://scenes/objects/Rain_Plant1.tscn" id="8_77jgw"]
 [ext_resource type="PackedScene" uid="uid://bkvgjc283abme" path="res://scenes/objects/Rain_Plant2.tscn" id="9_mhw10"]
 [ext_resource type="PackedScene" uid="uid://cuka1chubvkbq" path="res://scenes/ui/Overlay.tscn" id="10_srrk7"]
+[ext_resource type="PackedScene" uid="uid://clyowdm6g5taw" path="res://scenes/objects/Log.tscn" id="12_jcuij"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t8frm"]
 texture = ExtResource("1_dw1q2")
@@ -1326,7 +1327,7 @@ rotation = 3.14159
 scale = Vector2(1, -1)
 
 [node name="Player" parent="." instance=ExtResource("2_toopw")]
-position = Vector2(1838, -166)
+position = Vector2(296, -204)
 
 [node name="RainPlant" parent="." instance=ExtResource("8_77jgw")]
 position = Vector2(2099, -148)
@@ -1365,3 +1366,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Log" parent="." instance=ExtResource("12_jcuij")]
+position = Vector2(835, 152)
