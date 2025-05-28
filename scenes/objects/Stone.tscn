@@ -34,6 +34,7 @@ animations = [{
 size = Vector2(134, 173)
 
 [node name="Stone" type="Area2D"]
+collision_layer = 32
 script = ExtResource("1_slg8g")
 type = 1
 

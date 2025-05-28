@@ -1,21 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://clyowdm6g5taw"]
+[gd_scene load_steps=7 format=3 uid="uid://botpi3o2ff6bw"]
 
-[ext_resource type="Texture2D" uid="uid://du1ws4b7c26oa" path="res://assets/objects/log.png" id="1_g0cup"]
-[ext_resource type="Script" path="res://scripts/objects/log.gd" id="1_l1j0u"]
+[ext_resource type="Script" path="res://scripts/objects/log.gd" id="1_ft1ov"]
+[ext_resource type="Texture2D" uid="uid://byaktkukhr4w4" path="res://assets/objects/recipe.png" id="2_eaypv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dge1m"]
-atlas = ExtResource("1_g0cup")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hpe3"]
+atlas = ExtResource("2_eaypv")
 region = Rect2(0, 0, 208, 208)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a46uq"]
-atlas = ExtResource("1_g0cup")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwn6f"]
+atlas = ExtResource("2_eaypv")
 region = Rect2(0, 208, 208, 208)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_llotx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dge1m")
+"texture": SubResource("AtlasTexture_0hpe3")
 }],
 "loop": true,
 "name": &"default",
@@ -23,7 +23,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a46uq")
+"texture": SubResource("AtlasTexture_kwn6f")
 }],
 "loop": true,
 "name": &"select",
@@ -33,12 +33,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgcun"]
 size = Vector2(134, 173)
 
-[node name="Log" type="Area2D"]
+[node name="Recipe" type="Area2D"]
 collision_layer = 32
-script = ExtResource("1_l1j0u")
+script = ExtResource("1_ft1ov")
+type = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_llotx")
 animation = &"select"
 

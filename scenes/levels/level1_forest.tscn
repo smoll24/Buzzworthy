@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bodmq0acgkncu"]
+[gd_scene load_steps=17 format=4 uid="uid://bodmq0acgkncu"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_1_forest.gd" id="1_bcayv"]
 [ext_resource type="Texture2D" uid="uid://darhyvd5gt6t5" path="res://assets/tilemaps/forest_tilemap.png" id="1_dw1q2"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cuka1chubvkbq" path="res://scenes/ui/Overlay.tscn" id="10_srrk7"]
 [ext_resource type="PackedScene" uid="uid://clyowdm6g5taw" path="res://scenes/objects/Log.tscn" id="12_jcuij"]
 [ext_resource type="PackedScene" uid="uid://bxgpqkvj1h3y3" path="res://scenes/objects/Stone.tscn" id="13_puv3j"]
+[ext_resource type="PackedScene" uid="uid://botpi3o2ff6bw" path="res://scenes/objects/Recipe.tscn" id="14_indb8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t8frm"]
 texture = ExtResource("1_dw1q2")
@@ -1373,3 +1374,6 @@ position = Vector2(835, 152)
 
 [node name="Stone" parent="." instance=ExtResource("13_puv3j")]
 position = Vector2(329, 164)
+
+[node name="Recipe" parent="." instance=ExtResource("14_indb8")]
+position = Vector2(2219, -141)
