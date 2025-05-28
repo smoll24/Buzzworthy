@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://bodmq0acgkncu"]
+[gd_scene load_steps=16 format=4 uid="uid://bodmq0acgkncu"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_1_forest.gd" id="1_bcayv"]
 [ext_resource type="Texture2D" uid="uid://darhyvd5gt6t5" path="res://assets/tilemaps/forest_tilemap.png" id="1_dw1q2"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bkvgjc283abme" path="res://scenes/objects/Rain_Plant2.tscn" id="9_mhw10"]
 [ext_resource type="PackedScene" uid="uid://cuka1chubvkbq" path="res://scenes/ui/Overlay.tscn" id="10_srrk7"]
 [ext_resource type="PackedScene" uid="uid://clyowdm6g5taw" path="res://scenes/objects/Log.tscn" id="12_jcuij"]
+[ext_resource type="PackedScene" uid="uid://bxgpqkvj1h3y3" path="res://scenes/objects/Stone.tscn" id="13_puv3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t8frm"]
 texture = ExtResource("1_dw1q2")
@@ -1369,3 +1370,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="Log" parent="." instance=ExtResource("12_jcuij")]
 position = Vector2(835, 152)
+
+[node name="Stone" parent="." instance=ExtResource("13_puv3j")]
+position = Vector2(329, 164)

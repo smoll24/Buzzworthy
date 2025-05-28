@@ -1,7 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuka1chubvkbq"]
+[gd_scene load_steps=12 format=3 uid="uid://cuka1chubvkbq"]
 
 [ext_resource type="Script" path="res://scripts/ui/overlay.gd" id="1_v82of"]
 [ext_resource type="Texture2D" uid="uid://buimjmv3y4b3y" path="res://assets/ui/health.png" id="2_2q5kd"]
+[ext_resource type="Texture2D" uid="uid://du1ws4b7c26oa" path="res://assets/objects/log.png" id="3_yq870"]
+[ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="4_fbght"]
+[ext_resource type="Texture2D" uid="uid://dvgws3566i0q0" path="res://assets/objects/rock.png" id="5_q5tso"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ar4y"]
 atlas = ExtResource("2_2q5kd")
@@ -78,3 +81,37 @@ visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Frame Rate"
+
+[node name="Log_Sprite" type="Sprite2D" parent="."]
+position = Vector2(467, 20)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_yq870")
+vframes = 2
+frame = 1
+
+[node name="Log_Label" type="Label" parent="."]
+offset_left = 493.0
+offset_top = 15.0
+offset_right = 533.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("4_fbght")
+theme_override_font_sizes/font_size = 32
+text = "0"
+vertical_alignment = 1
+
+[node name="Stone_Sprite" type="Sprite2D" parent="."]
+position = Vector2(567, 27)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_q5tso")
+vframes = 2
+frame = 1
+
+[node name="Stone_Label" type="Label" parent="."]
+offset_left = 592.0
+offset_top = 15.0
+offset_right = 632.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("4_fbght")
+theme_override_font_sizes/font_size = 32
+text = "0"
+vertical_alignment = 1
