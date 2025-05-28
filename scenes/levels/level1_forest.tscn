@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=4 uid="uid://bodmq0acgkncu"]
+[gd_scene load_steps=14 format=4 uid="uid://bodmq0acgkncu"]
 
+[ext_resource type="Script" path="res://scripts/levels/level_1_forest.gd" id="1_bcayv"]
 [ext_resource type="Texture2D" uid="uid://darhyvd5gt6t5" path="res://assets/tilemaps/forest_tilemap.png" id="1_dw1q2"]
 [ext_resource type="Texture2D" uid="uid://daimqrvwrhc2g" path="res://assets/temp/db2eggh-d89cc026-e1c4-4d4d-a7a5-1257f55931ce.png" id="1_iwqtg"]
 [ext_resource type="PackedScene" uid="uid://2jc4e4q5f0rc" path="res://scenes/characters/Player.tscn" id="2_toopw"]
@@ -1262,6 +1263,7 @@ physics_layer_0/collision_mask = 13
 sources/0 = SubResource("TileSetAtlasSource_t8frm")
 
 [node name="Level1Forest" type="Node2D"]
+script = ExtResource("1_bcayv")
 
 [node name="Parallax_BG" type="Parallax2D" parent="."]
 scale = Vector2(2, 2)
@@ -1352,3 +1354,14 @@ tile_map_data = PackedByteArray("AAAHABUAAAASABYAAAAHABYAAAASABcAAAAHABcAAAASABg
 tile_set = SubResource("TileSet_f4yym")
 
 [node name="Overlay" parent="." instance=ExtResource("10_srrk7")]
+
+[node name="Fade" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Fade"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
