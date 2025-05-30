@@ -7,6 +7,7 @@ var current_dialog = 1
 var slow = false
 var logs = 0
 var stones = 0
+var crafting = false
 
 #Trigger to exit cutscene
 var swap = false

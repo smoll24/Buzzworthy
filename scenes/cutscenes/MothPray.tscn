@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://1i1j01185pff" path="res://assets/cutscenes/mothpray3.png" id="4_682u4"]
 [ext_resource type="Texture2D" uid="uid://dulxyhs8dulya" path="res://assets/cutscenes/mothpray4.png" id="5_m0qnq"]
 [ext_resource type="Texture2D" uid="uid://dp2otrab76jhq" path="res://assets/cutscenes/mothpray5.png" id="6_kqdia"]
-[ext_resource type="PackedScene" uid="uid://dves5pbm56ghy" path="res://scenes/ui/dialog.tscn" id="8_2nw4b"]
+[ext_resource type="PackedScene" uid="uid://dves5pbm56ghy" path="res://scenes/ui/Dialog.tscn" id="8_2nw4b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6uy0r"]
 shader = ExtResource("2_2u5e0")
