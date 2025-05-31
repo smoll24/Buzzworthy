@@ -129,3 +129,4 @@ shape = SubResource("RectangleShape2D_blscd")
 scale = Vector2(1, 1.12605)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+drag_vertical_offset = -1.0
