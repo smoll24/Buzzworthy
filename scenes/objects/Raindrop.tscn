@@ -72,26 +72,24 @@ animations = [{
 }],
 "loop": true,
 "name": &"ground",
-"speed": 9.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxy2x"]
-size = Vector2(11, 12)
+size = Vector2(5, 7)
 
 [node name="Raindrop" type="Area2D"]
 collision_layer = 16
-collision_mask = 11
+collision_mask = 15
 script = ExtResource("1_xnssh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_24dj0")
 animation = &"ground"
-frame = 5
-frame_progress = 0.750124
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, -3)
+position = Vector2(-2.5, 1.5)
 shape = SubResource("RectangleShape2D_pxy2x")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

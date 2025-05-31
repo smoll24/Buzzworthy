@@ -7,12 +7,11 @@
 size = Vector2(277, 135)
 
 [node name="Rain" type="Area2D"]
-collision_layer = 0
-collision_mask = 0
+collision_layer = 16
+collision_mask = 15
 script = ExtResource("1_gm5cb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(138, 68)
 shape = SubResource("RectangleShape2D_6bmub")
 

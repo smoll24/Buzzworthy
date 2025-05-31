@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	ground = true
 	if body == player:
 		player.apply_hit2_effect()
 	sprite.play("ground")
