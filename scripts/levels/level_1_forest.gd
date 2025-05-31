@@ -41,5 +41,5 @@ func _on_cave_theshold_body_entered(body: Node2D) -> void:
 func _on_cave_theshold_body_exited(body: Node2D) -> void:
 	heartbeat.stop()
 	tween = create_tween()
-	tween.tween_property(vignette, "modulate:a", 1, 0.5)
+	tween.tween_property(vignette, "modulate:a", 0, 0.5)
 	tween.tween_property(dark, "modulate:a", 0, 0.5)
