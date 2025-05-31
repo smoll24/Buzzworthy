@@ -7,6 +7,7 @@ extends StaticBody2D
 @onready var collision_3 = $CollisionShape2D_3
 @onready var collision_4 = $CollisionShape2D_4
 @onready var area = $Area2D
+@onready var sound = $PausePlant
 
 @export var stand_time: float = 0.2
 
@@ -30,6 +31,7 @@ func _process(delta):
 		if timer >= stand_time:
 			sensitive = false
 			sprite.play("closing")
+			sound.play()
 			timer = 0
 	else:
 		timer = 0
@@ -59,6 +61,7 @@ func _process(delta):
 	#If the Plant is Closed for too long, it opens again
 	if timer_closed >= stand_time:
 		sprite.play("opening")
+		sound.play()
 		timer_closed = 0
 		
 	if sprite.animation == "opening":

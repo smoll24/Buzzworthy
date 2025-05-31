@@ -9,6 +9,8 @@ var logs = 0
 var stones = 0
 var crafting = false
 
+var current_level = 1
+
 #Trigger to exit cutscene
 var swap = false
 

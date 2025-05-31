@@ -17,4 +17,6 @@ shape = SubResource("RectangleShape2D_6bmub")
 
 [node name="Raining" parent="." instance=ExtResource("2_jqe5y")]
 position = Vector2(139, 63)
-max_distance = 640.0
+volume_db = 10.0
+max_distance = 2500.0
+parameters/looping = true

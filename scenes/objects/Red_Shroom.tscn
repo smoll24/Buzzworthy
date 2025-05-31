@@ -78,5 +78,6 @@ scale = Vector2(0.245716, 1.8502)
 polygon = PackedVector2Array(121.057, -13.839, 51.8717, -11.1366, 76.2901, -6.81272, 80.3598, 3.45644, 31.523, 5.07788, -9.17442, 3.45644, -1.03493, -6.81272, 23.3836, -11.1366, -37.6626, -13.839)
 
 [node name="Shroom" parent="." instance=ExtResource("3_c23j4")]
+volume_db = 10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://t6tsms4x1utl"]
+
+[ext_resource type="AudioStream" uid="uid://dqgne3hud8r4n" path="res://assets/sounds/pause_plant.mp3" id="1_g4flu"]
+
+[node name="PausePlant" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_g4flu")
+volume_db = 10.0

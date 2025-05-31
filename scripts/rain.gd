@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 
 
 func spawn_rain():
-	rand_x = randf_range(-320,320)
+	rand_x = randf_range(-2000,1000)
 	rand_a = randf_range(0.00,1.00)
 	var raindrop = preload("res://scenes/objects/Raindrop.tscn").instantiate()
 	add_child(raindrop)
