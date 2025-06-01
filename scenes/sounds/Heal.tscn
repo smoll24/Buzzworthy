@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyp5th6drpo12"]
+
+[ext_resource type="AudioStream" uid="uid://dmxdxgomdh8lj" path="res://assets/sounds/heal1.wav" id="1_po70o"]
+
+[node name="Heal" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_po70o")
+volume_db = 10.0

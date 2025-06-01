@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bme2akrhf0oc8"]
+
+[ext_resource type="AudioStream" uid="uid://cd1wv303tej8" path="res://assets/sounds/damage2.wav" id="1_i0b67"]
+
+[node name="Damage" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_i0b67")
+volume_db = 10.0

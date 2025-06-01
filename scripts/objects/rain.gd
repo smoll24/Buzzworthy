@@ -13,7 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timer += delta
-	if timer > 0.001 and not ground:
+	if timer > 0.0001 and not ground:
 		self.position = Vector2(self.position.x-3,self.position.y+3)
 		timer = 0
 	if sprite.animation == "ground":
@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	ground = true
 	if body == player:
-		player.apply_hit2_effect()
+		player.apply_wet_effect()
 	sprite.play("ground")
 
 

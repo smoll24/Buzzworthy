@@ -9,7 +9,7 @@ extends StaticBody2D
 @onready var area = $Area2D
 @onready var sound = $PausePlant
 
-@export var stand_time: float = 0.2
+@export var stand_time: float = 0.1
 
 var timer: float = 0.0
 var timer_closed: float = 0.0

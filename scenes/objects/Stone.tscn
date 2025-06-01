@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxgpqkvj1h3y3"]
+[gd_scene load_steps=8 format=3 uid="uid://bxgpqkvj1h3y3"]
 
 [ext_resource type="Script" path="res://scripts/objects/log.gd" id="1_slg8g"]
 [ext_resource type="Texture2D" uid="uid://dvgws3566i0q0" path="res://assets/objects/rock.png" id="2_2nmdk"]
@@ -31,7 +31,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xgcun"]
-size = Vector2(134, 173)
+size = Vector2(25, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mk0x"]
+size = Vector2(132, 172)
 
 [node name="Stone" type="Area2D"]
 collision_layer = 32
@@ -44,8 +47,15 @@ sprite_frames = SubResource("SpriteFrames_llotx")
 animation = &"select"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 19.5)
+position = Vector2(-2.5, 1.5)
 shape = SubResource("RectangleShape2D_xgcun")
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 19)
+shape = SubResource("RectangleShape2D_1mk0x")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

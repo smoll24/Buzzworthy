@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://damqbs0ldn64k"]
+
+[ext_resource type="AudioStream" uid="uid://dbmr683xhqm1n" path="res://assets/sounds/lose1.wav" id="1_dck58"]
+
+[node name="Lose" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_dck58")
+volume_db = 20.0

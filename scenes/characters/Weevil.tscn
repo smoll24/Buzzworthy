@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://qsp7gdd10q00"]
+
+[ext_resource type="Script" path="res://scripts/characters/stink_bug.gd" id="1_ktuat"]
+[ext_resource type="Texture2D" uid="uid://c4xwjyq12ulro" path="res://assets/temp/weevil2.png" id="2_esr8x"]
+[ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="3_twu2c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gxmbd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_esr8x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkwol"]
+size = Vector2(84, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rxuq"]
+size = Vector2(150, 61)
+
+[node name="Weevil" type="StaticBody2D"]
+script = ExtResource("1_ktuat")
+type = 6
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gxmbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 0.5)
+shape = SubResource("RectangleShape2D_hkwol")
+
+[node name="Interact_Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact_Area"]
+position = Vector2(-3, -3.5)
+shape = SubResource("RectangleShape2D_1rxuq")
+
+[node name="Interact_Label" type="Label" parent="."]
+offset_left = -13.0
+offset_top = -54.0
+offset_right = 27.0
+offset_bottom = -28.0
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("3_twu2c")
+theme_override_font_sizes/font_size = 32
+text = "[!]"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Interact_Area" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="Interact_Area" to="." method="_on_interact_area_body_exited"]

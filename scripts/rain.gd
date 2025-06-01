@@ -17,7 +17,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timer += delta
-	if timer > 0.01:
+	if timer > 0.0001:
+		spawn_rain()
+		spawn_rain()
 		spawn_rain()
 		timer = 0
 

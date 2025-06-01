@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1oaalc83l0ed"]
+
+[ext_resource type="Script" path="res://scripts/characters/stink_bug.gd" id="1_uatwr"]
+[ext_resource type="Texture2D" uid="uid://vtc7wlv154pa" path="res://assets/characters/NPC1.png" id="2_6vjan"]
+[ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="3_78vgf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxkeq"]
+atlas = ExtResource("2_6vjan")
+region = Rect2(0, 0, 42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5wbc"]
+atlas = ExtResource("2_6vjan")
+region = Rect2(42, 0, 42, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gxmbd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxkeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5wbc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkwol"]
+size = Vector2(30, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rxuq"]
+size = Vector2(142, 61)
+
+[node name="Moth1" type="StaticBody2D"]
+script = ExtResource("1_uatwr")
+type = 20
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_gxmbd")
+autoplay = "default"
+frame_progress = 0.0714069
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_hkwol")
+
+[node name="Interact_Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact_Area"]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_1rxuq")
+
+[node name="Interact_Label" type="Label" parent="."]
+offset_left = -13.0
+offset_top = -54.0
+offset_right = 27.0
+offset_bottom = -28.0
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("3_78vgf")
+theme_override_font_sizes/font_size = 32
+text = "[!]"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Interact_Area" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="Interact_Area" to="." method="_on_interact_area_body_exited"]

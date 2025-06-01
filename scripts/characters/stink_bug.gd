@@ -5,6 +5,18 @@ var tween
 
 @onready var interact_area = $Interact_Area
 @onready var interact_label = $Interact_Label
+@export var type = 1
+
+var dialog = null
+
+#Stinkbug = 1
+#Clickbug = 2
+#Spider = 3
+#Museum beetle = 4
+#Cockroach = 5
+#Weevil = 6
+#Moth1 = 20
+#Moth2 = 21
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +29,19 @@ func _process(delta: float) -> void:
 	if in_body:
 		interact_label.show()
 		if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("dialogic_default_action"):
-			Dialogic.start("test_timeline")
+			if type == 1:
+				dialog = Dialogic.start("StinkBug")
+			elif type == 2:
+				dialog = Dialogic.start("ClickBug")
+			elif type == 3:
+				dialog = Dialogic.start("Spider")
+			elif type == 4:
+				dialog = Dialogic.start("MuseumBeetle")
+			elif type == 20:
+				dialog = Dialogic.start("Moth1")
+			elif type == 21:
+				dialog = Dialogic.start("Moth2")
+			get_tree().root.add_child(dialog)
 			in_body = false
 	else:
 		interact_label.hide()

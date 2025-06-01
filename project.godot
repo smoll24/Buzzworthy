@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TGC_GameJam"
-run/main_scene="res://scenes/levels/Test_Scene.tscn"
+run/main_scene="res://scenes/levels/level1_forest.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,13 @@ config/icon="res://icon.svg"
 Globals="*res://scripts/globals.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Level1Music="*res://scenes/music/Level1_Music.tscn"
+Advance="*res://scenes/sounds/Advance.tscn"
+Click="*res://scenes/sounds/Click.tscn"
+Damage="*res://scenes/sounds/Damage.tscn"
+Lose="*res://scenes/sounds/Lose.tscn"
+Pickup="*res://scenes/sounds/Pickup.tscn"
+Heal="*res://scenes/sounds/Heal.tscn"
+Splash="*res://scenes/sounds/Splash.tscn"
 
 [dialogic]
 
@@ -27,6 +34,12 @@ directories/dch_directory={
 "test_character": "res://assets/dialogic/test_character.dch"
 }
 directories/dtl_directory={
+"ClickBug": "res://assets/dialogic/ClickBug.dtl",
+"Moth1": "res://assets/dialogic/Moth1.dtl",
+"Moth2": "res://assets/dialogic/Moth2.dtl",
+"MuseumBeetle": "res://assets/dialogic/MuseumBeetle.dtl",
+"Spider": "res://assets/dialogic/Spider.dtl",
+"StinkBug1": "res://assets/dialogic/StinkBug1.dtl",
 "test_timeline": "res://assets/dialogic/test_timeline.dtl"
 }
 glossary/default_case_sensitive=true

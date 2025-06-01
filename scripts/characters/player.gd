@@ -138,7 +138,21 @@ func apply_hit2_effect():
 		if hp != 0:
 			hp -= 1
 			Globals.set_health(hp)
+			Damage.play()
 		sprite.modulate = Color(3,1,1,1)
+		
+func apply_wet_effect():
+	if hit == false and dash == false:
+		hit = true
+		var wet = Globals.get_wet()
+		if wet != Globals.max_wet:
+			wet += 1
+			Globals.set_wet(wet)
+			Splash.play()
+			sprite.modulate = Color(3,1,1,1)
+		else:
+			hit = false
+			apply_hit2_effect()
 		
 func apply_heal_effect():
 	if heal == false and dash == false:
@@ -147,6 +161,7 @@ func apply_heal_effect():
 		if hp != Globals.get("max_health"):
 			hp = hp + 1
 			Globals.set_health(hp)
+			Heal.play()
 		sprite.modulate = Color(0,1,0.5,10)
 		tween = create_tween()
 		if is_facing_right:

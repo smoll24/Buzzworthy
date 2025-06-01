@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwtbd34xju48i"]
+
+[ext_resource type="AudioStream" uid="uid://chjf4p1707cvv" path="res://assets/sounds/pickup3.wav" id="1_b0t4u"]
+
+[node name="Pickup" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_b0t4u")
+volume_db = 10.0

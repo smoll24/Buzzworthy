@@ -9,6 +9,9 @@ var logs = 0
 var stones = 0
 var crafting = false
 
+var current_wet = 0
+var max_wet = 5
+
 var current_level = 1
 
 #Trigger to exit cutscene
@@ -19,3 +22,10 @@ func get_health():
 	
 func set_health(health):
 	current_health = health
+	
+
+func get_wet():
+	return current_wet
+	
+func set_wet(wet):
+	current_wet = wet
