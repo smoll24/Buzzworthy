@@ -1500,7 +1500,7 @@ scale = Vector2(1, -1)
 position = Vector2(543, 1017)
 
 [node name="Spider" parent="." instance=ExtResource("9_0ld86")]
-position = Vector2(-3584, 2043)
+position = Vector2(-3588, 2039)
 scale = Vector2(1.5, 1.5)
 
 [node name="MuseumBeetle" parent="." instance=ExtResource("9_akn15")]
@@ -1509,7 +1509,7 @@ rotation = 3.14159
 scale = Vector2(1, -1)
 
 [node name="Player" parent="." instance=ExtResource("2_toopw")]
-position = Vector2(948, 1015)
+position = Vector2(-2054, 2052)
 
 [node name="RainPlants" type="Node2D" parent="."]
 
@@ -1727,6 +1727,7 @@ rotation = 1.5708
 texture = SubResource("GradientTexture2D_hwybn")
 
 [node name="TextureRect" type="TextureRect" parent="Darkness"]
+modulate = Color(1, 1, 1, 0.423529)
 offset_right = 3840.0
 offset_bottom = 2160.0
 scale = Vector2(0.17, 0.17)
