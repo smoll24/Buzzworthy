@@ -140,6 +140,7 @@ crafting={
 2d_physics/layer_5="Particles"
 2d_physics/layer_6="Collectibles"
 2d_physics/layer_7="Enemies"
+2d_physics/layer_8="Player for Enemies"
 
 [rendering]
 

@@ -1,20 +1,16 @@
 extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
+@onready var wings1 = $AnimatedSprite2D2
+@onready var wings2 = $AnimatedSprite2D3
 var tween
 
 @export var hover_speed: float = 80.0
 @export var lunge_speed: float = 200.0
 @export var retreat_speed: float = 200.0
-@export var lunge_distance: float = 200.0
+@export var lunge_distance: float = 400.0
 @export var hover_height: float = -80.0 
 @export var lunge_cooldown: float = 5.0
-
-var lunge_progress = 0.0
-var lunge_duration = 0.4
-var lunge_start_pos: Vector2
-var retreat_progress = 0.0
-var retreat_duration = 0.4
 
 var player: CharacterBody2D
 var current_state = "hover"
@@ -38,6 +34,8 @@ func _ready() -> void:
 func _physics_process(delta):
 	to_player = player.global_position.x - global_position.x
 	sprite.flip_h = to_player > 0
+	wings1.flip_h = to_player > 0
+	wings2.flip_h = to_player > 0
 	
 	if current_state != last_state:
 		if current_state == "hover":
@@ -77,7 +75,7 @@ func start_hover_tween():
 
 
 func move_toward_player(delta):
-	sprite.modulate = Color(1,1,1,1)
+	#sprite.modulate = Color(1,1,1,1)
 	var target_pos = player.global_position + Vector2(0, hover_height)
 	var direction = (target_pos - global_position).normalized()
 	
@@ -96,13 +94,14 @@ func check_lunge():
 		
 
 func do_lunge(delta):
-	sprite.modulate = Color(3,1,1,1)
-	var direction = (lunge_target_pos - global_position).normalized()
-	#var direction = (player.global_position - global_position).normalized()
-	velocity = direction * lunge_speed * ((lunge_timer*10)/2)
+	#sprite.modulate = Color(3,1,1,1)
+	#var direction = (lunge_target_pos - global_position).normalized()
+	var direction = (player.global_position - global_position).normalized()
+	velocity = direction * lunge_speed * (lunge_timer * 5)
 	
+	print(lunge_timer)
 	lunging_cooldown = true
-	if lunge_timer > 2 or in_body:
+	if lunge_timer > 1.0 or in_body:
 		retreat_start_pos = global_position
 		current_state = "retreat"
 
@@ -113,6 +112,8 @@ func do_retreat(delta):
 	var direction = (target - global_position).normalized()
 	velocity = direction * retreat_speed
 	in_body = false
+	
+	lunge_cooldown = randf_range(3.0,6.0)
 	
 	if global_position.distance_to(target) < 10:
 		current_state = "hover"

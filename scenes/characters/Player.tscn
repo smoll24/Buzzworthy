@@ -116,6 +116,7 @@ animations = [{
 size = Vector2(20, 49)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 129
 collision_mask = 46
 script = ExtResource("1_mkrog")
 

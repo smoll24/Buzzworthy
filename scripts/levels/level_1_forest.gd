@@ -60,7 +60,7 @@ func _on_cave_theshold_body_entered(body: CharacterBody2D) -> void:
 	tween.parallel().tween_property(vignette, "modulate:a", 1, 2)
 
 
-func _on_cave_theshold_body_exited(body: CharacterBody2D) -> void:
+func _on_cave_theshold_body_exited(body: Node2D) -> void:
 	heartbeat.stop()
 	tween = create_tween()
 	tween.tween_property(Level1Music, "volume_db", 0, 2)
