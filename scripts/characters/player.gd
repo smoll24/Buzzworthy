@@ -18,7 +18,7 @@ var dash_time = 0
 #Taking Damage
 var hit = false
 var hit_time = 0
-var knockback_hit_distance = 50 
+var knockback_hit_distance = 20 
 var knockback_hit_duration = 0.5 
 
 #Healing
@@ -122,7 +122,8 @@ func apply_hit_effect():
 		if hp != 0:
 			hp = hp - 1
 			Globals.set_health(hp)
-		sprite.modulate = Color(10,10,10,10)
+			Damage.play()
+		sprite.modulate = Color(5,2,2,1)
 		tween = create_tween()
 		if is_facing_right:
 			knockback_hit_distance = -abs(knockback_hit_distance)

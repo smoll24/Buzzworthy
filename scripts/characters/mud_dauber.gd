@@ -99,7 +99,6 @@ func do_lunge(delta):
 	var direction = (player.global_position - global_position).normalized()
 	velocity = direction * lunge_speed * (lunge_timer * 5)
 	
-	print(lunge_timer)
 	lunging_cooldown = true
 	if lunge_timer > 1.0 or in_body:
 		retreat_start_pos = global_position
@@ -107,7 +106,7 @@ func do_lunge(delta):
 
 
 func do_retreat(delta):
-	sprite.modulate = Color(1,2,1,1)
+	#sprite.modulate = Color(1,2,1,1)
 	var target = retreat_start_pos + Vector2(0, hover_height)
 	var direction = (target - global_position).normalized()
 	velocity = direction * retreat_speed
@@ -121,4 +120,6 @@ func do_retreat(delta):
 
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	in_body = true
+	if current_state == "lunge":
+		player.apply_hit_effect()
 	

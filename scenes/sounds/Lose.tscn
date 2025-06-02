@@ -5,3 +5,4 @@
 [node name="Lose" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_dck58")
 volume_db = 20.0
+max_distance = 200000.0

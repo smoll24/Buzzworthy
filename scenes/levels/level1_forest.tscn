@@ -1509,6 +1509,9 @@ position = Vector2(-57, 2345)
 rotation = 3.14159
 scale = Vector2(1, -1)
 
+[node name="MudDauber" parent="." instance=ExtResource("24_22me1")]
+position = Vector2(1747, 855)
+
 [node name="Player" parent="." instance=ExtResource("2_toopw")]
 position = Vector2(2306, 837)
 
@@ -1753,9 +1756,6 @@ visible = false
 [node name="HealingPlant" parent="." instance=ExtResource("18_ygplw")]
 visible = false
 position = Vector2(-213, 1109)
-
-[node name="MudDauber" parent="." instance=ExtResource("24_22me1")]
-position = Vector2(1747, 855)
 
 [connection signal="body_entered" from="CaveTheshold" to="." method="_on_cave_theshold_body_entered"]
 [connection signal="body_exited" from="CaveTheshold" to="." method="_on_cave_theshold_body_exited"]

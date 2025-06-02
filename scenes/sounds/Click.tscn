@@ -5,3 +5,4 @@
 [node name="Click" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_4gsp0")
 volume_db = 10.0
+max_distance = 200000.0

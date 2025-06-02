@@ -5,3 +5,4 @@
 [node name="Damage" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_i0b67")
 volume_db = 10.0
+max_distance = 200000.0
