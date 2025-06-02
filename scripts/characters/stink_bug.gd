@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 		interact_label.show()
 		if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("dialogic_default_action"):
 			if type == 1:
-				dialog = Dialogic.start("StinkBug")
+				dialog = Dialogic.start("StinkBug1")
 			elif type == 2:
 				dialog = Dialogic.start("ClickBug")
 			elif type == 3:
