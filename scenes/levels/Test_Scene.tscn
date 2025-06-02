@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://dkjdwfhfs38d4"]
+[gd_scene load_steps=28 format=4 uid="uid://dkjdwfhfs38d4"]
 
 [ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_1okjv"]
 [ext_resource type="Script" path="res://scripts/levels/test_scene.gd" id="1_gyqdb"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dhekdb0ujap7b" path="res://assets/temp/cockroach.png" id="20_on0fu"]
 [ext_resource type="PackedScene" uid="uid://g4qhs4r54vhc" path="res://scenes/objects/Brown_Shroom.tscn" id="21_v4tg3"]
 [ext_resource type="PackedScene" uid="uid://ba4kdeeumnipu" path="res://scenes/objects/Cobweb.tscn" id="23_jykni"]
+[ext_resource type="PackedScene" uid="uid://em06fd4l4h0u" path="res://scenes/characters/MudDauber.tscn" id="24_033b0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pf6h"]
 texture = ExtResource("1_1okjv")
@@ -321,6 +322,9 @@ texture = ExtResource("17_rb4o3")
 position = Vector2(-271, 295)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("20_on0fu")
+
+[node name="MudDauber" parent="." instance=ExtResource("24_033b0")]
+position = Vector2(-100, 150)
 
 [connection signal="body_entered" from="Test_Dialog" to="." method="_on_test_dialog_body_entered"]
 [connection signal="body_exited" from="Test_Dialog" to="." method="_on_test_dialog_body_exited"]

@@ -1509,7 +1509,7 @@ rotation = 3.14159
 scale = Vector2(1, -1)
 
 [node name="Player" parent="." instance=ExtResource("2_toopw")]
-position = Vector2(-2054, 2052)
+position = Vector2(-2198, 2181)
 
 [node name="RainPlants" type="Node2D" parent="."]
 

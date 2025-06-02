@@ -139,6 +139,7 @@ crafting={
 2d_physics/layer_4="Plants"
 2d_physics/layer_5="Particles"
 2d_physics/layer_6="Collectibles"
+2d_physics/layer_7="Enemies"
 
 [rendering]
 

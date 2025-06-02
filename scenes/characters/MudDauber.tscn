@@ -1,0 +1,134 @@
+[gd_scene load_steps=18 format=3 uid="uid://em06fd4l4h0u"]
+
+[ext_resource type="Texture2D" uid="uid://dq3jn2sjmlaec" path="res://assets/bugs/waspwing1.png" id="1_dulfw"]
+[ext_resource type="Script" path="res://scripts/characters/mud_dauber.gd" id="1_e572c"]
+[ext_resource type="Texture2D" uid="uid://klr5muwieqtq" path="res://assets/bugs/wasp1.png" id="1_i034r"]
+[ext_resource type="Texture2D" uid="uid://c7venbpkev3ij" path="res://assets/bugs/waspwing2.png" id="2_7fmlu"]
+[ext_resource type="Texture2D" uid="uid://cro51wh5uk4pq" path="res://assets/bugs/wasp2.png" id="2_i4m0j"]
+[ext_resource type="Texture2D" uid="uid://b1ehcyo7l1ttt" path="res://assets/bugs/wasp3.png" id="3_hrwtt"]
+[ext_resource type="Texture2D" uid="uid://xb4l47tnw1lv" path="res://assets/bugs/waspwing3.png" id="3_iekc1"]
+[ext_resource type="Texture2D" uid="uid://wyhmallmihq7" path="res://assets/bugs/wasp4.png" id="4_0a730"]
+[ext_resource type="Texture2D" uid="uid://diowi1nnw5eie" path="res://assets/bugs/waspwing4.png" id="4_jk4jw"]
+[ext_resource type="Texture2D" uid="uid://by34g4arymojw" path="res://assets/bugs/waspwing5.png" id="5_ixc5r"]
+[ext_resource type="Texture2D" uid="uid://blslkwto07jwy" path="res://assets/bugs/wasp5.png" id="5_nfmim"]
+[ext_resource type="Texture2D" uid="uid://3xanqsf3lkuf" path="res://assets/bugs/wasp6.png" id="6_nxsfg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6bcxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dulfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7fmlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iekc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jk4jw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ixc5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7fmlu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 40.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yhoi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i034r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i4m0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hrwtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0a730")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nfmim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nxsfg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ww3qx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dulfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7fmlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iekc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jk4jw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ixc5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7fmlu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 40.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcfie"]
+size = Vector2(103, 53.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r18kr"]
+size = Vector2(54, 31)
+
+[node name="MudDauber" type="CharacterBody2D"]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("1_e572c")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.758333, 0.42, 0.568627)
+position = Vector2(-9, 2)
+sprite_frames = SubResource("SpriteFrames_6bcxn")
+autoplay = "default"
+frame = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3yhoi")
+autoplay = "default"
+frame_progress = 0.440564
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 0)
+sprite_frames = SubResource("SpriteFrames_ww3qx")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-5.5, 3.25)
+shape = SubResource("RectangleShape2D_hcfie")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12, -0.5)
+shape = SubResource("RectangleShape2D_r18kr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
