@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bodmq0acgkncu"]
+[gd_scene load_steps=31 format=4 uid="uid://bodmq0acgkncu"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_1_forest.gd" id="1_bcayv"]
 [ext_resource type="Texture2D" uid="uid://darhyvd5gt6t5" path="res://assets/tilemaps/forest_tilemap.png" id="1_dw1q2"]
@@ -16,14 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://cuka1chubvkbq" path="res://scenes/ui/Overlay.tscn" id="10_srrk7"]
 [ext_resource type="PackedScene" uid="uid://clyowdm6g5taw" path="res://scenes/objects/Log.tscn" id="12_jcuij"]
 [ext_resource type="PackedScene" uid="uid://bxgpqkvj1h3y3" path="res://scenes/objects/Stone.tscn" id="13_puv3j"]
-[ext_resource type="PackedScene" uid="uid://botpi3o2ff6bw" path="res://scenes/objects/Recipe.tscn" id="14_indb8"]
 [ext_resource type="PackedScene" uid="uid://b6hmpa7iyf7bb" path="res://scenes/ui/Crafting.tscn" id="15_p4vmq"]
 [ext_resource type="PackedScene" uid="uid://cpprx4rkdcvl4" path="res://scenes/objects/Pause_Plant.tscn" id="17_twp8m"]
 [ext_resource type="PackedScene" uid="uid://bykc0clpltyeo" path="res://scenes/objects/Healing_Plant.tscn" id="18_ygplw"]
 [ext_resource type="Texture2D" uid="uid://qo2ih8c6hvem" path="res://assets/temp/vignette.png" id="19_273u1"]
 [ext_resource type="PackedScene" uid="uid://ba4kdeeumnipu" path="res://scenes/objects/Cobweb.tscn" id="20_j8rgd"]
 [ext_resource type="PackedScene" uid="uid://csdlob46jnjjx" path="res://scenes/sounds/Heartbeat.tscn" id="21_lbpsu"]
-[ext_resource type="PackedScene" uid="uid://em06fd4l4h0u" path="res://scenes/characters/MudDauber.tscn" id="24_22me1"]
 [ext_resource type="Texture2D" uid="uid://nvohyeyt8hpa" path="res://assets/cutscenes/cutscene_textbox.png" id="25_x42lv"]
 [ext_resource type="PackedScene" uid="uid://u884ayt25oyj" path="res://scenes/objects/Totem.tscn" id="25_xw11a"]
 [ext_resource type="FontFile" uid="uid://dy80sxg0xvt4v" path="res://assets/fonts/C&C Red Alert [INET].ttf" id="26_p18cw"]
@@ -1515,9 +1513,6 @@ position = Vector2(-57, 2345)
 rotation = 3.14159
 scale = Vector2(1, -1)
 
-[node name="MudDauber" parent="." instance=ExtResource("24_22me1")]
-position = Vector2(1747, 855)
-
 [node name="Player" parent="." instance=ExtResource("2_toopw")]
 position = Vector2(295, -189)
 
@@ -1609,10 +1604,6 @@ position = Vector2(835, 152)
 
 [node name="Stone" parent="Materials" instance=ExtResource("13_puv3j")]
 position = Vector2(329, 164)
-
-[node name="Recipe" parent="Materials" instance=ExtResource("14_indb8")]
-visible = false
-position = Vector2(2219, -141)
 
 [node name="Webs" type="Node2D" parent="."]
 
