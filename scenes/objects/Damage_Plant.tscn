@@ -1,17 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhmprhympvq4w"]
+[gd_scene load_steps=7 format=3 uid="uid://bhmprhympvq4w"]
 
-[ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_06qgg"]
 [ext_resource type="Script" path="res://scripts/objects/damage_plant.gd" id="1_cyblt"]
+[ext_resource type="Texture2D" uid="uid://b3pa4dqfumq0j" path="res://assets/objects/ivy.png" id="2_e8wum"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vgj77"]
-atlas = ExtResource("1_06qgg")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8014"]
+atlas = ExtResource("2_e8wum")
+region = Rect2(0, 0, 52, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbbj4"]
+atlas = ExtResource("2_e8wum")
+region = Rect2(0, 52, 52, 52)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k4muo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vgj77")
+"texture": SubResource("AtlasTexture_f8014")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbbj4")
 }],
 "loop": true,
 "name": &"default",
@@ -19,18 +26,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gv8se"]
-size = Vector2(38, 38)
+size = Vector2(38, 48)
 
 [node name="DamagePlant" type="Area2D"]
 collision_layer = 8
 script = ExtResource("1_cyblt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_k4muo")
+autoplay = "default"
+frame_progress = 0.00483784
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.90735e-06)
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_gv8se")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

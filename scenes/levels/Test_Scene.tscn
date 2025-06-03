@@ -302,3 +302,6 @@ position = Vector2(-342, 302)
 
 [node name="PillBug" parent="." instance=ExtResource("23_ijvd1")]
 position = Vector2(-193, 307)
+
+[node name="DamagePlant2" parent="." instance=ExtResource("6_pkyvs")]
+position = Vector2(-277, 300)

@@ -7,6 +7,7 @@ const SPEED = 200.0
 var current_speed
 const JUMP_VELOCITY = -400.0
 var is_facing_right = true
+var direction
 
 #To Use for Tweening Animations
 var tween
@@ -24,7 +25,7 @@ var knockback_hit_duration = 0.5
 #Healing
 var heal = false
 var heal_time = 0
-var knockback_heal_distance = 5
+var knockback_heal_distance = 10
 var knockback_heal_duration = 0.5 
 
 #Speed Boost
@@ -68,7 +69,7 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * current_speed
 		if not jumping:
@@ -131,12 +132,7 @@ func apply_hit_effect():
 			Damage.play()
 		sprite.modulate = Color(5,2,2,1)
 		tween = create_tween()
-		if is_facing_right:
-			knockback_hit_distance = -abs(knockback_hit_distance)
-		else:
-			knockback_hit_distance = abs(knockback_hit_distance)
-		
-		tween.tween_property(self, "position:x", self.global_position.x + knockback_hit_distance, knockback_hit_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+		tween.tween_property(self, "position:x", self.global_position.x - direction * knockback_hit_distance, knockback_hit_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 		
 	
 func apply_hitup_effect():
@@ -149,13 +145,8 @@ func apply_hitup_effect():
 			Damage.play()
 		sprite.modulate = Color(5,2,2,1)
 		tween = create_tween()
-		if is_facing_right:
-			knockback_hit_distance = -abs(knockback_hit_distance)
-		else:
-			knockback_hit_distance = abs(knockback_hit_distance)
-		
 		self.velocity.y = JUMP_VELOCITY/1.5
-		tween.tween_property(self, "position:x", self.global_position.x + knockback_hit_distance*1.5, knockback_hit_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+		tween.tween_property(self, "position:x", self.global_position.x - direction * knockback_hit_distance*1.5, knockback_hit_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 		
 		
 func apply_hit2_effect():
@@ -191,12 +182,8 @@ func apply_heal_effect():
 			Heal.play()
 		sprite.modulate = Color(0,1,0.5,10)
 		tween = create_tween()
-		if is_facing_right:
-			knockback_heal_distance = -abs(knockback_heal_distance)
-		else:
-			knockback_heal_distance = abs(knockback_heal_distance)
 		self.velocity.y = JUMP_VELOCITY/1.5
-		#tween.tween_property(self, "position:x", self.global_position.x + knockback_heal_distance, knockback_heal_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+		tween.tween_property(self, "position:x", self.global_position.x - direction * knockback_heal_distance, knockback_heal_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 
 func apply_speed_effect():
 	if speed == false and dash == false:
