@@ -1,18 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3vl0sm1wn2n3"]
+[gd_scene load_steps=10 format=3 uid="uid://c3vl0sm1wn2n3"]
 
 [ext_resource type="Script" path="res://scripts/characters/stink_bug.gd" id="1_lny0y"]
-[ext_resource type="Texture2D" uid="uid://dhekdb0ujap7b" path="res://assets/temp/cockroach.png" id="2_581bp"]
+[ext_resource type="Texture2D" uid="uid://lq3ap05o0mbn" path="res://assets/bugs/cockroach.png" id="2_dmawe"]
 [ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="3_urn6d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2v1v"]
+atlas = ExtResource("2_dmawe")
+region = Rect2(0, 0, 130, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffvso"]
+atlas = ExtResource("2_dmawe")
+region = Rect2(0, 66, 130, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk2v1"]
+atlas = ExtResource("2_dmawe")
+region = Rect2(130, 0, 130, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gxmbd"]
 animations = [{
 "frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_f2v1v")
+}, {
 "duration": 1.0,
-"texture": ExtResource("2_581bp")
+"texture": SubResource("AtlasTexture_ffvso")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_vk2v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffvso")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkwol"]
@@ -27,6 +48,9 @@ type = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gxmbd")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0042799
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 7.5)

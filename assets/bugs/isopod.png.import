@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dktt54354rqj0"
-path="res://.godot/imported/sword_focused.png-1af84e93d6421072df1cce4304a3b211.ctex"
+uid="uid://m3o42jqndq33"
+path="res://.godot/imported/isopod.png-5d4495c7bef411f835a5d64e4e61d731.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/sword_focused.png"
-dest_files=["res://.godot/imported/sword_focused.png-1af84e93d6421072df1cce4304a3b211.ctex"]
+source_file="res://assets/bugs/isopod.png"
+dest_files=["res://.godot/imported/isopod.png-5d4495c7bef411f835a5d64e4e61d731.ctex"]
 
 [params]
 

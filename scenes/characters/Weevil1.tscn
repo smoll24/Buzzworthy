@@ -1,18 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://qsp7gdd10q00"]
+[gd_scene load_steps=10 format=3 uid="uid://qsp7gdd10q00"]
 
 [ext_resource type="Script" path="res://scripts/characters/stink_bug.gd" id="1_wrddj"]
-[ext_resource type="Texture2D" uid="uid://c4xwjyq12ulro" path="res://assets/temp/weevil2.png" id="2_oq0ey"]
+[ext_resource type="Texture2D" uid="uid://b2hbll2jkhvge" path="res://assets/bugs/weevil1.png" id="2_srbl3"]
 [ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="3_lm3fa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cmte"]
+atlas = ExtResource("2_srbl3")
+region = Rect2(0, 0, 130, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r28k1"]
+atlas = ExtResource("2_srbl3")
+region = Rect2(0, 66, 130, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8fpr"]
+atlas = ExtResource("2_srbl3")
+region = Rect2(130, 0, 130, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gxmbd"]
 animations = [{
 "frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_0cmte")
+}, {
 "duration": 1.0,
-"texture": ExtResource("2_oq0ey")
+"texture": SubResource("AtlasTexture_r28k1")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_g8fpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r28k1")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkwol"]
@@ -27,6 +48,9 @@ type = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gxmbd")
+autoplay = "default"
+frame = 1
+frame_progress = 0.405487
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 0.5)

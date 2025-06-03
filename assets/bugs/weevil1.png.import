@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dktt54354rqj0"
-path="res://.godot/imported/sword_focused.png-1af84e93d6421072df1cce4304a3b211.ctex"
+uid="uid://b2hbll2jkhvge"
+path="res://.godot/imported/weevil1.png-8cf0a48968d9fc7be60ccae560b4b719.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/sword_focused.png"
-dest_files=["res://.godot/imported/sword_focused.png-1af84e93d6421072df1cce4304a3b211.ctex"]
+source_file="res://assets/bugs/weevil1.png"
+dest_files=["res://.godot/imported/weevil1.png-8cf0a48968d9fc7be60ccae560b4b719.ctex"]
 
 [params]
 

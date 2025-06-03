@@ -1,18 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://bh8mrbbgy2oa1"]
+[gd_scene load_steps=10 format=3 uid="uid://bh8mrbbgy2oa1"]
 
 [ext_resource type="Script" path="res://scripts/characters/stink_bug.gd" id="1_tc1xm"]
-[ext_resource type="Texture2D" uid="uid://dvaervspeg4v" path="res://assets/temp/museum_beetle.png" id="2_45we0"]
+[ext_resource type="Texture2D" uid="uid://drqwwitpxeugt" path="res://assets/bugs/museumbeetle.png" id="2_ky4lb"]
 [ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="3_w5khq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rl3ip"]
+atlas = ExtResource("2_ky4lb")
+region = Rect2(0, 0, 130, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugapx"]
+atlas = ExtResource("2_ky4lb")
+region = Rect2(0, 66, 130, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3unt3"]
+atlas = ExtResource("2_ky4lb")
+region = Rect2(130, 0, 130, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gxmbd"]
 animations = [{
 "frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_rl3ip")
+}, {
 "duration": 1.0,
-"texture": ExtResource("2_45we0")
+"texture": SubResource("AtlasTexture_ugapx")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_3unt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugapx")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkwol"]
@@ -27,6 +48,9 @@ type = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gxmbd")
+autoplay = "default"
+frame = 3
+frame_progress = 0.552146
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7.5, 0.5)

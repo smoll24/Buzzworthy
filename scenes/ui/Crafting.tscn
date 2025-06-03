@@ -1,20 +1,58 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6hmpa7iyf7bb"]
+[gd_scene load_steps=25 format=3 uid="uid://b6hmpa7iyf7bb"]
 
 [ext_resource type="Script" path="res://scripts/ui/crafting.gd" id="1_m4r8l"]
-[ext_resource type="Texture2D" uid="uid://csyrhldj2v5mk" path="res://assets/temp/crafting_test.png" id="2_h7rpq"]
+[ext_resource type="Texture2D" uid="uid://dlragg63llcvu" path="res://assets/ui/crafting_table.png" id="2_c6xpi"]
+[ext_resource type="FontFile" uid="uid://dy80sxg0xvt4v" path="res://assets/fonts/C&C Red Alert [INET].ttf" id="3_a42lm"]
 [ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="3_c3puj"]
 [ext_resource type="Texture2D" uid="uid://qdxay3rxf5xa" path="res://assets/ui/sword_normal.png" id="4_05shr"]
-[ext_resource type="Texture2D" uid="uid://dxn80n62ukbat" path="res://assets/ui/sword_focused.png" id="5_0newg"]
+[ext_resource type="Texture2D" uid="uid://dktt54354rqj0" path="res://assets/ui/sword_focused.png" id="5_0newg"]
+[ext_resource type="Texture2D" uid="uid://bh48lflquoos" path="res://assets/ui/sword_pressed.png" id="5_kfivc"]
 [ext_resource type="Texture2D" uid="uid://du1ws4b7c26oa" path="res://assets/objects/log.png" id="6_jnth1"]
 [ext_resource type="Texture2D" uid="uid://bb25yas6agom3" path="res://assets/ui/shield_normal.png" id="6_k27yf"]
 [ext_resource type="Texture2D" uid="uid://dvgws3566i0q0" path="res://assets/objects/rock.png" id="7_6tcq5"]
+[ext_resource type="Texture2D" uid="uid://becy737uy1wx8" path="res://assets/ui/sword_disabled.png" id="7_g5jff"]
 [ext_resource type="Texture2D" uid="uid://bjiy0oj2gp3vl" path="res://assets/ui/shield_focused.png" id="7_gdwju"]
+[ext_resource type="Texture2D" uid="uid://cm0odbpssd74t" path="res://assets/ui/shield_pressed.png" id="8_yfy21"]
+[ext_resource type="Texture2D" uid="uid://iqlxxj65iv38" path="res://assets/ui/shield_disabled.png" id="9_00lfm"]
+[ext_resource type="Texture2D" uid="uid://dwouyyl0hufh0" path="res://assets/ui/helmet_normal.png" id="10_0ivau"]
+[ext_resource type="Texture2D" uid="uid://cmnxty1vsdggk" path="res://assets/ui/helmet_pressed.png" id="11_d7hli"]
+[ext_resource type="Texture2D" uid="uid://imgkxtjya38a" path="res://assets/ui/helmet_focused.png" id="12_k6kqq"]
+[ext_resource type="Texture2D" uid="uid://d3wfnru2riycu" path="res://assets/ui/boots_normal.png" id="13_hkw3r"]
+[ext_resource type="Texture2D" uid="uid://1sno41ha8i3n" path="res://assets/ui/boots_pressed.png" id="14_xe5nw"]
+[ext_resource type="Texture2D" uid="uid://b0wu6f11lqtay" path="res://assets/ui/helmet_disabled.png" id="15_emjkn"]
+[ext_resource type="Texture2D" uid="uid://c6ilrr8a7dfor" path="res://assets/ui/boot_focused.png" id="15_qhst1"]
+[ext_resource type="Texture2D" uid="uid://c8i38radftlcc" path="res://assets/ui/boots_disabled.png" id="19_nmnbh"]
+[ext_resource type="Texture2D" uid="uid://b2ya46frh665a" path="res://assets/ui/empty.png" id="20_q2ntp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_88bjn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_05shr")
+"texture": ExtResource("14_xe5nw")
+}],
+"loop": true,
+"name": &"boots",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_d7hli")
+}],
+"loop": true,
+"name": &"helmet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_yfy21")
+}],
+"loop": true,
+"name": &"shield",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kfivc")
 }],
 "loop": true,
 "name": &"sword",
@@ -22,19 +60,31 @@ animations = [{
 }]
 
 [node name="Crafting" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_m4r8l")
 
 [node name="bg" type="Sprite2D" parent="."]
-position = Vector2(323, 193)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("2_h7rpq")
+position = Vector2(320, 179)
+scale = Vector2(2, 2)
+texture = ExtResource("2_c6xpi")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 65.0
-offset_top = 131.0
-offset_right = 317.0
-offset_bottom = 306.0
-color = Color(0.454902, 0.341176, 0.266667, 1)
+[node name="Instructions" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.0
+offset_top = -67.0
+offset_right = -121.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.937255, 0.862745, 0.807843, 1)
+theme_override_fonts/font = ExtResource("3_c3puj")
+theme_override_font_sizes/font_size = 25
+text = "[Z] to select"
+horizontal_alignment = 1
 
 [node name="CraftingLabel" type="Label" parent="."]
 anchors_preset = 8
@@ -42,15 +92,47 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -112.5
-offset_right = 64.0
-offset_bottom = -61.5
+offset_left = -87.0
+offset_top = -104.0
+offset_right = 84.0
+offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.258824, 0.137255, 0.0509804, 1)
 theme_override_fonts/font = ExtResource("3_c3puj")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 45
 text = "CRAFTING"
+horizontal_alignment = 1
+
+[node name="Empty" type="Sprite2D" parent="."]
+position = Vector2(109, 177)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_q2ntp")
+
+[node name="Empty2" type="Sprite2D" parent="."]
+position = Vector2(189, 177)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_q2ntp")
+
+[node name="Empty3" type="Sprite2D" parent="."]
+position = Vector2(269, 177)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_q2ntp")
+
+[node name="Empty4" type="Sprite2D" parent="."]
+position = Vector2(109, 257)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_q2ntp")
+
+[node name="Empty5" type="Sprite2D" parent="."]
+position = Vector2(189, 257)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_q2ntp")
+
+[node name="Empty6" type="Sprite2D" parent="."]
+position = Vector2(269, 257)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("20_q2ntp")
 
 [node name="SwordButton" type="TextureButton" parent="."]
 offset_left = 73.0
@@ -58,45 +140,51 @@ offset_top = 141.0
 offset_right = 121.0
 offset_bottom = 189.0
 scale = Vector2(1.5, 1.5)
-focus_neighbor_right = NodePath("../TextureButton2")
-focus_neighbor_bottom = NodePath("../SwordButton2")
-focus_next = NodePath("../TextureButton2")
+focus_neighbor_right = NodePath("../ShieldButton")
+focus_neighbor_bottom = NodePath("../BootsButton")
+focus_next = NodePath("../ShieldButton")
 focus_previous = NodePath("../TextureButton5")
 toggle_mode = true
 texture_normal = ExtResource("4_05shr")
+texture_pressed = ExtResource("5_kfivc")
+texture_disabled = ExtResource("7_g5jff")
 texture_focused = ExtResource("5_0newg")
 
-[node name="TextureButton2" type="TextureButton" parent="."]
+[node name="ShieldButton" type="TextureButton" parent="."]
 offset_left = 153.0
 offset_top = 141.0
 offset_right = 201.0
 offset_bottom = 189.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_left = NodePath("../SwordButton")
-focus_neighbor_right = NodePath("../TextureButton3")
+focus_neighbor_right = NodePath("../HelmetButton")
 focus_neighbor_bottom = NodePath("../TextureButton4")
-focus_next = NodePath("../TextureButton3")
+focus_next = NodePath("../HelmetButton")
 focus_previous = NodePath("../SwordButton")
 toggle_mode = true
 texture_normal = ExtResource("6_k27yf")
+texture_pressed = ExtResource("8_yfy21")
+texture_disabled = ExtResource("9_00lfm")
 texture_focused = ExtResource("7_gdwju")
 
-[node name="TextureButton3" type="TextureButton" parent="."]
+[node name="HelmetButton" type="TextureButton" parent="."]
 offset_left = 233.0
 offset_top = 141.0
 offset_right = 281.0
 offset_bottom = 189.0
 scale = Vector2(1.5, 1.5)
-focus_neighbor_left = NodePath("../TextureButton2")
+focus_neighbor_left = NodePath("../ShieldButton")
 focus_neighbor_right = NodePath("../CraftButton")
 focus_neighbor_bottom = NodePath("../TextureButton5")
 focus_next = NodePath("../CraftButton")
-focus_previous = NodePath("../TextureButton2")
+focus_previous = NodePath("../ShieldButton")
 toggle_mode = true
-texture_normal = ExtResource("4_05shr")
-texture_focused = ExtResource("5_0newg")
+texture_normal = ExtResource("10_0ivau")
+texture_pressed = ExtResource("11_d7hli")
+texture_disabled = ExtResource("15_emjkn")
+texture_focused = ExtResource("12_k6kqq")
 
-[node name="SwordButton2" type="TextureButton" parent="."]
+[node name="BootsButton" type="TextureButton" parent="."]
 offset_left = 73.0
 offset_top = 221.0
 offset_right = 121.0
@@ -105,34 +193,38 @@ scale = Vector2(1.5, 1.5)
 focus_neighbor_top = NodePath("../SwordButton")
 focus_neighbor_right = NodePath("../TextureButton4")
 focus_next = NodePath("../TextureButton4")
-focus_previous = NodePath("../TextureButton3")
+focus_previous = NodePath("../HelmetButton")
 toggle_mode = true
-texture_normal = ExtResource("4_05shr")
-texture_focused = ExtResource("5_0newg")
+texture_normal = ExtResource("13_hkw3r")
+texture_pressed = ExtResource("14_xe5nw")
+texture_disabled = ExtResource("19_nmnbh")
+texture_focused = ExtResource("15_qhst1")
 
 [node name="TextureButton4" type="TextureButton" parent="."]
+visible = false
 offset_left = 153.0
 offset_top = 221.0
 offset_right = 201.0
 offset_bottom = 269.0
 scale = Vector2(1.5, 1.5)
-focus_neighbor_left = NodePath("../SwordButton2")
-focus_neighbor_top = NodePath("../TextureButton2")
+focus_neighbor_left = NodePath("../BootsButton")
+focus_neighbor_top = NodePath("../ShieldButton")
 focus_neighbor_right = NodePath("../TextureButton5")
 focus_next = NodePath("../TextureButton5")
-focus_previous = NodePath("../SwordButton2")
+focus_previous = NodePath("../BootsButton")
 toggle_mode = true
 texture_normal = ExtResource("4_05shr")
 texture_focused = ExtResource("5_0newg")
 
 [node name="TextureButton5" type="TextureButton" parent="."]
+visible = false
 offset_left = 233.0
 offset_top = 221.0
 offset_right = 281.0
 offset_bottom = 269.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_left = NodePath("../TextureButton4")
-focus_neighbor_top = NodePath("../TextureButton3")
+focus_neighbor_top = NodePath("../HelmetButton")
 focus_neighbor_right = NodePath("../CraftButton")
 focus_next = NodePath("../CraftButton")
 focus_previous = NodePath("../TextureButton4")
@@ -141,14 +233,24 @@ texture_normal = ExtResource("4_05shr")
 texture_focused = ExtResource("5_0newg")
 
 [node name="NameLabel" type="Label" parent="."]
-offset_left = 468.0
-offset_top = 139.0
-offset_right = 559.0
-offset_bottom = 190.0
+offset_left = 457.0
+offset_top = 129.0
+offset_right = 560.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0.858824, 0.815686, 0.788235, 1)
 theme_override_fonts/font = ExtResource("3_c3puj")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 50
 text = "Sword
 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 473.0
+offset_top = 184.0
+offset_right = 542.0
+offset_bottom = 187.0
+color = Color(0.308298, 0.169185, 0.0648436, 1)
 
 [node name="PictureIcon" type="AnimatedSprite2D" parent="."]
 position = Vector2(417, 171)
@@ -157,45 +259,55 @@ sprite_frames = SubResource("SpriteFrames_88bjn")
 animation = &"sword"
 
 [node name="LogSprite" type="Sprite2D" parent="."]
-position = Vector2(425.6, 224.6)
+position = Vector2(409, 226)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_jnth1")
 vframes = 2
 frame = 1
 
 [node name="LogLabel" type="Label" parent="."]
-offset_left = 444.6
-offset_top = 217.6
-offset_right = 477.6
-offset_bottom = 243.6
+offset_left = 430.0
+offset_top = 215.0
+offset_right = 463.0
+offset_bottom = 241.0
+theme_override_colors/font_color = Color(0.937255, 0.862745, 0.807843, 1)
 theme_override_fonts/font = ExtResource("3_c3puj")
 theme_override_font_sizes/font_size = 32
 text = "10"
 vertical_alignment = 1
 
 [node name="StoneSprite" type="Sprite2D" parent="."]
-position = Vector2(495.6, 228.6)
+position = Vector2(497, 228)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("7_6tcq5")
 vframes = 2
 frame = 1
 
 [node name="StoneLabel" type="Label" parent="."]
-offset_left = 512.6
-offset_top = 217.6
-offset_right = 552.6
-offset_bottom = 243.6
+offset_left = 517.0
+offset_top = 215.0
+offset_right = 557.0
+offset_bottom = 241.0
+theme_override_colors/font_color = Color(0.937255, 0.862745, 0.807843, 1)
 theme_override_fonts/font = ExtResource("3_c3puj")
 theme_override_font_sizes/font_size = 32
 text = "10"
 vertical_alignment = 1
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 390.0
+offset_top = 261.0
+offset_right = 535.0
+offset_bottom = 291.0
+color = Color(0.825649, 0.516343, 0.294216, 1)
+
 [node name="CraftButton" type="Button" parent="."]
-offset_left = 419.0
-offset_top = 260.0
-offset_right = 517.0
-offset_bottom = 294.0
-focus_neighbor_left = NodePath("../TextureButton3")
-theme_override_fonts/font = ExtResource("3_c3puj")
-theme_override_font_sizes/font_size = 32
+modulate = Color(0.890196, 0.698039, 0.552941, 1)
+offset_left = 387.0
+offset_top = 258.0
+offset_right = 541.0
+offset_bottom = 297.0
+focus_neighbor_left = NodePath("../HelmetButton")
+theme_override_fonts/font = ExtResource("3_a42lm")
+theme_override_font_sizes/font_size = 25
 text = "Craft"

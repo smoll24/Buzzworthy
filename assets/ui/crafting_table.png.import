@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dktt54354rqj0"
-path="res://.godot/imported/sword_focused.png-1af84e93d6421072df1cce4304a3b211.ctex"
+uid="uid://dlragg63llcvu"
+path="res://.godot/imported/crafting_table.png-2ca9cc654f570362cac1f9bffc3aa58a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/sword_focused.png"
-dest_files=["res://.godot/imported/sword_focused.png-1af84e93d6421072df1cce4304a3b211.ctex"]
+source_file="res://assets/ui/crafting_table.png"
+dest_files=["res://.godot/imported/crafting_table.png-2ca9cc654f570362cac1f9bffc3aa58a.ctex"]
 
 [params]
 
