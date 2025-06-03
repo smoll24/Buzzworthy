@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bodmq0acgkncu"]
+[gd_scene load_steps=33 format=4 uid="uid://bodmq0acgkncu"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_1_forest.gd" id="1_bcayv"]
 [ext_resource type="Texture2D" uid="uid://darhyvd5gt6t5" path="res://assets/tilemaps/forest_tilemap.png" id="1_dw1q2"]
@@ -24,7 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://ba4kdeeumnipu" path="res://scenes/objects/Cobweb.tscn" id="20_j8rgd"]
 [ext_resource type="PackedScene" uid="uid://csdlob46jnjjx" path="res://scenes/sounds/Heartbeat.tscn" id="21_lbpsu"]
 [ext_resource type="PackedScene" uid="uid://em06fd4l4h0u" path="res://scenes/characters/MudDauber.tscn" id="24_22me1"]
+[ext_resource type="Texture2D" uid="uid://nvohyeyt8hpa" path="res://assets/cutscenes/cutscene_textbox.png" id="25_x42lv"]
 [ext_resource type="PackedScene" uid="uid://u884ayt25oyj" path="res://scenes/objects/Totem.tscn" id="25_xw11a"]
+[ext_resource type="FontFile" uid="uid://dy80sxg0xvt4v" path="res://assets/fonts/C&C Red Alert [INET].ttf" id="26_p18cw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t8frm"]
 texture = ExtResource("1_dw1q2")
@@ -1517,7 +1519,7 @@ scale = Vector2(1, -1)
 position = Vector2(1747, 855)
 
 [node name="Player" parent="." instance=ExtResource("2_toopw")]
-position = Vector2(1792, -186)
+position = Vector2(295, -189)
 
 [node name="RainPlants" type="Node2D" parent="."]
 
@@ -1756,6 +1758,44 @@ color = Color(0, 0, 0, 1)
 
 [node name="Crafting" parent="." instance=ExtResource("15_p4vmq")]
 visible = false
+
+[node name="Name" type="CanvasLayer" parent="."]
+
+[node name="NameBox" type="Node2D" parent="Name"]
+position = Vector2(0, -113)
+
+[node name="Box" type="Sprite2D" parent="Name/NameBox"]
+position = Vector2(317.5, 137.375)
+scale = Vector2(0.534375, 0.726389)
+texture = ExtResource("25_x42lv")
+
+[node name="Label" type="Label" parent="Name/NameBox"]
+offset_left = 261.0
+offset_top = 166.0
+offset_right = 374.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.760784, 0.74902, 0.478431, 1)
+theme_override_fonts/font = ExtResource("26_p18cw")
+theme_override_font_sizes/font_size = 25
+text = "Forest"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Name"]
+visible = false
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(2, 2)
+texture = ExtResource("25_x42lv")
+
+[node name="Fade" type="ColorRect" parent="Name"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="HealingPlant" parent="." instance=ExtResource("18_ygplw")]
 visible = false

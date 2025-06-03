@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dves5pbm56ghy"]
+[gd_scene load_steps=4 format=3 uid="uid://dves5pbm56ghy"]
 
 [ext_resource type="Texture2D" uid="uid://nvohyeyt8hpa" path="res://assets/cutscenes/cutscene_textbox.png" id="1_nkmd7"]
 [ext_resource type="Script" path="res://scripts/ui/dialog.gd" id="1_nwomw"]
 [ext_resource type="FontFile" uid="uid://dy80sxg0xvt4v" path="res://assets/fonts/C&C Red Alert [INET].ttf" id="3_rkec6"]
-[ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="3_w8obl"]
 
 [node name="Dialog" type="CanvasLayer"]
 script = ExtResource("1_nwomw")
@@ -25,19 +24,18 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 124.0
-offset_top = 79.0
-offset_right = -319.0
-offset_bottom = 107.0
+offset_left = 120.0
+offset_top = 87.0
+offset_right = -114.0
+offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
 theme_override_colors/default_color = Color(1, 1, 0.631373, 0.729412)
 theme_override_constants/line_separation = 1
-theme_override_fonts/normal_font = ExtResource("3_w8obl")
-theme_override_font_sizes/normal_font_size = 16
+theme_override_fonts/normal_font = ExtResource("3_rkec6")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid. "
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid."
 
 [node name="end" type="Label" parent="."]
 visible = false

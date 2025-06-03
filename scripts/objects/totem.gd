@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 		#interact_label.show()
 		if Input.is_action_just_pressed("ui_accept"):
 			sprite.play("saving")
+			Globals.save_pos = self.position
 			in_body = false
 			selected = true
 	else:

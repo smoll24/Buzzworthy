@@ -6,7 +6,6 @@ extends Node2D
 
 var tween : Tween
 var tween2 : Tween
-var tween3 : Tween
 
 var name_timer = 1
 
@@ -14,12 +13,10 @@ var name_timer = 1
 func _ready() -> void:
 	name_group.visible = true
 	name_box.visible = true
-	name_box.self_modulate.a = 0
-	tween = create_tween()
-	tween.tween_property(name_box, "modulate:a", 0, 0)
+	name_box.modulate.a = 0
 	fade.visible = true
-	tween3 = create_tween()
-	tween3.tween_property(fade, "modulate:a", 0, 2)
+	tween = create_tween()
+	tween.tween_property(fade, "modulate:a", 0, 2)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

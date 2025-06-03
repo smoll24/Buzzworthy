@@ -9,6 +9,8 @@ var logs = 0
 var stones = 0
 var crafting = false
 
+var save_pos = Vector2(0, 0)
+
 var current_wet = 0
 var max_wet = 5
 

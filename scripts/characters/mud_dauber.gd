@@ -54,7 +54,7 @@ func _physics_process(delta):
 	match current_state:
 		"hover":
 			move_toward_player(delta)
-			#check_lunge()
+			check_lunge()
 		
 		"lunge":
 			do_lunge(delta)

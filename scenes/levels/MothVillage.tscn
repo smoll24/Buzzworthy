@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://daimqrvwrhc2g" path="res://assets/temp/db2eggh-d89cc026-e1c4-4d4d-a7a5-1257f55931ce.png" id="2_8rpa4"]
 [ext_resource type="PackedScene" uid="uid://2jc4e4q5f0rc" path="res://scenes/characters/Player.tscn" id="2_depb3"]
 [ext_resource type="Texture2D" uid="uid://nvohyeyt8hpa" path="res://assets/cutscenes/cutscene_textbox.png" id="3_55s6d"]
-[ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="4_78hul"]
+[ext_resource type="FontFile" uid="uid://dy80sxg0xvt4v" path="res://assets/fonts/C&C Red Alert [INET].ttf" id="6_b2i04"]
 [ext_resource type="PackedScene" uid="uid://c1oaalc83l0ed" path="res://scenes/characters/Moth1.tscn" id="7_bsu56"]
 [ext_resource type="PackedScene" uid="uid://b82prg085h2a0" path="res://scenes/characters/Moth2.tscn" id="8_xr2xj"]
 [ext_resource type="PackedScene" uid="uid://0qcrpsbc60i4" path="res://scenes/characters/Moth3.tscn" id="9_kstxn"]
@@ -1452,24 +1452,26 @@ tile_set = SubResource("TileSet_48xxg")
 position = Vector2(42, 256)
 
 [node name="Name" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="NameBox" type="Node2D" parent="Name"]
+position = Vector2(0, -113)
 
 [node name="Box" type="Sprite2D" parent="Name/NameBox"]
-position = Vector2(317.5, 133.375)
-scale = Vector2(0.534375, 0.770833)
+position = Vector2(317.5, 137.375)
+scale = Vector2(0.534375, 0.726389)
 texture = ExtResource("3_55s6d")
 
 [node name="Label" type="Label" parent="Name/NameBox"]
-offset_left = 270.5
-offset_top = 160.375
-offset_right = 364.5
-offset_bottom = 187.375
+offset_left = 261.0
+offset_top = 166.0
+offset_right = 374.0
+offset_bottom = 193.0
 theme_override_colors/font_color = Color(0.760784, 0.74902, 0.478431, 1)
-theme_override_fonts/font = ExtResource("4_78hul")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("6_b2i04")
+theme_override_font_sizes/font_size = 25
 text = "Moth Village"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Name"]
 visible = false
