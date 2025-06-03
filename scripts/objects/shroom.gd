@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var sprite = $AnimatedSprite2D
-@onready var player : CharacterBody2D
 @onready var sound = $Shroom
 @export var type = 1
 
@@ -9,7 +8,6 @@ var jump_velocity = -400.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = get_parent().get_node("Player")
 	jump_velocity *= type
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

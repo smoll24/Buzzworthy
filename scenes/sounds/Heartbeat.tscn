@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://jwj5s6cd17nw" path="res://assets/sounds/heartbeat.mp3" id="1_r4kvf"]
 
 [node name="Heartbeat" type="AudioStreamPlayer2D"]
+process_mode = 3
 stream = ExtResource("1_r4kvf")
 volume_db = 10.0
 autoplay = true

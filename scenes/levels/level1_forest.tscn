@@ -1744,8 +1744,10 @@ scale = Vector2(0.17, 0.17)
 texture = ExtResource("19_273u1")
 
 [node name="Overlay" parent="." instance=ExtResource("10_srrk7")]
+process_mode = 3
 
 [node name="Fade" type="CanvasLayer" parent="."]
+process_mode = 3
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Fade"]
@@ -1756,10 +1758,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Crafting" parent="." instance=ExtResource("15_p4vmq")]
-visible = false
-
 [node name="Name" type="CanvasLayer" parent="."]
+process_mode = 3
 visible = false
 
 [node name="NameBox" type="Node2D" parent="Name"]
@@ -1797,6 +1797,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Crafting" parent="." instance=ExtResource("15_p4vmq")]
+visible = false
 
 [node name="HealingPlant" parent="." instance=ExtResource("18_ygplw")]
 visible = false

@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://dsha80jycbql6"]
 
-[ext_resource type="AudioStream" uid="uid://bdwuyj8vxjvh0" path="res://assets/sounds/advance1.wav" id="1_2goxm"]
+[ext_resource type="AudioStream" uid="uid://ddlem63a1w1qc" path="res://assets/sounds/advance_2.wav" id="1_5gw56"]
 
 [node name="Advance" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_2goxm")
+process_mode = 3
+stream = ExtResource("1_5gw56")
 volume_db = 10.0
 max_distance = 200000.0

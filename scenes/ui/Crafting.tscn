@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b6hmpa7iyf7bb"]
+[gd_scene load_steps=26 format=3 uid="uid://b6hmpa7iyf7bb"]
 
 [ext_resource type="Script" path="res://scripts/ui/crafting.gd" id="1_m4r8l"]
 [ext_resource type="Texture2D" uid="uid://dlragg63llcvu" path="res://assets/ui/crafting_table.png" id="2_c6xpi"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="3_c3puj"]
 [ext_resource type="Texture2D" uid="uid://qdxay3rxf5xa" path="res://assets/ui/sword_normal.png" id="4_05shr"]
 [ext_resource type="Texture2D" uid="uid://dktt54354rqj0" path="res://assets/ui/sword_focused.png" id="5_0newg"]
+[ext_resource type="Texture2D" uid="uid://y2to134nwguy" path="res://assets/ui/empty_select.png" id="5_53d0i"]
 [ext_resource type="Texture2D" uid="uid://bh48lflquoos" path="res://assets/ui/sword_pressed.png" id="5_kfivc"]
 [ext_resource type="Texture2D" uid="uid://du1ws4b7c26oa" path="res://assets/objects/log.png" id="6_jnth1"]
 [ext_resource type="Texture2D" uid="uid://bb25yas6agom3" path="res://assets/ui/shield_normal.png" id="6_k27yf"]
@@ -32,6 +33,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"boots",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_q2ntp")
+}],
+"loop": true,
+"name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
@@ -104,35 +113,89 @@ theme_override_font_sizes/font_size = 45
 text = "CRAFTING"
 horizontal_alignment = 1
 
-[node name="Empty" type="Sprite2D" parent="."]
-position = Vector2(109, 177)
+[node name="Empty1" type="TextureButton" parent="."]
+offset_left = 73.0
+offset_top = 141.0
+offset_right = 121.0
+offset_bottom = 189.0
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("20_q2ntp")
+toggle_mode = true
+texture_normal = ExtResource("20_q2ntp")
+texture_focused = ExtResource("5_53d0i")
 
-[node name="Empty2" type="Sprite2D" parent="."]
-position = Vector2(189, 177)
+[node name="Empty2" type="TextureButton" parent="."]
+offset_left = 153.0
+offset_top = 141.0
+offset_right = 201.0
+offset_bottom = 189.0
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("20_q2ntp")
+focus_neighbor_left = NodePath("../SwordButton")
+focus_neighbor_right = NodePath("../HelmetButton")
+focus_neighbor_bottom = NodePath("../TextureButton4")
+focus_next = NodePath("../HelmetButton")
+focus_previous = NodePath("../SwordButton")
+toggle_mode = true
+texture_normal = ExtResource("20_q2ntp")
+texture_focused = ExtResource("5_53d0i")
 
-[node name="Empty3" type="Sprite2D" parent="."]
-position = Vector2(269, 177)
+[node name="Empty3" type="TextureButton" parent="."]
+offset_left = 233.0
+offset_top = 141.0
+offset_right = 281.0
+offset_bottom = 189.0
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("20_q2ntp")
+focus_neighbor_left = NodePath("../ShieldButton")
+focus_neighbor_right = NodePath("../CraftButton")
+focus_neighbor_bottom = NodePath("../TextureButton5")
+focus_next = NodePath("../CraftButton")
+focus_previous = NodePath("../ShieldButton")
+toggle_mode = true
+texture_normal = ExtResource("20_q2ntp")
+texture_focused = ExtResource("5_53d0i")
 
-[node name="Empty4" type="Sprite2D" parent="."]
-position = Vector2(109, 257)
+[node name="Empty4" type="TextureButton" parent="."]
+offset_left = 73.0
+offset_top = 221.0
+offset_right = 121.0
+offset_bottom = 269.0
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("20_q2ntp")
+focus_neighbor_top = NodePath("../SwordButton")
+focus_neighbor_right = NodePath("../TextureButton4")
+focus_next = NodePath("../TextureButton4")
+focus_previous = NodePath("../HelmetButton")
+toggle_mode = true
+texture_normal = ExtResource("20_q2ntp")
+texture_focused = ExtResource("5_53d0i")
 
-[node name="Empty5" type="Sprite2D" parent="."]
-position = Vector2(189, 257)
+[node name="Empty5" type="TextureButton" parent="."]
+offset_left = 153.0
+offset_top = 221.0
+offset_right = 201.0
+offset_bottom = 269.0
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("20_q2ntp")
+focus_neighbor_left = NodePath("../BootsButton")
+focus_neighbor_top = NodePath("../ShieldButton")
+focus_neighbor_right = NodePath("../TextureButton5")
+focus_next = NodePath("../TextureButton5")
+focus_previous = NodePath("../BootsButton")
+toggle_mode = true
+texture_normal = ExtResource("20_q2ntp")
+texture_focused = ExtResource("5_53d0i")
 
-[node name="Empty6" type="Sprite2D" parent="."]
-position = Vector2(269, 257)
+[node name="Empty6" type="TextureButton" parent="."]
+offset_left = 233.0
+offset_top = 221.0
+offset_right = 281.0
+offset_bottom = 269.0
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("20_q2ntp")
+focus_neighbor_left = NodePath("../TextureButton4")
+focus_neighbor_top = NodePath("../HelmetButton")
+focus_neighbor_right = NodePath("../CraftButton")
+focus_next = NodePath("../CraftButton")
+focus_previous = NodePath("../TextureButton4")
+toggle_mode = true
+texture_normal = ExtResource("20_q2ntp")
+texture_focused = ExtResource("5_53d0i")
 
 [node name="SwordButton" type="TextureButton" parent="."]
 offset_left = 73.0
@@ -234,9 +297,9 @@ texture_focused = ExtResource("5_0newg")
 
 [node name="NameLabel" type="Label" parent="."]
 offset_left = 457.0
-offset_top = 129.0
+offset_top = 132.0
 offset_right = 560.0
-offset_bottom = 201.0
+offset_bottom = 204.0
 theme_override_colors/font_color = Color(0.858824, 0.815686, 0.788235, 1)
 theme_override_fonts/font = ExtResource("3_c3puj")
 theme_override_font_sizes/font_size = 50
@@ -246,6 +309,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 offset_left = 473.0
 offset_top = 184.0
 offset_right = 542.0
@@ -295,6 +359,7 @@ text = "10"
 vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = 390.0
 offset_top = 261.0
 offset_right = 535.0
@@ -306,8 +371,10 @@ modulate = Color(0.890196, 0.698039, 0.552941, 1)
 offset_left = 387.0
 offset_top = 258.0
 offset_right = 541.0
-offset_bottom = 297.0
+offset_bottom = 292.0
 focus_neighbor_left = NodePath("../HelmetButton")
 theme_override_fonts/font = ExtResource("3_a42lm")
 theme_override_font_sizes/font_size = 25
 text = "Craft"
+
+[connection signal="pressed" from="CraftButton" to="." method="_on_craft_button_pressed"]

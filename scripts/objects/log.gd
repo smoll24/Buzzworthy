@@ -5,7 +5,14 @@ var tween
 
 @export var type = 0
 @onready var sprite = $AnimatedSprite2D
-@onready var interact_area = $Area2D
+
+#logs = 0
+#stones = 1
+
+#sword recipe = 10
+#shield recipe = 11
+#helmet recipe = 12
+#boots recipe = 13
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,6 +37,15 @@ func _on_body_entered(body: Node2D) -> void:
 		Globals.logs += 1
 	elif type == 1:
 		Globals.stones += 1
+	
+	elif type == 10:
+		Globals.has_sword_recipe = true
+	elif type == 11:
+		Globals.has_shield_recipe = true
+	elif type == 12:
+		Globals.has_helmet_recipe = true
+	elif type == 13:
+		Globals.has_boots_recipe = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	in_body = true

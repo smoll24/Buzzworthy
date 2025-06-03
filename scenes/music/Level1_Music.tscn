@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://c004wj0flesw0" path="res://assets/music/forest_piano.mp3" id="1_5jaqq"]
 
 [node name="Level1Music" type="AudioStreamPlayer2D"]
+process_mode = 3
 stream = ExtResource("1_5jaqq")
 max_distance = 1e+06
 parameters/looping = true

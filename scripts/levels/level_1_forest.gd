@@ -8,7 +8,6 @@ extends Node2D
 @onready var dark_box = $Darkness
 @onready var dark = $Darkness/ColorRect
 @onready var vignette = $Darkness/TextureRect
-@onready var music = $ForestPiano
 @onready var heartbeat = $CaveTheshold/Heartbeat
 @onready var rain = $Rain
 var tween : Tween
@@ -20,6 +19,7 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.crafting = false
 	if Globals.save_pos != Vector2(0, 0):
 		player.position = Globals.save_pos
 	
@@ -67,6 +67,7 @@ func _process(delta: float) -> void:
 			tween = create_tween()
 			tween.tween_property(name_box, "modulate:a", 1, 0)
 			tween.tween_property(fade, "modulate:a", 1, 0)
+			Globals.crafting = true
 	
 	
 	if Globals.current_health == 0 and playing:

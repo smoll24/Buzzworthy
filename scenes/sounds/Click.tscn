@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://26cpideehp7l" path="res://assets/sounds/click.wav" id="1_4gsp0"]
 
 [node name="Click" type="AudioStreamPlayer2D"]
+process_mode = 3
 stream = ExtResource("1_4gsp0")
 volume_db = 10.0
 max_distance = 200000.0

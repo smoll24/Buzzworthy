@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 	
 	if in_body:
 		interact_label.show()
-		if Input.is_action_just_pressed("select"):
+		if Input.is_action_just_pressed("ui_accept"):
 			if type == 1:
 				dialog = Dialogic.start("StinkBug1")
 			elif type == 2:

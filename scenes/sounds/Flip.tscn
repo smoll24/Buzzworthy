@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw163axsscdy5"]
+
+[ext_resource type="AudioStream" uid="uid://cb7vl0ad3kxh4" path="res://assets/sounds/flip.mp3" id="1_34vbc"]
+
+[node name="Flip" type="AudioStreamPlayer2D"]
+process_mode = 3
+stream = ExtResource("1_34vbc")
+volume_db = 15.0
+max_distance = 200000.0
