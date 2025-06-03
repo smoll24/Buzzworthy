@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bgxorco40c5kf"]
+[gd_scene load_steps=14 format=4 uid="uid://bgxorco40c5kf"]
 
 [ext_resource type="Texture2D" uid="uid://cfhpbmkmoi6jl" path="res://assets/tilemaps/village_tilemap.png" id="1_ca6mw"]
 [ext_resource type="Script" path="res://scripts/levels/moth_village.gd" id="1_m0p5b"]
@@ -8,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="4_78hul"]
 [ext_resource type="PackedScene" uid="uid://c1oaalc83l0ed" path="res://scenes/characters/Moth1.tscn" id="7_bsu56"]
 [ext_resource type="PackedScene" uid="uid://b82prg085h2a0" path="res://scenes/characters/Moth2.tscn" id="8_xr2xj"]
+[ext_resource type="PackedScene" uid="uid://0qcrpsbc60i4" path="res://scenes/characters/Moth3.tscn" id="9_kstxn"]
+[ext_resource type="PackedScene" uid="uid://ctdwi6costub5" path="res://scenes/characters/Moth4.tscn" id="10_7opqu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hp7uo"]
 
@@ -1486,8 +1488,15 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Moth1" parent="." instance=ExtResource("7_bsu56")]
-position = Vector2(670, 280)
+position = Vector2(673, 277)
 scale = Vector2(-1, 1)
 
 [node name="Moth2" parent="." instance=ExtResource("8_xr2xj")]
-position = Vector2(371, 695)
+position = Vector2(-22, 276)
+
+[node name="Moth3" parent="." instance=ExtResource("9_kstxn")]
+position = Vector2(387, 288)
+scale = Vector2(-1, 1)
+
+[node name="Moth4" parent="." instance=ExtResource("10_7opqu")]
+position = Vector2(505, 279)

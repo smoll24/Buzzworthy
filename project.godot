@@ -31,6 +31,11 @@ Splash="*res://scenes/sounds/Splash.tscn"
 [dialogic]
 
 directories/dch_directory={
+"ClickBug": "res://assets/dialogic/ClickBug.dch",
+"MuseumBeetle": "res://assets/dialogic/MuseumBeetle.dch",
+"Spider": "res://assets/dialogic/Spider.dch",
+"StinkBug": "res://assets/dialogic/StinkBug.dch",
+"Weevil1": "res://assets/dialogic/Weevil1.dch",
 "test_character": "res://assets/dialogic/test_character.dch"
 }
 directories/dtl_directory={

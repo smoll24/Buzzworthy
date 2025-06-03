@@ -38,7 +38,7 @@ overrides = {
 "name_label_customfont": "\"res://assets/fonts/C&C Red Alert [INET].ttf\"",
 "name_label_hide_when_no_character": "true",
 "name_label_use_global_font": "false",
-"portrait_bg_modulate": "Color(0.597656, 0.324509, 0.324509, 0.513726)",
+"portrait_bg_modulate": "Color(0.257813, 0.200975, 0.173218, 0.513726)",
 "portrait_stretch_factor": "0.2",
 "text_custom_size": "32.0"
 }

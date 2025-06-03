@@ -17,6 +17,8 @@ var dialog = null
 #Weevil = 6
 #Moth1 = 20
 #Moth2 = 21
+#Moth3 = 22
+#Moth4 = 23
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,6 +43,10 @@ func _process(delta: float) -> void:
 				dialog = Dialogic.start("Moth1")
 			elif type == 21:
 				dialog = Dialogic.start("Moth2")
+			elif type == 22:
+				dialog = Dialogic.start("Moth3")
+			elif type == 23:
+				dialog = Dialogic.start("Moth4")
 			get_tree().root.add_child(dialog)
 			in_body = false
 	else:

@@ -1,25 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1oaalc83l0ed"]
+[gd_scene load_steps=9 format=3 uid="uid://ctdwi6costub5"]
 
-[ext_resource type="Script" path="res://scripts/characters/stink_bug.gd" id="1_uatwr"]
-[ext_resource type="Texture2D" uid="uid://vtc7wlv154pa" path="res://assets/characters/NPC1.png" id="2_6vjan"]
-[ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="3_78vgf"]
+[ext_resource type="Script" path="res://scripts/characters/stink_bug.gd" id="1_agkde"]
+[ext_resource type="Texture2D" uid="uid://cgpprmiqqg5hd" path="res://assets/characters/NPC4.png" id="2_tq2na"]
+[ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="3_4yeti"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxkeq"]
-atlas = ExtResource("2_6vjan")
-region = Rect2(0, 0, 42, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmth6"]
+atlas = ExtResource("2_tq2na")
+region = Rect2(0, 0, 42, 43)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n5wbc"]
-atlas = ExtResource("2_6vjan")
-region = Rect2(42, 0, 42, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll1bc"]
+atlas = ExtResource("2_tq2na")
+region = Rect2(0, 43, 42, 43)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gxmbd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fyknd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yxkeq")
+"texture": SubResource("AtlasTexture_cmth6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n5wbc")
+"texture": SubResource("AtlasTexture_ll1bc")
 }],
 "loop": true,
 "name": &"default",
@@ -27,29 +27,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkwol"]
-size = Vector2(30, 50)
+size = Vector2(25, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rxuq"]
-size = Vector2(142, 61)
+size = Vector2(141, 63)
 
-[node name="Moth1" type="StaticBody2D"]
-script = ExtResource("1_uatwr")
-type = 20
+[node name="Moth4" type="StaticBody2D"]
+script = ExtResource("1_agkde")
+type = 22
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
-sprite_frames = SubResource("SpriteFrames_gxmbd")
+sprite_frames = SubResource("SpriteFrames_fyknd")
 autoplay = "default"
-frame_progress = 0.0714069
+frame_progress = 0.47993
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 1)
+position = Vector2(0.5, 2.5)
 shape = SubResource("RectangleShape2D_hkwol")
 
 [node name="Interact_Area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interact_Area"]
-position = Vector2(1, -4)
+position = Vector2(1.5, -2.5)
 shape = SubResource("RectangleShape2D_1rxuq")
 
 [node name="Interact_Label" type="Label" parent="."]
@@ -58,7 +58,7 @@ offset_top = -54.0
 offset_right = 27.0
 offset_bottom = -28.0
 scale = Vector2(0.7, 0.7)
-theme_override_fonts/font = ExtResource("3_78vgf")
+theme_override_fonts/font = ExtResource("3_4yeti")
 theme_override_font_sizes/font_size = 32
 text = "[!]"
 horizontal_alignment = 1
