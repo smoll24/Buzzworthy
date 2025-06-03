@@ -30,3 +30,7 @@ func switch_state():
 	var wait_time = randf_range(min_wait_time, max_wait_time)
 	await get_tree().create_timer(wait_time).timeout
 	switch_state()
+
+
+func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
+	body.apply_hitup_effect()

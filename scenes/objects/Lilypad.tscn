@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0cf1bgfyik24"]
+
+[ext_resource type="Texture2D" uid="uid://b2ldrhp07eis" path="res://assets/objects/lilypad.png" id="1_od08b"]
+[ext_resource type="Script" path="res://scripts/objects/lilypad.gd" id="1_qsrxm"]
+[ext_resource type="PackedScene" uid="uid://6o57ielv6nwm" path="res://scenes/sounds/Shroom2.tscn" id="3_0yvn4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b2q5"]
+atlas = ExtResource("1_od08b")
+region = Rect2(168, 0, 168, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de67k"]
+atlas = ExtResource("1_od08b")
+region = Rect2(0, 0, 168, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q5od"]
+atlas = ExtResource("1_od08b")
+region = Rect2(0, 0, 168, 168)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7pko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b2q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de67k")
+}],
+"loop": false,
+"name": &"bounce",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q5od")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rxl8"]
+size = Vector2(23.5, 53.0001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x08cl"]
+size = Vector2(16.9999, 52)
+
+[node name="Lilypad" type="Area2D"]
+script = ExtResource("1_qsrxm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_s7pko")
+animation = &"bounce"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 18.75)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_4rxl8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.99998, 21.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_x08cl")
+
+[node name="Shroom" parent="." instance=ExtResource("3_0yvn4")]
+volume_db = 10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

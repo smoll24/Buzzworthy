@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dkjdwfhfs38d4"]
+[gd_scene load_steps=28 format=4 uid="uid://dkjdwfhfs38d4"]
 
 [ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_1okjv"]
 [ext_resource type="Script" path="res://scripts/levels/test_scene.gd" id="1_gyqdb"]
@@ -22,9 +22,11 @@
 [ext_resource type="PackedScene" uid="uid://suuat32uwnem" path="res://scenes/characters/Weevil2.tscn" id="22_kwkgs"]
 [ext_resource type="PackedScene" uid="uid://cir20vl0ukgsc" path="res://scenes/characters/Pill_Bug.tscn" id="23_ijvd1"]
 [ext_resource type="PackedScene" uid="uid://ba4kdeeumnipu" path="res://scenes/objects/Cobweb.tscn" id="23_jykni"]
-[ext_resource type="PackedScene" uid="uid://em06fd4l4h0u" path="res://scenes/characters/MudDauber.tscn" id="24_033b0"]
+[ext_resource type="PackedScene" uid="uid://b0cf1bgfyik24" path="res://scenes/objects/Lilypad.tscn" id="24_ccwje"]
+[ext_resource type="PackedScene" uid="uid://dvfocfu10x6hw" path="res://scenes/objects/Waterleaf.tscn" id="25_k6llp"]
+[ext_resource type="PackedScene" uid="uid://bdsc11w7e8uh1" path="res://scenes/objects/Helicopter.tscn" id="25_waf5p"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pf6h"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j54b3"]
 texture = ExtResource("1_1okjv")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -155,7 +157,7 @@ texture = ExtResource("1_1okjv")
 [sub_resource type="TileSet" id="TileSet_paph8"]
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 5
-sources/0 = SubResource("TileSetAtlasSource_7pf6h")
+sources/0 = SubResource("TileSetAtlasSource_j54b3")
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_gyqdb")
@@ -227,13 +229,13 @@ position = Vector2(564, 273)
 scale = Vector2(-1, 1)
 
 [node name="DamagePlant" parent="." instance=ExtResource("6_pkyvs")]
-position = Vector2(355, 135)
+position = Vector2(302, 31)
 
 [node name="HealingPlant" parent="." instance=ExtResource("7_48ecj")]
-position = Vector2(207, 294)
+position = Vector2(40, 300)
 
 [node name="StatePlant" parent="." instance=ExtResource("8_a8270")]
-position = Vector2(339, 306)
+position = Vector2(-49, 297)
 
 [node name="PausePlant2" parent="." instance=ExtResource("9_0o3qe")]
 position = Vector2(862, 322)
@@ -251,13 +253,22 @@ position = Vector2(994, 322)
 position = Vector2(278, 298)
 
 [node name="BoostPlant" parent="." instance=ExtResource("10_sq0v2")]
-position = Vector2(73, 135)
+position = Vector2(-29, 35)
 
 [node name="RedShroom" parent="." instance=ExtResource("12_208oq")]
 position = Vector2(142, 295)
 
+[node name="Lilypad" parent="." instance=ExtResource("24_ccwje")]
+position = Vector2(204, 234)
+
+[node name="Waterleaf" parent="." instance=ExtResource("25_k6llp")]
+position = Vector2(102, 176)
+
+[node name="Helicopter" parent="." instance=ExtResource("25_waf5p")]
+position = Vector2(0, 200)
+
 [node name="Player" parent="." instance=ExtResource("2_phqok")]
-position = Vector2(47, 251)
+position = Vector2(344, 253)
 
 [node name="Cobweb" parent="." instance=ExtResource("23_jykni")]
 modulate = Color(1, 1, 1, 0.54902)
@@ -276,9 +287,6 @@ visible = false
 position = Vector2(840, 207)
 scale = Vector2(0.188542, 0.180556)
 texture = ExtResource("14_s5syp")
-
-[node name="MudDauber" parent="." instance=ExtResource("24_033b0")]
-position = Vector2(-100, 150)
 
 [node name="ClickBug" parent="." instance=ExtResource("19_jo5o0")]
 position = Vector2(-808, 303)

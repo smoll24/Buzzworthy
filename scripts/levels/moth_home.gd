@@ -14,12 +14,13 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(Globals.spawn)
 	if Globals.spawn == 1:
-		player.position.x = left.position.x - 30
-		player.face_left()
-	elif Globals.spawn == 2:
-		player.position.x = right.position.x + 30
+		player.position.x = left.position.x + 30
 		player.face_right()
+	elif Globals.spawn == 2:
+		player.position.x = right.position.x - 30
+		player.face_left()
 	name_group.visible = true
 	name_box.visible = true
 	name_box.modulate.a = 0
@@ -42,7 +43,7 @@ func _process(delta: float) -> void:
 		tween2 = create_tween()
 		tween2.tween_property(name_box, "modulate:a", 0, 1)
 		name_timer = 0
-		
+
 
 func _on_left_home_entrance_body_entered(body: Node2D) -> void:
 	Globals.spawn = 1
@@ -51,8 +52,7 @@ func _on_left_home_entrance_body_entered(body: Node2D) -> void:
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 1, 1)
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://scenes/levels/MothHome.tscn")
-
+	get_tree().change_scene_to_file("res://scenes/levels/MothVillage.tscn")
 
 func _on_right_home_entrance_2_body_entered(body: Node2D) -> void:
 	Globals.spawn = 2
@@ -61,4 +61,4 @@ func _on_right_home_entrance_2_body_entered(body: Node2D) -> void:
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 1, 1)
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://scenes/levels/MothHome.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/MothVillage.tscn")

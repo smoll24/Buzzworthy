@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c02j18sellmfd"]
+[gd_scene load_steps=11 format=3 uid="uid://c02j18sellmfd"]
 
 [ext_resource type="Script" path="res://scripts/objects/state_plant.gd" id="1_681ku"]
 [ext_resource type="Texture2D" uid="uid://cd78s2rvk5igd" path="res://assets/objects/venus.png" id="2_o0qwt"]
@@ -54,6 +54,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_awobx"]
 size = Vector2(38, 34)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m53gs"]
+size = Vector2(31, 18)
+
 [node name="StatePlant" type="StaticBody2D"]
 collision_layer = 8
 script = ExtResource("1_681ku")
@@ -61,13 +64,18 @@ script = ExtResource("1_681ku")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_iarju")
-animation = &"closed"
+animation = &"open"
 autoplay = "closed"
-frame_progress = 0.00949116
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_awobx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, 3)
+shape = SubResource("RectangleShape2D_m53gs")
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -77,3 +85,5 @@ offset_right = 20.0
 offset_bottom = -25.6667
 text = "State"
 horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

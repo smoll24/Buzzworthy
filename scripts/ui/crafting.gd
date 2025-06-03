@@ -31,6 +31,9 @@ var node_focused
 func _ready() -> void:
 	icon.play("default")
 	label.text = " "
+	log_label.text = " "
+	stone_label.text = " "
+	craft.disabled = true
 	previous_node = sword
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

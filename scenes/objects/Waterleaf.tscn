@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://dvfocfu10x6hw"]
+
+[ext_resource type="Script" path="res://scripts/objects/waterleaf.gd" id="1_8ntuh"]
+[ext_resource type="Texture2D" uid="uid://tnml6jyvsxjd" path="res://assets/objects/waterleaf.png" id="1_ilney"]
+[ext_resource type="PackedScene" uid="uid://6o57ielv6nwm" path="res://scenes/sounds/Shroom2.tscn" id="3_4n7hl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcggf"]
+atlas = ExtResource("1_ilney")
+region = Rect2(0, 52, 52, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn6ey"]
+atlas = ExtResource("1_ilney")
+region = Rect2(0, 0, 52, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xprw"]
+atlas = ExtResource("1_ilney")
+region = Rect2(0, 0, 52, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i63o2"]
+atlas = ExtResource("1_ilney")
+region = Rect2(0, 52, 52, 52)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvrh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcggf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn6ey")
+}],
+"loop": false,
+"name": &"bounce",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xprw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i63o2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x08cl"]
+size = Vector2(15, 52)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4rxl8"]
+size = Vector2(31.5, 53.0001)
+
+[node name="Waterleaf" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_8ntuh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pvrh4")
+autoplay = "default"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-1.99998, 22.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_x08cl")
+
+[node name="AreaBody2D" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBody2D"]
+position = Vector2(-1.99999, 14.75)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_4rxl8")
+
+[node name="Shroom" parent="." instance=ExtResource("3_4n7hl")]
+volume_db = 10.0
+
+[connection signal="body_entered" from="AreaBody2D" to="." method="_on_area_body_2d_body_entered"]
+[connection signal="body_exited" from="AreaBody2D" to="." method="_on_area_body_2d_body_exited"]

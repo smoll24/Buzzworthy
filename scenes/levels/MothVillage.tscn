@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bgxorco40c5kf"]
+[gd_scene load_steps=15 format=4 uid="uid://bgxorco40c5kf"]
 
 [ext_resource type="Texture2D" uid="uid://cfhpbmkmoi6jl" path="res://assets/tilemaps/village_tilemap.png" id="1_ca6mw"]
 [ext_resource type="Script" path="res://scripts/levels/moth_village.gd" id="1_m0p5b"]
@@ -1421,6 +1421,9 @@ physics_layer_0/collision_mask = 5
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_hp7uo")
 sources/0 = SubResource("TileSetAtlasSource_447w2")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xgfj"]
+size = Vector2(26, 54.5)
+
 [node name="MothVillage" type="Node2D"]
 script = ExtResource("1_m0p5b")
 
@@ -1449,7 +1452,35 @@ tile_map_data = PackedByteArray("AAA9ABoAAAABABoAAAA9ABsAAAABABsAAAA+AAwAAAACAAw
 tile_set = SubResource("TileSet_48xxg")
 
 [node name="Player" parent="." instance=ExtResource("2_depb3")]
-position = Vector2(42, 256)
+position = Vector2(80, 290)
+
+[node name="Moth1" parent="." instance=ExtResource("7_bsu56")]
+position = Vector2(673, 277)
+scale = Vector2(-1, 1)
+
+[node name="Moth2" parent="." instance=ExtResource("8_xr2xj")]
+position = Vector2(-22, 276)
+
+[node name="Moth3" parent="." instance=ExtResource("9_kstxn")]
+position = Vector2(387, 288)
+scale = Vector2(-1, 1)
+
+[node name="Moth4" parent="." instance=ExtResource("10_7opqu")]
+position = Vector2(505, 279)
+
+[node name="Left_Home_Entrance" type="Area2D" parent="."]
+position = Vector2(149, 292)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Home_Entrance"]
+shape = SubResource("RectangleShape2D_5xgfj")
+
+[node name="Right_Home_Entrance" type="Area2D" parent="."]
+position = Vector2(281, 295)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Home_Entrance"]
+position = Vector2(-3, -1)
+shape = SubResource("RectangleShape2D_5xgfj")
 
 [node name="Name" type="CanvasLayer" parent="."]
 
@@ -1489,16 +1520,5 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Moth1" parent="." instance=ExtResource("7_bsu56")]
-position = Vector2(673, 277)
-scale = Vector2(-1, 1)
-
-[node name="Moth2" parent="." instance=ExtResource("8_xr2xj")]
-position = Vector2(-22, 276)
-
-[node name="Moth3" parent="." instance=ExtResource("9_kstxn")]
-position = Vector2(387, 288)
-scale = Vector2(-1, 1)
-
-[node name="Moth4" parent="." instance=ExtResource("10_7opqu")]
-position = Vector2(505, 279)
+[connection signal="body_entered" from="Left_Home_Entrance" to="." method="_on_left_home_entrance_body_entered"]
+[connection signal="body_entered" from="Right_Home_Entrance" to="." method="_on_right_home_entrance_2_body_entered"]

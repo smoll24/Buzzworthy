@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bykc0clpltyeo"]
+[gd_scene load_steps=8 format=3 uid="uid://bykc0clpltyeo"]
 
 [ext_resource type="Script" path="res://scripts/objects/healing_plant.gd" id="1_0cxpx"]
 [ext_resource type="Texture2D" uid="uid://cakwkpm7b0lml" path="res://assets/objects/4clover.png" id="2_cl3t6"]
@@ -26,7 +26,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atfvm"]
-size = Vector2(38, 38)
+size = Vector2(54, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7cxa"]
+size = Vector2(22, 13)
 
 [node name="HealingPlant" type="Area2D"]
 collision_layer = 8
@@ -39,7 +42,14 @@ autoplay = "default"
 frame_progress = 0.18204
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 7)
+position = Vector2(3, 6)
 shape = SubResource("RectangleShape2D_atfvm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3, 6.5)
+shape = SubResource("RectangleShape2D_b7cxa")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
