@@ -32,19 +32,26 @@ Splash="*res://scenes/sounds/Splash.tscn"
 
 directories/dch_directory={
 "ClickBug": "res://assets/dialogic/ClickBug.dch",
+"Cockroach": "res://assets/dialogic/Cockroach.dch",
 "MuseumBeetle": "res://assets/dialogic/MuseumBeetle.dch",
+"PillBug": "res://assets/dialogic/PillBug.dch",
 "Spider": "res://assets/dialogic/Spider.dch",
 "StinkBug": "res://assets/dialogic/StinkBug.dch",
 "Weevil1": "res://assets/dialogic/Weevil1.dch",
+"Weevil2": "res://assets/dialogic/Weevil2.dch",
 "test_character": "res://assets/dialogic/test_character.dch"
 }
 directories/dtl_directory={
 "ClickBug": "res://assets/dialogic/ClickBug.dtl",
+"Cockroach": "res://assets/dialogic/Cockroach.dtl",
 "Moth1": "res://assets/dialogic/Moth1.dtl",
 "Moth2": "res://assets/dialogic/Moth2.dtl",
 "MuseumBeetle": "res://assets/dialogic/MuseumBeetle.dtl",
+"PillBug": "res://assets/dialogic/PillBug.dtl",
 "Spider": "res://assets/dialogic/Spider.dtl",
 "StinkBug1": "res://assets/dialogic/StinkBug1.dtl",
+"Weevil1": "res://assets/dialogic/Weevil1.dtl",
+"Weevil2": "res://assets/dialogic/Weevil2.dtl",
 "test_timeline": "res://assets/dialogic/test_timeline.dtl"
 }
 glossary/default_case_sensitive=true

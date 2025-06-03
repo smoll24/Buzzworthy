@@ -14,7 +14,9 @@ var dialog = null
 #Spider = 3
 #Museum beetle = 4
 #Cockroach = 5
-#Weevil = 6
+#Weevil1 = 6
+#Weevil2 = 7
+#Pillbug = 8
 #Moth1 = 20
 #Moth2 = 21
 #Moth3 = 22
@@ -39,6 +41,14 @@ func _process(delta: float) -> void:
 				dialog = Dialogic.start("Spider")
 			elif type == 4:
 				dialog = Dialogic.start("MuseumBeetle")
+			elif type == 5:
+				dialog = Dialogic.start("Cockroach")
+			elif type == 6:
+				dialog = Dialogic.start("Weevil1")
+			elif type == 7:
+				dialog = Dialogic.start("Weevil2")
+			elif type == 8:
+				dialog = Dialogic.start("PillBug")
 			elif type == 20:
 				dialog = Dialogic.start("Moth1")
 			elif type == 21:
