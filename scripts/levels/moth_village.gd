@@ -42,7 +42,7 @@ func _ready() -> void:
 	fade.modulate.a = 1
 	fade.visible = true
 	tween = create_tween()
-	tween.tween_property(fade, "modulate:a", 0, 1)
+	tween.tween_property(fade, "modulate:a", 0, 0.5)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -65,8 +65,8 @@ func _on_left_home_entrance_body_entered(body: Node2D) -> void:
 	name_box.visible = true
 	fade.visible = true
 	tween = create_tween()
-	tween.tween_property(fade, "modulate:a", 1, 1)
-	await get_tree().create_timer(1).timeout
+	tween.tween_property(fade, "modulate:a", 1, 0.5)
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/levels/MothHome.tscn")
 
 
@@ -75,6 +75,16 @@ func _on_right_home_entrance_2_body_entered(body: Node2D) -> void:
 	name_box.visible = true
 	fade.visible = true
 	tween = create_tween()
-	tween.tween_property(fade, "modulate:a", 1, 1)
-	await get_tree().create_timer(1).timeout
+	tween.tween_property(fade, "modulate:a", 1, 0.5)
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://scenes/levels/MothHome.tscn")
+
+
+func _on_court_entrance_body_entered(body: Node2D) -> void:
+	Globals.spawn = 0
+	name_box.visible = true
+	fade.visible = true
+	tween = create_tween()
+	tween.tween_property(fade, "modulate:a", 1, 0.5)
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/levels/MothHome.tscn")
