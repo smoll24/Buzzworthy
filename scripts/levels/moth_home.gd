@@ -14,6 +14,7 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Name/NameBox/Box.self_modulate = Color(1.5,1.5,1.5,1)
 	print(Globals.spawn)
 	if Globals.spawn == 1:
 		player.position.x = left.position.x + 30
