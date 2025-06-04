@@ -80,7 +80,7 @@ func display_text():
 		tween2 = create_tween()
 		tween2.tween_property(fade, "modulate:a", 1, 0.5)
 		await get_tree().create_timer(0.5).timeout
-		get_tree().change_scene_to_file("res://scenes/levels/MothVillage.tscn")
+		get_tree().change_scene_to_file("res://scenes/levels/MothHome.tscn")
 		
 		
 	end.text = '  '

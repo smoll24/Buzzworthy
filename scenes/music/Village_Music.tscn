@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnsbo3plprrr4"]
+
+[ext_resource type="AudioStream" uid="uid://bhgm7xe7g01aq" path="res://assets/music/calm_piano.mp3" id="1_btcuj"]
+
+[node name="VillageMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_btcuj")
+volume_db = -10.0
+max_distance = 1e+06
+parameters/looping = true

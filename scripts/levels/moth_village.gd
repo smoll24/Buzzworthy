@@ -7,6 +7,13 @@ extends Node2D
 @onready var left = $Left_Home_Entrance
 @onready var right = $Right_Home_Entrance
 
+
+@onready var nice = "res://assets/tilemaps/nice_village_tilemap.png"
+@onready var sad = "res://assets/tilemaps/sad_village_tilemap.png"
+
+@onready var tilemap1 = $Ground
+var texture
+
 var tween : Tween
 var tween2 : Tween
 
@@ -14,6 +21,14 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if Globals.village_fixed:
+		texture = load(sad)
+	else:
+		texture = load(sad)
+	tilemap1.tile_set.get_source(2).texture = texture
+	
+	if not VillageMusic.playing:
+		VillageMusic.play()
 	$Name/NameBox/Box.self_modulate = Color(1.5,1.5,1.5,1)
 	if Globals.spawn == 1:
 		player.position.x = left.position.x - 30

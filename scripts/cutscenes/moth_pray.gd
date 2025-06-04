@@ -7,6 +7,7 @@ var count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	VillageMusic.play()
 	moth.position.y = moth.position.y + 100
 	moth.self_modulate.r = 1.25
 	moth.self_modulate.a = 0

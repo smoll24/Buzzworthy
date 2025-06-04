@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddg86tkdr11po"]
+
+[ext_resource type="AudioStream" uid="uid://cbar7p8neeqk4" path="res://assets/music/forest_lullaby.mp3" id="1_nwfvg"]
+
+[node name="MenuMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_nwfvg")
+autoplay = true
+max_distance = 1e+06
+parameters/looping = true

@@ -28,6 +28,7 @@ Pickup="*res://scenes/sounds/Pickup.tscn"
 Heal="*res://scenes/sounds/Heal.tscn"
 Splash="*res://scenes/sounds/Splash.tscn"
 Flip="*res://scenes/sounds/Flip.tscn"
+VillageMusic="*res://scenes/music/Village_Music.tscn"
 
 [dialogic]
 

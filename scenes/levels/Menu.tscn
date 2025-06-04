@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3th6cw1uqrjl"]
 
 [ext_resource type="Script" path="res://scripts/levels/menu.gd" id="1_fdlwv"]
-[ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="1_vl6yx"]
 [ext_resource type="FontFile" uid="uid://dy80sxg0xvt4v" path="res://assets/fonts/C&C Red Alert [INET].ttf" id="2_y4w0q"]
+[ext_resource type="PackedScene" uid="uid://ddg86tkdr11po" path="res://scenes/music/Menu_Music.tscn" id="3_7205p"]
 
 [sub_resource type="Gradient" id="Gradient_phy3a"]
 offsets = PackedFloat32Array(0, 0.987013)
@@ -27,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.29446, 0.139315, 0.17209, 1)
+color = Color(0.128996, 0.217245, 0.170165, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -56,12 +56,13 @@ offset_right = 173.0
 offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_vl6yx")
-theme_override_font_sizes/font_size = 128
-text = "GAME TITLE"
+theme_override_fonts/font = ExtResource("2_y4w0q")
+theme_override_font_sizes/font_size = 80
+text = "Buzzworthy"
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -70,6 +71,7 @@ theme_override_font_sizes/font_size = 26
 text = "Start"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_y4w0q")
 theme_override_font_sizes/font_size = 26
@@ -90,6 +92,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="MenuMusic" parent="." instance=ExtResource("3_7205p")]
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]

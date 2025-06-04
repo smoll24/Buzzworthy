@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 	if in_body and not selected:
 		#interact_label.show()
 		if Input.is_action_just_pressed("ui_accept"):
+			Advance.play()
 			sprite.play("saving")
 			Globals.save_pos = self.position
 			in_body = false

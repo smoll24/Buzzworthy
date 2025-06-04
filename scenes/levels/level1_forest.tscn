@@ -1296,7 +1296,7 @@ repeat_size = Vector2(640, 360)
 repeat_times = 10
 
 [node name="BG" type="Sprite2D" parent="Parallax_BG"]
-modulate = Color(0.0452329, 0.172782, 0.146996, 0.768627)
+modulate = Color(0.0862745, 0.262745, 0.223529, 1)
 position = Vector2(320, 180)
 scale = Vector2(1.25, 1.40625)
 texture = ExtResource("1_iwqtg")

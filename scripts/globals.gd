@@ -9,6 +9,7 @@ var logs = 0
 var stones = 0
 var crafting = true
 var spawn = 0
+var village_fixed = false
 
 var save_pos = Vector2(0, 0)
 

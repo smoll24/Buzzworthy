@@ -1,9 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://dw5ldet1dn7a7"]
 
-[ext_resource type="AudioStream" uid="uid://c004wj0flesw0" path="res://assets/music/forest_piano.mp3" id="1_5jaqq"]
+[ext_resource type="AudioStream" uid="uid://8f8kjr3bjxaj" path="res://assets/music/soft_memories.mp3" id="1_glga2"]
 
 [node name="Level1Music" type="AudioStreamPlayer2D"]
 process_mode = 3
-stream = ExtResource("1_5jaqq")
+stream = ExtResource("1_glga2")
+volume_db = -10.0
 max_distance = 1e+06
 parameters/looping = true
