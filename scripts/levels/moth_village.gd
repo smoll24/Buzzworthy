@@ -81,10 +81,11 @@ func _on_right_home_entrance_2_body_entered(body: Node2D) -> void:
 
 
 func _on_court_entrance_body_entered(body: Node2D) -> void:
+	Globals.save_pos = Vector2(0, 0)
 	Globals.spawn = 0
 	name_box.visible = true
 	fade.visible = true
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 1, 0.5)
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/levels/MothHome.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level1_forest.tscn")

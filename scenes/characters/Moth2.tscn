@@ -44,10 +44,11 @@ frame = 1
 frame_progress = 0.412658
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 2.5)
+position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_hkwol")
 
 [node name="Interact_Area" type="Area2D" parent="."]
+position = Vector2(0, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interact_Area"]
 position = Vector2(1.5, -2.5)

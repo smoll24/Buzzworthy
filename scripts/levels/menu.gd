@@ -22,7 +22,7 @@ func _on_start_pressed() -> void:
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 1, 0.5)
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/cutscenes/MothPray.tscn")
+	get_tree().change_scene_to_file("res://scenes/cutscenes/Exposition.tscn")
 
 
 func _on_settings_pressed() -> void:

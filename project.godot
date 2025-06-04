@@ -48,6 +48,8 @@ directories/dtl_directory={
 "Cockroach": "res://assets/dialogic/Cockroach.dtl",
 "Moth1": "res://assets/dialogic/Moth1.dtl",
 "Moth2": "res://assets/dialogic/Moth2.dtl",
+"Moth3": "res://assets/dialogic/Moth3.dtl",
+"Moth4": "res://assets/dialogic/Moth4.dtl",
 "MuseumBeetle": "res://assets/dialogic/MuseumBeetle.dtl",
 "PillBug": "res://assets/dialogic/PillBug.dtl",
 "Spider": "res://assets/dialogic/Spider.dtl",

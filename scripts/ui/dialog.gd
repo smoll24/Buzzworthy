@@ -37,6 +37,12 @@ func _ready() -> void:
 	current = Globals.current_dialog
 	dialogbox.hide()
 
+	if current == 0:
+			queue_text(["Isolated deep in the forest, there lives a society of struggling moths ...                            "])
+			queue_text(["Now you will live their story as a prayer catches your ear upon the wind ...                         "])
+			queue_text(['A'])
+			Globals.current_dialog = 1
+
 	if current == 1:
 			queue_text(["My village is under great peril.             "])
 			queue_text(["Our vegetation refuses to blossom as once it used to long ago.                      "])
@@ -75,6 +81,13 @@ func display_text():
 	end.visible = true
 	var next_queue = text_queue.pop_front()
 	var next_text = next_queue[0]
+	
+	
+	if next_text == 'A':
+		tween2 = create_tween()
+		tween2.tween_property(fade, "modulate:a", 1, 0.5)
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file("res://scenes/cutscenes/MothPray.tscn")
 	
 	if next_text == 'E':
 		tween2 = create_tween()

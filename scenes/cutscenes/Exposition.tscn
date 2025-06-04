@@ -1,0 +1,108 @@
+[gd_scene load_steps=12 format=3 uid="uid://cnitdh53nr6gr"]
+
+[ext_resource type="Script" path="res://scripts/cutscenes/moth_pray.gd" id="1_wr4ha"]
+[ext_resource type="Shader" path="res://scripts/cutscenes/MothPrayBG.gdshader" id="2_d8qll"]
+[ext_resource type="Texture2D" uid="uid://dt11765fx5fws" path="res://assets/cutscenes/mothpray_bg.png" id="3_durdf"]
+[ext_resource type="Texture2D" uid="uid://cyumt6te53sme" path="res://assets/cutscenes/mothpray.png" id="4_r44dj"]
+[ext_resource type="Texture2D" uid="uid://dnefja885waxx" path="res://assets/cutscenes/mothpray2.png" id="5_v8r8e"]
+[ext_resource type="Texture2D" uid="uid://1i1j01185pff" path="res://assets/cutscenes/mothpray3.png" id="6_ivur0"]
+[ext_resource type="Texture2D" uid="uid://dulxyhs8dulya" path="res://assets/cutscenes/mothpray4.png" id="7_2tvmj"]
+[ext_resource type="Texture2D" uid="uid://dp2otrab76jhq" path="res://assets/cutscenes/mothpray5.png" id="8_rqkpt"]
+[ext_resource type="PackedScene" uid="uid://dves5pbm56ghy" path="res://scenes/ui/Dialog.tscn" id="9_g6afx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6uy0r"]
+shader = ExtResource("2_d8qll")
+shader_parameter/tiled_factor = Vector2(1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1w4l8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_r44dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v8r8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ivur0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2tvmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rqkpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rqkpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rqkpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rqkpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2tvmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ivur0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v8r8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r44dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r44dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r44dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r44dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r44dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r44dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r44dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r44dj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Exposition" type="Node2D"]
+script = ExtResource("1_wr4ha")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="MothBG" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_6uy0r")
+position = Vector2(320, 180)
+scale = Vector2(2, 2)
+texture = ExtResource("3_durdf")
+
+[node name="Moth" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(319, 180)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1w4l8")
+autoplay = "default"
+frame = 7
+frame_progress = 0.27379
+
+[node name="Dialog" parent="." instance=ExtResource("9_g6afx")]
+offset = Vector2(0, -100)
+transform = Transform2D(1, 0, 0, 1, 0, -100)
