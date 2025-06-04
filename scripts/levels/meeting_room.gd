@@ -6,40 +6,26 @@ extends Node2D
 @onready var player = $Player
 @onready var left = $Left_Home_Entrance
 @onready var right = $Right_Home_Entrance
-@onready var court = $Court_Entrance
-
-
-@onready var nice = "res://assets/tilemaps/nice_village_tilemap.png"
-@onready var sad = "res://assets/tilemaps/sad_village_tilemap.png"
-
-@onready var tilemap1 = $Ground
-var texture
+var courted = false
 
 var tween : Tween
 var tween2 : Tween
+var dialog
 
 var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.can_move = true
-	if Globals.village_fixed:
-		texture = load(sad)
-	else:
-		texture = load(sad)
-	tilemap1.tile_set.get_source(2).texture = texture
-	
 	if not VillageMusic.playing:
 		VillageMusic.play()
 	$Name/NameBox/Box.self_modulate = Color(1.5,1.5,1.5,1)
+	print(Globals.spawn)
 	if Globals.spawn == 1:
-		player.position.x = left.position.x - 30
-		player.face_left()
-	elif Globals.spawn == 2:
-		player.position.x = right.position.x + 30
+		player.position.x = left.position.x + 30
 		player.face_right()
-	elif Globals.spawn == 3:
-		player.position.x = court.position.x - 30
+	elif Globals.spawn == 2:
+		player.position.x = right.position.x - 30
 		player.face_left()
 	name_group.visible = true
 	name_box.visible = true
@@ -63,20 +49,19 @@ func _process(delta: float) -> void:
 		tween2 = create_tween()
 		tween2.tween_property(name_box, "modulate:a", 0, 1)
 		name_timer = 0
-		
+
 
 func _on_left_home_entrance_body_entered(body: Node2D) -> void:
 	Globals.can_move = false
-	Globals.spawn = 1
+	Globals.spawn = 3
 	name_box.visible = true
 	fade.visible = true
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 1, 0.5)
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/levels/MothHome.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/MothVillage.tscn")
 
-
-func _on_right_home_entrance_2_body_entered(body: Node2D) -> void:
+func _on_right_home_entrance_body_entered(body: Node2D) -> void:
 	Globals.can_move = false
 	Globals.spawn = 2
 	name_box.visible = true
@@ -84,16 +69,15 @@ func _on_right_home_entrance_2_body_entered(body: Node2D) -> void:
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 1, 0.5)
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/levels/MothHome.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/MothVillage.tscn")
 
-
-func _on_court_entrance_body_entered(body: Node2D) -> void:
-	Globals.can_move = false
-	Globals.save_pos = Vector2(0, 0)
-	Globals.spawn = 0
-	name_box.visible = true
-	fade.visible = true
-	tween = create_tween()
-	tween.tween_property(fade, "modulate:a", 1, 0.5)
-	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/levels/MeetingRoom.tscn")
+func _on_dialog_entrance_body_entered(body: Node2D) -> void:
+	if not courted:
+		Globals.can_move = false
+		dialog = Dialogic.start("Courthouse")
+		get_tree().root.add_child(dialog)
+		Dialogic.timeline_ended.connect(dialog_end)
+		courted = true
+	
+func dialog_end():
+	Globals.can_move = true

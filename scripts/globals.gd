@@ -10,6 +10,8 @@ var stones = 0
 var crafting = true
 var spawn = 0
 var village_fixed = false
+var can_move = true
+var woken = false
 
 var save_pos = Vector2(0, 0)
 

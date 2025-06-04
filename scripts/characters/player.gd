@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 					jumping = false
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and Globals.can_move:
 		if not Globals.slow:
 			jumping = true
 			sprite.play("jump")
@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_axis("move_left", "move_right")
-	if direction:
+	if direction and Globals.can_move:
 		velocity.x = direction * current_speed
 		if not jumping:
 			if Globals.slow:

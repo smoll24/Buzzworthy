@@ -19,6 +19,7 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.can_move = true
 	VillageMusic.stream_paused = true
 	Globals.crafting = false
 	if Globals.save_pos != Vector2(0, 0):

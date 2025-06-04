@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TGC_GameJam"
-run/main_scene="res://scenes/levels/level1_forest.tscn"
+run/main_scene="res://scenes/levels/Menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -37,6 +37,7 @@ directories/dch_directory={
 "Cockroach": "res://assets/dialogic/Cockroach.dch",
 "MuseumBeetle": "res://assets/dialogic/MuseumBeetle.dch",
 "PillBug": "res://assets/dialogic/PillBug.dch",
+"Player": "res://assets/dialogic/Player.dch",
 "Spider": "res://assets/dialogic/Spider.dch",
 "StinkBug": "res://assets/dialogic/StinkBug.dch",
 "Weevil1": "res://assets/dialogic/Weevil1.dch",
@@ -46,6 +47,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "ClickBug": "res://assets/dialogic/ClickBug.dtl",
 "Cockroach": "res://assets/dialogic/Cockroach.dtl",
+"Courthouse": "res://assets/dialogic/Courthouse.dtl",
 "Moth1": "res://assets/dialogic/Moth1.dtl",
 "Moth2": "res://assets/dialogic/Moth2.dtl",
 "Moth3": "res://assets/dialogic/Moth3.dtl",
@@ -54,6 +56,7 @@ directories/dtl_directory={
 "PillBug": "res://assets/dialogic/PillBug.dtl",
 "Spider": "res://assets/dialogic/Spider.dtl",
 "StinkBug1": "res://assets/dialogic/StinkBug1.dtl",
+"Wake": "res://assets/dialogic/Wake.dtl",
 "Weevil1": "res://assets/dialogic/Weevil1.dtl",
 "Weevil2": "res://assets/dialogic/Weevil2.dtl",
 "test_timeline": "res://assets/dialogic/test_timeline.dtl"
@@ -63,7 +66,7 @@ layout/style_list=["res://assets/dialogic/dialogic_style.tres"]
 layout/default_style="res://assets/dialogic/dialogic_style.tres"
 variables={}
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
+text/letter_speed=0.05
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
