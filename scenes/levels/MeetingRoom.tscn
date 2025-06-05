@@ -219,6 +219,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("6_cckq2")]
+visible = false
 position = Vector2(271, 304)
 
 [node name="Interact_Label" type="Label" parent="."]

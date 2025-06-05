@@ -2547,7 +2547,7 @@ tile_map_data = PackedByteArray("AAAUAAwAAAAGAAEAADAUAA0AAAAGAAAAADAVAAwAAAAHAAE
 tile_set = SubResource("TileSet_ao1cp")
 
 [node name="MudDauber" parent="." instance=ExtResource("8_jgtby")]
-position = Vector2(2934, 328)
+position = Vector2(2732, 302)
 hover_speed = 150.0
 lunge_distance = 300.0
 hover_height = -50.0

@@ -34,13 +34,6 @@ func _ready() -> void:
 	fade.visible = true
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 0, 0.5)
-	
-	#THIS IS TEMP REMOVE LATER PLS
-	Globals.can_move = false
-	dialog = Dialogic.start("Courthouse")
-	get_tree().root.add_child(dialog)
-	Dialogic.timeline_ended.connect(dialog_end)
-	courted = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,8 +48,15 @@ func _process(delta: float) -> void:
 	if name_timer >= 4:
 		tween2 = create_tween()
 		tween2.tween_property(name_box, "modulate:a", 0, 1)
-		name_timer = 0
 
+	if name_timer >= 6:
+		#THIS IS TEMP REMOVE LATER PLS
+		Globals.can_move = false
+		dialog = Dialogic.start("Courthouse")
+		get_tree().root.add_child(dialog)
+		Dialogic.timeline_ended.connect(dialog_end)
+		courted = true
+		name_timer = 0
 
 func _on_left_home_entrance_body_entered(body: Node2D) -> void:
 	Globals.can_move = false

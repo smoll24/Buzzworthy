@@ -48,9 +48,9 @@ func _ready() -> void:
 	if current == 1:
 			queue_text(["If there is still kindness listening out among the leaves... please hear me.                     "])
 			queue_text(["Our village is fading. The soil that once nourished us has turned brittle and bare.              "])
-			queue_text(["We have done what we thought we must… We closed our gates, built our walls high…                    "])
+			queue_text(["We have done what we thought we must… We closed our gates, built our walls high…                 "])
 			queue_text(["But now, all that remains is silence and more suffering.                         "])
-			queue_text(["Please, if anyone hears this prayer, please help us.                        "])
+			queue_text(["Please, if anyone hears this prayer, please help us.                                  "])
 			queue_text(['E'])
 			Globals.current_dialog = 2
 
@@ -104,8 +104,8 @@ func display_text():
 	
 	if next_text == 'E':
 		tween2 = create_tween()
-		tween2.tween_property(fade, "modulate:a", 1, 0.5)
-		await get_tree().create_timer(0.5).timeout
+		tween2.tween_property(fade, "modulate:a", 1, 2)
+		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_file("res://scenes/levels/MothHome.tscn")
 		
 		
