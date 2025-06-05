@@ -69,7 +69,7 @@ func _on_right_home_entrance_body_entered(body: Node2D) -> void:
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 1, 0.5)
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/levels/MothVillage.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/MiniBoss.tscn")
 
 func _on_dialog_entrance_body_entered(body: Node2D) -> void:
 	if not courted:

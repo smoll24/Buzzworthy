@@ -5,3 +5,4 @@
 [node name="Splash" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_icrma")
 volume_db = 10.0
+max_distance = 200000.0

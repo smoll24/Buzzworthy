@@ -7,7 +7,8 @@ var count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if not VillageMusic.playing:
+	Globals.current_health = Globals.max_health
+	if not VillageMusic.playing and Globals.current_dialog != 2:
 		VillageMusic.play()
 	moth.position.y = moth.position.y + 100
 	moth.self_modulate.r = 1.25

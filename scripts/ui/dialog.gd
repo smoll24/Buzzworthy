@@ -52,6 +52,11 @@ func _ready() -> void:
 			queue_text(['E'])
 			Globals.current_dialog = 2
 
+	if current == 2:
+			queue_text(["Aaaand they died, L + ratio ...                    "])
+			queue_text(["Truly very sad innit ...                         "])
+			queue_text(['B'])
+			Globals.current_dialog = 3
 
 func _process(delta):
 	match current_state:
@@ -88,6 +93,12 @@ func display_text():
 		tween2.tween_property(fade, "modulate:a", 1, 0.5)
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://scenes/cutscenes/MothPray.tscn")
+	
+	if next_text == 'B':
+		tween2 = create_tween()
+		tween2.tween_property(fade, "modulate:a", 1, 0.5)
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file("res://scenes/levels/level1_forest.tscn")
 	
 	if next_text == 'E':
 		tween2 = create_tween()

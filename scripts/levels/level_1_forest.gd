@@ -15,11 +15,17 @@ var tween2 : Tween
 var dialog
 
 var playing = true
+var debried = false
+var totemed = false
 
 var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	ready()
+	
+func ready() -> void:
+	playing = true
 	if not Globals.fallen:
 		Globals.can_move = false
 	else:
@@ -94,18 +100,19 @@ func dialog_end():
 	Globals.can_move = true
 
 func respawn():
+	Globals.can_move = false
 	playing = false
 	Lose.play()
 	fade_box.visible = true
 	fade.visible = true
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 1, 2)
-	tween.parallel().tween_property(Level1Music, "volume_db", -50, 2)
-	rain.queue_free()
+	#tween.parallel().tween_property(Level1Music, "volume_db", -50, 2)
 	await get_tree().create_timer(3).timeout
 	Globals.current_health = Globals.max_health
 	Globals.current_wet = 0
-	get_tree().reload_current_scene() 
+	#get_tree().reload_current_scene() 
+	ready()
 
 
 func _on_cave_theshold_body_entered(body: CharacterBody2D) -> void:
@@ -122,3 +129,20 @@ func _on_cave_theshold_body_exited(body: Node2D) -> void:
 	tween.tween_property(Level1Music, "volume_db", 0, 2)
 	tween.parallel().tween_property(vignette, "modulate:a", 0, 0.5)
 	tween.parallel().tween_property(dark, "modulate:a", 0, 0.5)
+
+
+func _on_debris_dialog_body_entered(body: Node2D) -> void:
+	if not debried:
+		Globals.can_move = false
+		dialog = Dialogic.start("Debris")
+		get_tree().root.add_child(dialog)
+		Dialogic.timeline_ended.connect(dialog_end)
+		debried = true
+
+func _on_totem_dialog_body_entered(body: Node2D) -> void:
+	if not totemed:
+		Globals.can_move = false
+		dialog = Dialogic.start("Totem")
+		get_tree().root.add_child(dialog)
+		Dialogic.timeline_ended.connect(dialog_end)
+		totemed = true

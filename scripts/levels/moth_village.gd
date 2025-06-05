@@ -24,7 +24,7 @@ var name_timer = 1
 func _ready() -> void:
 	Globals.can_move = true
 	if Globals.village_fixed:
-		texture = load(sad)
+		texture = load(nice)
 	else:
 		texture = load(sad)
 	tilemap1.tile_set.get_source(2).texture = texture
