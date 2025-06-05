@@ -14,7 +14,7 @@
 script = ExtResource("1_vn7uy")
 overrides = {
 "global_bg_color": "Color(0, 0, 0, 1)",
-"global_font": "\"res://assets/fonts/C&C Red Alert [LAN].ttf\"",
+"global_font": "\"res://assets/fonts/C&C Red Alert [INET].ttf\"",
 "global_font_size": "14.0"
 }
 
