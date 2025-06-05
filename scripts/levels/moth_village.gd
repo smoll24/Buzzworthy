@@ -63,6 +63,7 @@ func _process(delta: float) -> void:
 		tween2 = create_tween()
 		tween2.tween_property(name_box, "modulate:a", 0, 1)
 		name_timer = 0
+	
 		
 
 func _on_left_home_entrance_body_entered(body: Node2D) -> void:

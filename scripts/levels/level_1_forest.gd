@@ -12,6 +12,7 @@ extends Node2D
 @onready var rain = $Rain
 var tween : Tween
 var tween2 : Tween
+var dialog
 
 var playing = true
 
@@ -19,8 +20,15 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Globals.can_move = true
+	if not Globals.fallen:
+		Globals.can_move = false
+	else:
+		Globals.can_move = true
+	
+	MiniBossMusic.stream_paused = true
+	ForestAmbiance.stream_paused = true
 	VillageMusic.stream_paused = true
+	
 	Globals.crafting = false
 	if Globals.save_pos != Vector2(0, 0):
 		player.position = Globals.save_pos
@@ -40,9 +48,9 @@ func _ready() -> void:
 	fade_box.visible = true
 	fade.visible = true
 	tween = create_tween()
-	tween.tween_property(fade, "modulate:a", 0, 2)
+	tween.tween_property(fade, "modulate:a", 0, 5)
 	tween.parallel().tween_property(Level1Music, "volume_db", 0, 2)
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(5).timeout
 	fade.visible = false
 	Level1Music.play()
 
@@ -52,13 +60,20 @@ func _process(delta: float) -> void:
 	if name_timer >= 1:
 		name_timer += delta
 	
-	if name_timer >= 2 and name_timer <= 3:
+	if name_timer >= 4 and name_timer <= 5:
 		tween = create_tween()
 		tween.tween_property(name_box, "modulate:a", 1, 1)
 		
-	if name_timer >= 4:
+	if name_timer >= 7:
 		tween2 = create_tween()
 		tween2.tween_property(name_box, "modulate:a", 0, 1)
+		
+	if name_timer >= 8:
+		if not Globals.fallen:
+			dialog = Dialogic.start("Lost")
+			get_tree().root.add_child(dialog)
+			Dialogic.timeline_ended.connect(dialog_end)
+			Globals.fallen = true
 		name_timer = 0
 	
 	#Reset tweens
@@ -75,6 +90,8 @@ func _process(delta: float) -> void:
 	if Globals.current_health == 0 and playing:
 		respawn()
 		
+func dialog_end():
+	Globals.can_move = true
 
 func respawn():
 	playing = false

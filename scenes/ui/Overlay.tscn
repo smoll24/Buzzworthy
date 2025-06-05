@@ -95,24 +95,27 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Frame Rate"
 
-[node name="Moss" type="AnimatedSprite2D" parent="."]
-position = Vector2(526, 38)
+[node name="CraftBar" type="Node2D" parent="."]
+
+[node name="Moss" type="AnimatedSprite2D" parent="CraftBar"]
+position = Vector2(526, 37)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_exla2")
+frame = 1
 
-[node name="Material_Panel" type="Sprite2D" parent="."]
+[node name="Material_Panel" type="Sprite2D" parent="CraftBar"]
 position = Vector2(523, 25)
 scale = Vector2(2.8, 2.8)
 texture = ExtResource("3_c84n8")
 
-[node name="Log_Sprite" type="Sprite2D" parent="."]
+[node name="Log_Sprite" type="Sprite2D" parent="CraftBar"]
 position = Vector2(491, 15)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_yq870")
 vframes = 2
 frame = 1
 
-[node name="Log_Label" type="Label" parent="."]
+[node name="Log_Label" type="Label" parent="CraftBar"]
 offset_left = 510.0
 offset_top = 8.0
 offset_right = 543.0
@@ -122,14 +125,14 @@ theme_override_font_sizes/font_size = 32
 text = "10"
 vertical_alignment = 1
 
-[node name="Stone_Sprite" type="Sprite2D" parent="."]
+[node name="Stone_Sprite" type="Sprite2D" parent="CraftBar"]
 position = Vector2(561, 19)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_q5tso")
 vframes = 2
 frame = 1
 
-[node name="Stone_Label" type="Label" parent="."]
+[node name="Stone_Label" type="Label" parent="CraftBar"]
 offset_left = 578.0
 offset_top = 8.0
 offset_right = 618.0

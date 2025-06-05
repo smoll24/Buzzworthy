@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://em06fd4l4h0u"]
+[gd_scene load_steps=19 format=3 uid="uid://em06fd4l4h0u"]
 
 [ext_resource type="Texture2D" uid="uid://dq3jn2sjmlaec" path="res://assets/bugs/waspwing1.png" id="1_dulfw"]
 [ext_resource type="Script" path="res://scripts/characters/mud_dauber.gd" id="1_e572c"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://by34g4arymojw" path="res://assets/bugs/waspwing5.png" id="5_ixc5r"]
 [ext_resource type="Texture2D" uid="uid://blslkwto07jwy" path="res://assets/bugs/wasp5.png" id="5_nfmim"]
 [ext_resource type="Texture2D" uid="uid://3xanqsf3lkuf" path="res://assets/bugs/wasp6.png" id="6_nxsfg"]
+[ext_resource type="PackedScene" uid="uid://bi8qrj3uxx3k3" path="res://scenes/sounds/Wasps.tscn" id="13_xt2pp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6bcxn"]
 animations = [{
@@ -95,12 +96,13 @@ animations = [{
 size = Vector2(103, 53.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r18kr"]
-size = Vector2(54, 31)
+size = Vector2(46, 41)
 
 [node name="MudDauber" type="CharacterBody2D"]
 collision_layer = 64
 collision_mask = 0
 script = ExtResource("1_e572c")
+hover_height = -100.0
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 0.758333, 0.42, 0.568627)
@@ -129,7 +131,11 @@ collision_layer = 64
 collision_mask = 128
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-12, -0.5)
+position = Vector2(-28, 4.5)
 shape = SubResource("RectangleShape2D_r18kr")
+
+[node name="Wasps" parent="." instance=ExtResource("13_xt2pp")]
+autoplay = true
+max_distance = 300.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -4,8 +4,9 @@ extends CanvasLayer
 @onready var healthbar = $ProgressBar
 @onready var wetbar = $MoistureBar
 @onready var label_frames = $Label
-@onready var log_label = $Log_Label
-@onready var stone_label = $Stone_Label
+@onready var log_label = $CraftBar/Log_Label
+@onready var stone_label = $CraftBar/Stone_Label
+@onready var craft_bar = $CraftBar
 
 var timer = 0
 var timer_on = false
@@ -33,6 +34,8 @@ func _process(delta: float) -> void:
 	log_label.text = str(Globals.logs)
 	stone_label.text = str(Globals.stones)
 
+func craft_hide():
+	craft_bar.hide()
 
 func _on_moisture_bar_frame_changed() -> void:
 	timer_on = true

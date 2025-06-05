@@ -1,0 +1,103 @@
+[gd_scene load_steps=16 format=3 uid="uid://bn7dul85v0lqk"]
+
+[ext_resource type="Script" path="res://scripts/characters/moths.gd" id="1_8r6b2"]
+[ext_resource type="Texture2D" uid="uid://vtc7wlv154pa" path="res://assets/characters/NPC1.png" id="2_872f8"]
+[ext_resource type="Texture2D" uid="uid://p4bbeyc1hrb7" path="res://assets/characters/NPC2.png" id="3_xjjjx"]
+[ext_resource type="Texture2D" uid="uid://dchx7kpnw4n0f" path="res://assets/characters/NPC3.png" id="4_dqfrk"]
+[ext_resource type="Texture2D" uid="uid://cgpprmiqqg5hd" path="res://assets/characters/NPC4.png" id="5_kvdsq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs1qn"]
+atlas = ExtResource("2_872f8")
+region = Rect2(0, 0, 42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtvck"]
+atlas = ExtResource("2_872f8")
+region = Rect2(42, 0, 42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgl1t"]
+atlas = ExtResource("3_xjjjx")
+region = Rect2(0, 0, 42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bav11"]
+atlas = ExtResource("3_xjjjx")
+region = Rect2(42, 0, 42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y75sn"]
+atlas = ExtResource("4_dqfrk")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebgx4"]
+atlas = ExtResource("4_dqfrk")
+region = Rect2(0, 42, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m377w"]
+atlas = ExtResource("5_kvdsq")
+region = Rect2(0, 0, 42, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd5hh"]
+atlas = ExtResource("5_kvdsq")
+region = Rect2(0, 43, 42, 43)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yhoi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs1qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtvck")
+}],
+"loop": true,
+"name": &"1",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgl1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bav11")
+}],
+"loop": true,
+"name": &"2",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y75sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebgx4")
+}],
+"loop": true,
+"name": &"3",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m377w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd5hh")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcfie"]
+size = Vector2(26, 52)
+
+[node name="Moths" type="CharacterBody2D"]
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("1_8r6b2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_3yhoi")
+animation = &"1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_hcfie")

@@ -5,12 +5,12 @@ extends CharacterBody2D
 @onready var wings2 = $AnimatedSprite2D3
 var tween
 
-@export var hover_speed: float = 80.0
+@export var hover_speed: float = 100.0
 @export var lunge_speed: float = 200.0
 @export var retreat_speed: float = 200.0
 @export var lunge_distance: float = 400.0
-@export var hover_height: float = -80.0 
-@export var lunge_cooldown: float = 5.0
+@export var hover_height: float = -120.0 
+@export var lunge_cooldown: float = 15.0
 
 var player: CharacterBody2D
 var current_state = "hover"
@@ -21,14 +21,12 @@ var to_player
 var lunging_cooldown = true
 var in_body = false
 var last_state = ""
+var chasing = false
+var moving = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_parent().get_node("Player")
-	#tween = create_tween().set_loops()
-	#tween.tween_property(self, "position:y", self.position.y + 5, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	#tween.tween_property(self, "position:y",  self.position.y - 5, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -53,8 +51,10 @@ func _physics_process(delta):
 	
 	match current_state:
 		"hover":
-			move_toward_player(delta)
-			#check_lunge()
+			if moving:
+				move_toward_player(delta)
+			if chasing:
+				check_lunge()
 		
 		"lunge":
 			do_lunge(delta)
@@ -112,14 +112,19 @@ func do_retreat(delta):
 	velocity = direction * retreat_speed
 	in_body = false
 	
-	lunge_cooldown = randf_range(3.0,6.0)
+	lunge_cooldown = randf_range(5.0,9.0)
 	
 	if global_position.distance_to(target) < 10:
 		current_state = "hover"
 
+func set_chase():
+	chasing = true
+	
+func set_move():
+	moving = true
 
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	in_body = true
 	if current_state == "lunge":
-		player.apply_hit_effect()
+		player.apply_hitup_effect()
 	

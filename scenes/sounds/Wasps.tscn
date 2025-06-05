@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi8qrj3uxx3k3"]
+
+[ext_resource type="AudioStream" uid="uid://2rmsfpbnll5t" path="res://assets/sounds/wasps.mp3" id="1_o8kc3"]
+
+[node name="Wasps" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_o8kc3")

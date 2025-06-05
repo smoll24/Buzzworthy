@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://jkoo6p4rjhwe"]
+
+[ext_resource type="AudioStream" uid="uid://dwim48jad76pm" path="res://assets/music/forest_ambiance.mp3" id="1_4dobf"]
+
+[node name="ForestAmbiance" type="AudioStreamPlayer2D"]
+process_mode = 3
+stream = ExtResource("1_4dobf")
+volume_db = -10.0
+max_distance = 1e+06
+parameters/looping = true

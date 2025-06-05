@@ -29,6 +29,9 @@ Heal="*res://scenes/sounds/Heal.tscn"
 Splash="*res://scenes/sounds/Splash.tscn"
 Flip="*res://scenes/sounds/Flip.tscn"
 VillageMusic="*res://scenes/music/Village_Music.tscn"
+BossMusic="*res://scenes/music/Boss_Music.tscn"
+ForestAmbiance="*res://scenes/music/Forest_Ambiance.tscn"
+MiniBossMusic="*res://scenes/music/MiniBoss_Music.tscn"
 
 [dialogic]
 
@@ -48,11 +51,14 @@ directories/dtl_directory={
 "ClickBug": "res://assets/dialogic/ClickBug.dtl",
 "Cockroach": "res://assets/dialogic/Cockroach.dtl",
 "Courthouse": "res://assets/dialogic/Courthouse.dtl",
+"Lost": "res://assets/characters/Lost.dtl",
+"MiniBossEntrance": "res://assets/characters/MiniBossEntrance.dtl",
 "Moth1": "res://assets/dialogic/Moth1.dtl",
 "Moth2": "res://assets/dialogic/Moth2.dtl",
 "Moth3": "res://assets/dialogic/Moth3.dtl",
 "Moth4": "res://assets/dialogic/Moth4.dtl",
 "MuseumBeetle": "res://assets/dialogic/MuseumBeetle.dtl",
+"Nest": "res://assets/dialogic/Nest.dtl",
 "PillBug": "res://assets/dialogic/PillBug.dtl",
 "Spider": "res://assets/dialogic/Spider.dtl",
 "StinkBug1": "res://assets/dialogic/StinkBug1.dtl",

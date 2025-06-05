@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://nayjco6wptgp"]
+
+[ext_resource type="AudioStream" uid="uid://enk4jsxhas6w" path="res://assets/music/rainwelder.mp3" id="1_1t2af"]
+
+[node name="MiniBossMusic" type="AudioStreamPlayer2D"]
+process_mode = 3
+stream = ExtResource("1_1t2af")
+volume_db = 5.0
+max_distance = 1e+06
+parameters/looping = true
