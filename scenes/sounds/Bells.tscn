@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcdarr371se1n"]
+
+[ext_resource type="AudioStream" uid="uid://b7b5ojidkgg2g" path="res://assets/sounds/bells.mp3" id="1_8lnf7"]
+
+[node name="Bells" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_8lnf7")
+max_distance = 500.0
+attenuation = 2.73208
+parameters/looping = true

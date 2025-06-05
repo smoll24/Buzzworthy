@@ -15,6 +15,10 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	if Globals.shut_up:
+		$Bell.queue_free()
+	
 	if not Globals.woken:
 		$Interact_Label.hide()
 		$Interact_Label2.hide()

@@ -13,6 +13,10 @@ var village_fixed = false
 var can_move = true
 var woken = false
 var fallen = false
+var shut_up = false
+var bell1 = false
+var bell2 = false
+var bell3 = false
 
 var save_pos = Vector2(0, 0)
 

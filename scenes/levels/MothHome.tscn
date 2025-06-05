@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b2nq3c5btutyy"]
+[gd_scene load_steps=12 format=4 uid="uid://b2nq3c5btutyy"]
 
 [ext_resource type="Script" path="res://scripts/levels/moth_home.gd" id="1_fosrp"]
 [ext_resource type="Texture2D" uid="uid://nvohyeyt8hpa" path="res://assets/cutscenes/cutscene_textbox.png" id="2_5fgka"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="4_dpunl"]
 [ext_resource type="PackedScene" uid="uid://2jc4e4q5f0rc" path="res://scenes/characters/Player.tscn" id="5_4y1t8"]
 [ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="7_vjmbt"]
+[ext_resource type="PackedScene" uid="uid://i0s8nodhsetp" path="res://scenes/objects/Bell.tscn" id="8_756ov"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jl325"]
 texture = ExtResource("4_dpunl")
@@ -238,6 +239,10 @@ theme_override_font_sizes/font_size = 32
 text = "or ARROW KEYS
 to move"
 horizontal_alignment = 1
+
+[node name="Bell" parent="." instance=ExtResource("8_756ov")]
+visible = false
+position = Vector2(-115, 309)
 
 [connection signal="body_entered" from="Left_Home_Entrance" to="." method="_on_left_home_entrance_body_entered"]
 [connection signal="body_entered" from="Right_Home_Entrance" to="." method="_on_right_home_entrance_2_body_entered"]
