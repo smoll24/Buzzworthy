@@ -59,9 +59,10 @@ func _process(delta: float) -> void:
 		tween2.tween_property(name_box, "modulate:a", 0, 1)
 		
 	if name_timer >= 6:
-		dialog = Dialogic.start("Wake")
-		get_tree().root.add_child(dialog)
-		Dialogic.timeline_ended.connect(dialog_end)
+		if not Globals.woken:
+			dialog = Dialogic.start("Wake")
+			get_tree().root.add_child(dialog)
+			Dialogic.timeline_ended.connect(dialog_end)
 		name_timer = 0
 
 func dialog_end():

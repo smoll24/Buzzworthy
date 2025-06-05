@@ -2955,10 +2955,12 @@ scale = Vector2(-1, 1)
 
 [node name="Moth2" parent="." instance=ExtResource("8_xr2xj")]
 position = Vector2(136, 708)
+type = 22
 
 [node name="Moth3" parent="." instance=ExtResource("9_kstxn")]
 position = Vector2(2147, 711)
 scale = Vector2(-1, 1)
+type = 21
 
 [node name="Moth4" parent="." instance=ExtResource("10_7opqu")]
 position = Vector2(-608, 902)

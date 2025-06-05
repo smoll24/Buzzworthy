@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const READ_RATE = 0.1
+const READ_RATE = 0.08
 @onready var dialogbox = $Box
 @onready var text = $RichTextLabel
 @onready var end = $end
@@ -37,18 +37,20 @@ func _ready() -> void:
 	current = Globals.current_dialog
 	dialogbox.hide()
 
+
 	if current == 0:
-			queue_text(["Isolated deep in the forest, there lives a society of struggling moths ...                            "])
-			queue_text(["Now you will live their story as a prayer catches your ear upon the wind ...                         "])
+			queue_text(["Isolated deep in the forest, there lives a quiet people ...                           "])
+			queue_text(["A village of mothfolk, hidden away from the rest of the woods ...                      "])
+			queue_text(["Now you will live their story as a prayer is whispered in the wind ...                  "])
 			queue_text(['A'])
 			Globals.current_dialog = 1
 
 	if current == 1:
-			queue_text(["My village is under great peril.             "])
-			queue_text(["Our vegetation refuses to blossom as once it used to long ago.                      "])
-			queue_text(["The crops wither and the water spoils endlessly.                      "])
-			queue_text(["Please, if anyone hears this prayer, please come to our aid.                      "])
-			queue_text(["Help us, please, for we dearly need it to live on in peace.                            "])
+			queue_text(["If there is still kindness listening out among the leaves... please hear me.                     "])
+			queue_text(["Our village is fading. The soil that once nourished us has turned brittle and bare.              "])
+			queue_text(["We have done what we thought we must… We closed our gates, built our walls high…                    "])
+			queue_text(["But now, all that remains is silence and more suffering.                         "])
+			queue_text(["Please, if anyone hears this prayer, please help us.                        "])
 			queue_text(['E'])
 			Globals.current_dialog = 2
 

@@ -28,7 +28,7 @@
 "portraits": {
 "New portrait": {
 "export_overrides": {
-"image": "\"res://assets/characters/luna_icon.png\""
+"image": "\"res://assets/characters/nardi_icon.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

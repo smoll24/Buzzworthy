@@ -85,13 +85,13 @@ func _process(delta: float) -> void:
 		Globals.current_dialog = 2
 		get_tree().change_scene_to_file("res://scenes/cutscenes/Exposition.tscn")
 
-func _on_dialog_npc_entrance_body_entered(body: Node2D) -> void:
-	if not entered:
-		Globals.can_move = false
-		dialog = Dialogic.start("MiniBossEntrance")
-		get_tree().root.add_child(dialog)
-		Dialogic.timeline_ended.connect(entrance_end)
-		entered = true
+#func _on_dialog_npc_entrance_body_entered(body: Node2D) -> void:
+	#if not entered:
+		#Globals.can_move = false
+		#dialog = Dialogic.start("MiniBossEntrance")
+		#get_tree().root.add_child(dialog)
+		#Dialogic.timeline_ended.connect(entrance_end)
+		#entered = true
 
 func _on_dialog_wasp_entrance_body_entered(body: Node2D) -> void:
 	if not nested:
@@ -112,11 +112,11 @@ func nest_end():
 	wasp.set_chase()
 	wasp_health.show()
 
-
-func _on_dialog_npc_mid_body_entered(body: Node2D) -> void:
-	if not mid:
-		Globals.can_move = false
-		dialog = Dialogic.start("MiniBossEntrance")
-		get_tree().root.add_child(dialog)
-		Dialogic.timeline_ended.connect(entrance_end)
-		mid = true
+#
+#func _on_dialog_npc_mid_body_entered(body: Node2D) -> void:
+	#if not mid:
+		#Globals.can_move = false
+		#dialog = Dialogic.start("MiniBossEntrance")
+		#get_tree().root.add_child(dialog)
+		#Dialogic.timeline_ended.connect(entrance_end)
+		#mid = true

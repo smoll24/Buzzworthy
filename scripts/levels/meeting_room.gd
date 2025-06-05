@@ -34,6 +34,13 @@ func _ready() -> void:
 	fade.visible = true
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 0, 0.5)
+	
+	#THIS IS TEMP REMOVE LATER PLS
+	Globals.can_move = false
+	dialog = Dialogic.start("Courthouse")
+	get_tree().root.add_child(dialog)
+	Dialogic.timeline_ended.connect(dialog_end)
+	courted = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -80,4 +87,14 @@ func _on_dialog_entrance_body_entered(body: Node2D) -> void:
 		courted = true
 	
 func dialog_end():
-	Globals.can_move = true
+	#Globals.can_move = true
+	
+	#THIS IS TEMP
+	Globals.can_move = false
+	Globals.spawn = 2
+	name_box.visible = true
+	fade.visible = true
+	tween = create_tween()
+	tween.tween_property(fade, "modulate:a", 1, 0.5)
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://scenes/levels/MiniBoss.tscn")

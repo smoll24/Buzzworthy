@@ -112,7 +112,7 @@ func do_retreat(delta):
 	velocity = direction * retreat_speed
 	in_body = false
 	
-	lunge_cooldown = randf_range(5.0,9.0)
+	lunge_cooldown = randf_range(5.0,7.0)
 	
 	if global_position.distance_to(target) < 10:
 		current_state = "hover"
