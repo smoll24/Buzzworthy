@@ -36,9 +36,13 @@ MiniBossMusic="*res://scenes/music/MiniBoss_Music.tscn"
 [dialogic]
 
 directories/dch_directory={
+"Argema": "res://assets/dialogic/Argema.dch",
 "ClickBug": "res://assets/dialogic/ClickBug.dch",
 "Cockroach": "res://assets/dialogic/Cockroach.dch",
+"Dub": "res://assets/dialogic/Dub.dch",
+"Luna": "res://assets/dialogic/Luna.dch",
 "MuseumBeetle": "res://assets/dialogic/MuseumBeetle.dch",
+"Nardi": "res://assets/characters/Nardi.dch",
 "PillBug": "res://assets/dialogic/PillBug.dch",
 "Player": "res://assets/dialogic/Player.dch",
 "Spider": "res://assets/dialogic/Spider.dch",
