@@ -24,6 +24,7 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.current_dialog = 2
 	texture = load(red)
 	tilemap.tile_set.get_source(0).texture = texture
 	tilemap.tile_set.get_source(1).texture = texture
@@ -82,7 +83,6 @@ func _process(delta: float) -> void:
 		tween = create_tween()
 		tween.tween_property(fade, "modulate:a", 1, 0.5)
 		await get_tree().create_timer(0.5).timeout
-		Globals.current_dialog = 2
 		get_tree().change_scene_to_file("res://scenes/cutscenes/Exposition.tscn")
 
 #func _on_dialog_npc_entrance_body_entered(body: Node2D) -> void:

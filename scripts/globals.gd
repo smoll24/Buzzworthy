@@ -25,9 +25,9 @@ var max_wet = 5
 
 var current_level = 1
 
-var has_sword_recipe = false
+var has_sword_recipe = true
 var has_sword = false
-var has_shield_recipe = false
+var has_shield_recipe = true
 var has_shield = false
 var has_helmet_recipe = false
 var has_helmet = false
