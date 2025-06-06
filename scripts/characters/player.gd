@@ -151,8 +151,8 @@ func apply_hitup_effect():
 			Damage.play()
 		sprite.modulate = Color(5,2,2,1)
 		tween = create_tween()
-		self.velocity.y = JUMP_VELOCITY/1.5
-		tween.tween_property(self, "position:x", self.global_position.x - direction * knockback_hit_distance*1.5, knockback_hit_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+		self.velocity.y = JUMP_VELOCITY
+		#tween.tween_property(self, "position:x", self.global_position.x - direction * knockback_hit_distance*1.5, knockback_hit_duration).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 		
 		
 func apply_hit2_effect():

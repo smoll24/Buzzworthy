@@ -1647,6 +1647,7 @@ scale = Vector2(1, -1)
 
 [node name="Player" parent="." instance=ExtResource("2_toopw")]
 position = Vector2(305, 69)
+script = null
 
 [node name="Debris_Dialog" type="Area2D" parent="."]
 position = Vector2(665, 169)
