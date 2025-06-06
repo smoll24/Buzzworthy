@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite = $AnimatedSprite2D
+@onready var camera = $Camera2D
 var enemy : Area2D
 
 const SPEED = 200.0
@@ -41,6 +42,11 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if Globals.current_dialog >= 2:
+		camera.drag_vertical_offset = 0
+	else:
+		camera.drag_vertical_offset = -1
+	
 	if Globals.slow:
 		current_speed = SPEED/10
 	else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://d3xq688yn2nas"]
+[gd_scene load_steps=19 format=4 uid="uid://d3xq688yn2nas"]
 
 [ext_resource type="Script" path="res://scripts/levels/mini_boss.gd" id="1_8nqk4"]
 [ext_resource type="Texture2D" uid="uid://daimqrvwrhc2g" path="res://assets/temp/db2eggh-d89cc026-e1c4-4d4d-a7a5-1257f55931ce.png" id="2_ar1b1"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://em06fd4l4h0u" path="res://scenes/characters/MudDauber.tscn" id="8_jgtby"]
 [ext_resource type="PackedScene" uid="uid://cuka1chubvkbq" path="res://scenes/ui/Overlay.tscn" id="8_vengr"]
 [ext_resource type="PackedScene" uid="uid://bn7dul85v0lqk" path="res://scenes/characters/Moths.tscn" id="9_n2ruv"]
+[ext_resource type="Texture2D" uid="uid://dx7u8hlx7oys0" path="res://assets/temp/megarhyssa.png" id="12_hkec7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3cppq"]
 texture = ExtResource("3_6r2v6")
@@ -2507,10 +2508,10 @@ bg_color = Color(0.387919, 0.149557, 0.0851327, 1)
 script = ExtResource("1_8nqk4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1067.0
-offset_top = -228.0
-offset_right = 4064.0
-offset_bottom = 1035.0
+offset_left = -694.0
+offset_top = -288.0
+offset_right = 4437.0
+offset_bottom = 975.0
 color = Color(0.302248, 0.294087, 0.253997, 1)
 
 [node name="Parallax_BG" type="Parallax2D" parent="."]
@@ -2732,6 +2733,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Megarhyssa" type="Sprite2D" parent="."]
+position = Vector2(2971, 214)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("12_hkec7")
 
 [connection signal="body_entered" from="DialogNPC_Entrance" to="." method="_on_dialog_npc_entrance_body_entered"]
 [connection signal="body_entered" from="DialogNPC_Mid" to="." method="_on_dialog_npc_mid_body_entered"]

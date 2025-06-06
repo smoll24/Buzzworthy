@@ -22,6 +22,11 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.current_dialog = 3
+	MiniBossMusic.stream_paused = true
+	ForestAmbiance.stream_paused = true
+	VillageMusic.stream_paused = true
+	Level1Music.play()
 	ready()
 	
 func ready() -> void:
@@ -30,10 +35,6 @@ func ready() -> void:
 		Globals.can_move = false
 	else:
 		Globals.can_move = true
-	
-	MiniBossMusic.stream_paused = true
-	ForestAmbiance.stream_paused = true
-	VillageMusic.stream_paused = true
 	
 	Globals.crafting = false
 	if Globals.save_pos != Vector2(0, 0):
@@ -58,7 +59,6 @@ func ready() -> void:
 	tween.parallel().tween_property(Level1Music, "volume_db", 0, 2)
 	await get_tree().create_timer(5).timeout
 	fade.visible = false
-	Level1Music.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
