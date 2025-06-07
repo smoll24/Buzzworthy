@@ -32,6 +32,7 @@ VillageMusic="*res://scenes/music/Village_Music.tscn"
 BossMusic="*res://scenes/music/Boss_Music.tscn"
 ForestAmbiance="*res://scenes/music/Forest_Ambiance.tscn"
 MiniBossMusic="*res://scenes/music/MiniBoss_Music.tscn"
+Level2Music="*res://scenes/music/Level2_Music.tscn"
 
 [dialogic]
 

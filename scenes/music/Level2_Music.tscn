@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://m0l0gopuyo4w"]
+
+[ext_resource type="AudioStream" uid="uid://gkv1e8khrlw4" path="res://assets/music/inner_void.mp3" id="1_eqewv"]
+
+[node name="Level2Music" type="AudioStreamPlayer2D"]
+process_mode = 3
+stream = ExtResource("1_eqewv")
+volume_db = -10.0
+max_distance = 1e+06
+parameters/looping = true
