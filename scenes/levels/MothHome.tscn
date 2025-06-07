@@ -214,24 +214,38 @@ color = Color(0, 0, 0, 1)
 [node name="Player" parent="." instance=ExtResource("5_4y1t8")]
 position = Vector2(308, 300)
 
+[node name="Interact_Label3" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.447059)
+offset_left = 261.0
+offset_top = 102.0
+offset_right = 377.0
+offset_bottom = 157.0
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("7_vjmbt")
+theme_override_font_sizes/font_size = 32
+text = "[Z] or [ENTER]
+to read text"
+horizontal_alignment = 1
+
 [node name="Interact_Label" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.447059)
-offset_left = 235.0
+offset_left = 230.0
 offset_top = 101.0
-offset_right = 315.0
+offset_right = 314.0
 offset_bottom = 156.0
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("7_vjmbt")
 theme_override_font_sizes/font_size = 32
-text = "[W]
-[A] [S] [D]"
+text = "[W] [A] [D]
+[SPACE]"
 horizontal_alignment = 1
 
 [node name="Interact_Label2" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0.447059)
-offset_left = 294.0
+offset_left = 296.0
 offset_top = 101.0
-offset_right = 406.0
+offset_right = 408.0
 offset_bottom = 156.0
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("7_vjmbt")

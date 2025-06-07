@@ -13,8 +13,9 @@ func _process(delta: float) -> void:
 
 
 func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	Globals.slow = true
-	sprite.animation = "caught"
+	if not Globals.spider_met:
+		Globals.slow = true
+		sprite.animation = "caught"
 
 
 func _on_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:

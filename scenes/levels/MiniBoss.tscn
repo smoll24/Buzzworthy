@@ -2496,7 +2496,7 @@ sources/0 = SubResource("TileSetAtlasSource_3cppq")
 sources/1 = SubResource("TileSetAtlasSource_oslqy")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pmaf"]
-size = Vector2(27.5, 54.5)
+size = Vector2(27.5, 544.25)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e2pm"]
 bg_color = Color(0.25098, 0, 0, 1)
@@ -2576,6 +2576,7 @@ position = Vector2(748, 393)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogNPC_Entrance"]
+position = Vector2(0, -244.875)
 shape = SubResource("RectangleShape2D_3pmaf")
 
 [node name="DialogNPC_Mid" type="Area2D" parent="."]
@@ -2589,7 +2590,7 @@ shape = SubResource("RectangleShape2D_3pmaf")
 position = Vector2(2521, 491)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogWasp_Entrance"]
-position = Vector2(0, -1)
+position = Vector2(0, 151)
 shape = SubResource("RectangleShape2D_3pmaf")
 
 [node name="Interact_Label" type="Label" parent="."]

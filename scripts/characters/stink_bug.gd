@@ -8,6 +8,7 @@ var tween
 @export var type = 1
 
 var dialog = null
+var can_talk = true
 
 #Stinkbug = 1
 #Clickbug = 2
@@ -31,13 +32,17 @@ func _process(delta: float) -> void:
 	move_label(delta)
 	
 	if in_body:
-		interact_label.show()
-		if Input.is_action_just_pressed("ui_accept"):
+		if can_talk:
+			interact_label.show()
+		else:
+			interact_label.hide()
+		if Input.is_action_just_pressed("ui_accept") and can_talk:
 			if type == 1:
 				dialog = Dialogic.start("StinkBug1")
 			elif type == 2:
 				dialog = Dialogic.start("ClickBug")
 			elif type == 3:
+				Globals.spider_met = true
 				dialog = Dialogic.start("Spider")
 			elif type == 4:
 				dialog = Dialogic.start("MuseumBeetle")
@@ -58,7 +63,8 @@ func _process(delta: float) -> void:
 			elif type == 23:
 				dialog = Dialogic.start("Moth4")
 			get_tree().root.add_child(dialog)
-			in_body = false
+			Dialogic.timeline_ended.connect(dialog_end)
+			can_talk = false
 	else:
 		interact_label.hide()
 		
@@ -67,6 +73,10 @@ func _on_interact_area_body_entered(body: CharacterBody2D) -> void:
 
 func _on_interact_area_body_exited(body: CharacterBody2D) -> void:
 	in_body = false
+
+func dialog_end():
+	await get_tree().create_timer(0.5).timeout
+	can_talk = true
 
 func move_label(delta):
 	pass

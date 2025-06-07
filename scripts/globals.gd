@@ -17,6 +17,7 @@ var shut_up = false
 var bell1 = false
 var bell2 = false
 var bell3 = false
+var spider_met = false
 
 var save_pos = Vector2(0, 0)
 

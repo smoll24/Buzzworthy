@@ -117,11 +117,12 @@ func respawn():
 
 
 func _on_cave_theshold_body_entered(body: CharacterBody2D) -> void:
-	heartbeat.play()
-	tween = create_tween()
-	tween.tween_property(Level1Music, "volume_db", -50, 3)
-	tween.parallel().tween_property(dark, "modulate:a", 1, 2)
-	tween.parallel().tween_property(vignette, "modulate:a", 1, 2)
+	if not Globals.spider_met:
+		heartbeat.play()
+		tween = create_tween()
+		tween.tween_property(Level1Music, "volume_db", -50, 3)
+		tween.parallel().tween_property(dark, "modulate:a", 1, 2)
+		tween.parallel().tween_property(vignette, "modulate:a", 1, 2)
 
 
 func _on_cave_theshold_body_exited(body: Node2D) -> void:

@@ -20,6 +20,7 @@ func _ready() -> void:
 		$Bell.queue_free()
 	
 	if not Globals.woken:
+		$Interact_Label3.show()
 		$Interact_Label.hide()
 		$Interact_Label2.hide()
 		Globals.can_move = false
@@ -68,6 +69,7 @@ func _process(delta: float) -> void:
 func dialog_end():
 	Globals.woken = true
 	Globals.can_move = true
+	$Interact_Label3.hide()
 	$Interact_Label.show()
 	$Interact_Label2.show()
 
