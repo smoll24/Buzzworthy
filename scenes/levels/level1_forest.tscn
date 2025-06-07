@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bodmq0acgkncu"]
+[gd_scene load_steps=34 format=4 uid="uid://bodmq0acgkncu"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_1_forest.gd" id="1_bcayv"]
 [ext_resource type="Texture2D" uid="uid://darhyvd5gt6t5" path="res://assets/tilemaps/forest_tilemap.png" id="1_dw1q2"]
@@ -1289,6 +1289,9 @@ colors = PackedColorArray(0, 0, 0, 0.909804, 0, 0.268871, 0.600197, 0)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hwybn"]
 gradient = SubResource("Gradient_ff0g3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n47e0"]
+size = Vector2(62.5, 309)
+
 [node name="Level1Forest" type="Node2D"]
 script = ExtResource("1_bcayv")
 
@@ -1645,10 +1648,6 @@ position = Vector2(-57, 2345)
 rotation = 3.14159
 scale = Vector2(1, -1)
 
-[node name="Player" parent="." instance=ExtResource("2_toopw")]
-position = Vector2(305, 69)
-script = null
-
 [node name="Debris_Dialog" type="Area2D" parent="."]
 position = Vector2(665, 169)
 collision_layer = 2
@@ -1932,6 +1931,9 @@ position = Vector2(-3654, 1856)
 [node name="Cobweb23" parent="Webs" instance=ExtResource("20_j8rgd")]
 position = Vector2(-3828, 2123)
 
+[node name="Player" parent="." instance=ExtResource("2_toopw")]
+position = Vector2(285, -49)
+
 [node name="Rain" parent="." instance=ExtResource("7_nhrbp")]
 position = Vector2(9, 476)
 
@@ -2050,7 +2052,16 @@ visible = false
 visible = false
 position = Vector2(-213, 1109)
 
+[node name="Exit_Entrance" type="Area2D" parent="."]
+position = Vector2(2089, 1987)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit_Entrance"]
+position = Vector2(-35, -78.5)
+shape = SubResource("RectangleShape2D_n47e0")
+
 [connection signal="body_entered" from="Debris_Dialog" to="." method="_on_debris_dialog_body_entered"]
 [connection signal="body_entered" from="Totem_Dialog" to="." method="_on_totem_dialog_body_entered"]
 [connection signal="body_entered" from="CaveTheshold" to="." method="_on_cave_theshold_body_entered"]
 [connection signal="body_exited" from="CaveTheshold" to="." method="_on_cave_theshold_body_exited"]
+[connection signal="body_entered" from="Exit_Entrance" to="." method="_on_exit_entrance_body_entered"]

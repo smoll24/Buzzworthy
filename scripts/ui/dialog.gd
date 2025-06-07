@@ -60,6 +60,12 @@ func _ready() -> void:
 			queue_text(['B'])
 			Globals.current_dialog = 3
 
+	if current == 3:
+			queue_text(["Journey on                   "])
+			queue_text(["Yupp                        "])
+			queue_text(['C'])
+			Globals.current_dialog = 4
+
 func _process(delta):
 	match current_state:
 		State.READY:
@@ -101,6 +107,12 @@ func display_text():
 		tween2.tween_property(fade, "modulate:a", 1, 0.5)
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://scenes/levels/level1_forest.tscn")
+	
+	if next_text == 'C':
+		tween2 = create_tween()
+		tween2.tween_property(fade, "modulate:a", 1, 0.5)
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file("res://scenes/levels/level2_wetland.tscn")
 	
 	if next_text == 'E':
 		tween2 = create_tween()

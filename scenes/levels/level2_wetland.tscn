@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://c423qpy1501fj"]
+[gd_scene load_steps=26 format=4 uid="uid://c423qpy1501fj"]
 
 [ext_resource type="Texture2D" uid="uid://ckdiqq3h2pbwp" path="res://assets/tilemaps/wetlands_tilemap.png" id="1_cu8rn"]
 [ext_resource type="Script" path="res://scenes/levels/level_2_wetland.gd" id="1_vmc2p"]
@@ -2180,6 +2180,9 @@ sources/1 = SubResource("TileSetAtlasSource_fcmq1")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cx4vl"]
 size = Vector2(1813, 68)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c74it"]
+size = Vector2(62.5, 309)
+
 [node name="Level2Wetland" type="Node2D"]
 script = ExtResource("1_vmc2p")
 
@@ -2634,5 +2637,14 @@ color = Color(0, 0, 0, 1)
 [node name="Crafting" parent="." instance=ExtResource("18_x7ggk")]
 visible = false
 
+[node name="Exit_Entrance" type="Area2D" parent="."]
+position = Vector2(-1600, -921)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit_Entrance"]
+position = Vector2(-35, -78.5)
+shape = SubResource("RectangleShape2D_c74it")
+
 [connection signal="body_entered" from="Water" to="." method="_on_water_body_entered"]
 [connection signal="body_exited" from="Water" to="." method="_on_water_body_exited"]
+[connection signal="body_entered" from="Exit_Entrance" to="." method="_on_exit_entrance_body_entered"]

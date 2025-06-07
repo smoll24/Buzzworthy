@@ -105,6 +105,7 @@ func respawn():
 	Lose.play()
 	fade_box.visible = true
 	fade.visible = true
+	fade.modulate.a = 0
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 1, 2)
 	#tween.parallel().tween_property(Level1Music, "volume_db", -50, 2)
@@ -146,3 +147,16 @@ func _on_totem_dialog_body_entered(body: Node2D) -> void:
 		get_tree().root.add_child(dialog)
 		Dialogic.timeline_ended.connect(dialog_end)
 		totemed = true
+
+
+func _on_exit_entrance_body_entered(body: Node2D) -> void:
+	Globals.can_move = false
+	Globals.save_pos = Vector2(0, 0)
+	Globals.spawn = 0
+	fade.modulate.a = 0
+	fade_box.visible = true
+	fade.visible = true
+	tween = create_tween()
+	tween.tween_property(fade, "modulate:a", 1, 0.5)
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://scenes/cutscenes/Exposition.tscn")

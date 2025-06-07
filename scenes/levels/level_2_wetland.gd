@@ -19,6 +19,7 @@ var name_timer = 1
 func _ready() -> void:
 	Globals.current_dialog = 4
 	Level1Music.stream_paused = true
+	VillageMusic.stream_paused = true
 	Level2Music.play()
 	ready()
 
@@ -111,3 +112,15 @@ func _on_water_body_entered(body: CharacterBody2D) -> void:
 
 func _on_water_body_exited(body: Node2D) -> void:
 	in_water = false
+
+
+func _on_exit_entrance_body_entered(body: Node2D) -> void:
+	Globals.can_move = false
+	Globals.save_pos = Vector2(0, 0)
+	Globals.spawn = 0
+	name_box.visible = true
+	fade.visible = true
+	tween = create_tween()
+	tween.tween_property(fade, "modulate:a", 1, 0.5)
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://scenes/levels/Boss.tscn")
