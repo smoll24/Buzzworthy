@@ -9,6 +9,8 @@ var tween : Tween
 var tween2 : Tween
 var dialog
 
+var in_water = false
+
 var playing = true
 
 var name_timer = 1
@@ -23,6 +25,7 @@ func _ready() -> void:
 
 func ready() -> void:
 	playing = true
+	Globals.can_move = true
 	
 	Globals.crafting = false
 	if Globals.save_pos != Vector2(0, 0):
@@ -46,6 +49,10 @@ func ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if in_water:
+		player.apply_hitup_effect()
+	
+	
 	if name_timer >= 1:
 		name_timer += delta
 	
@@ -99,4 +106,8 @@ func respawn():
 
 
 func _on_water_body_entered(body: CharacterBody2D) -> void:
-	body.apply_hitup_effect()
+	in_water = true
+
+
+func _on_water_body_exited(body: Node2D) -> void:
+	in_water = false
