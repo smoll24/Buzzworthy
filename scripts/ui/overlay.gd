@@ -8,6 +8,13 @@ extends CanvasLayer
 @onready var stone_label = $CraftBar/Stone_Label
 @onready var craft_bar = $CraftBar
 
+
+@onready var sword = $Equipment/Sword
+@onready var sword2 = $Equipment/Sword2
+@onready var shield = $Equipment/Shield
+@onready var helmet = $Equipment/Helmet
+@onready var boots = $Equipment/Boots
+
 var timer = 0
 var timer_on = false
 
@@ -18,6 +25,23 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Globals.has_sword:
+		sword.show()
+	else:
+		sword.hide()
+	if Globals.has_shield:
+		shield.show()
+	else:
+		shield.hide()
+	if Globals.has_helmet:
+		helmet.show()
+	else:
+		helmet.hide()
+	if Globals.has_boots:
+		boots.show()
+	else:
+		boots.hide()
+	
 	
 	timer += delta
 	

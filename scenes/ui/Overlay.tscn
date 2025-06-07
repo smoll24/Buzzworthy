@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cuka1chubvkbq"]
+[gd_scene load_steps=18 format=3 uid="uid://cuka1chubvkbq"]
 
 [ext_resource type="Script" path="res://scripts/ui/overlay.gd" id="1_v82of"]
 [ext_resource type="Texture2D" uid="uid://buimjmv3y4b3y" path="res://assets/ui/health.png" id="2_2q5kd"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://du1ws4b7c26oa" path="res://assets/objects/log.png" id="3_yq870"]
 [ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="4_fbght"]
 [ext_resource type="Texture2D" uid="uid://dvgws3566i0q0" path="res://assets/objects/rock.png" id="5_q5tso"]
+[ext_resource type="Texture2D" uid="uid://cbgyiwxk2ijip" path="res://assets/ui/sword1_icon.png" id="7_q6hqh"]
+[ext_resource type="Texture2D" uid="uid://b6rkc2lfeulp2" path="res://assets/ui/sword2_icon.png" id="8_fqfj2"]
+[ext_resource type="Texture2D" uid="uid://cjasr4x3vwn6q" path="res://assets/ui/shield_icon.png" id="9_b0fpe"]
+[ext_resource type="Texture2D" uid="uid://153a3mvy18fa" path="res://assets/ui/helmet_icon.png" id="10_5bfmj"]
+[ext_resource type="Texture2D" uid="uid://c8nehvd05hhxq" path="res://assets/ui/boots_icon.png" id="11_dm182"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ar4y"]
 atlas = ExtResource("2_2q5kd")
@@ -126,7 +131,7 @@ text = "10"
 vertical_alignment = 1
 
 [node name="Stone_Sprite" type="Sprite2D" parent="CraftBar"]
-position = Vector2(561, 19)
+position = Vector2(560, 19)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_q5tso")
 vframes = 2
@@ -141,5 +146,38 @@ theme_override_fonts/font = ExtResource("4_fbght")
 theme_override_font_sizes/font_size = 32
 text = "10"
 vertical_alignment = 1
+
+[node name="Equipment" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0.67451)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -180.0
+offset_right = 54.0
+offset_bottom = 180.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Sword" type="TextureRect" parent="Equipment"]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_q6hqh")
+
+[node name="Sword2" type="TextureRect" parent="Equipment"]
+layout_mode = 2
+texture = ExtResource("8_fqfj2")
+
+[node name="Shield" type="TextureRect" parent="Equipment"]
+layout_mode = 2
+texture = ExtResource("9_b0fpe")
+
+[node name="Helmet" type="TextureRect" parent="Equipment"]
+layout_mode = 2
+texture = ExtResource("10_5bfmj")
+
+[node name="Boots" type="TextureRect" parent="Equipment"]
+layout_mode = 2
+texture = ExtResource("11_dm182")
 
 [connection signal="frame_changed" from="MoistureBar" to="." method="_on_moisture_bar_frame_changed"]
