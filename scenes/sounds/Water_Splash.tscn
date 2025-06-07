@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnjf8n1al7dhi"]
+
+[ext_resource type="AudioStream" uid="uid://j3j6sna0pvra" path="res://assets/sounds/water_splash.mp3" id="1_pqoka"]
+
+[node name="Splash" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_pqoka")
+volume_db = 10.0
+max_distance = 200000.0

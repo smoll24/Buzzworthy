@@ -21,6 +21,7 @@ func _ready() -> void:
 	Level1Music.stream_paused = true
 	VillageMusic.stream_paused = true
 	Level2Music.play()
+	WaterStream.play()
 	ready()
 
 
@@ -50,7 +51,7 @@ func ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if in_water:
+	if in_water and Globals.current_health > 0:
 		player.apply_hitup_effect()
 	
 	
@@ -107,6 +108,7 @@ func respawn():
 
 
 func _on_water_body_entered(body: CharacterBody2D) -> void:
+	WaterSplash.play()
 	in_water = true
 
 

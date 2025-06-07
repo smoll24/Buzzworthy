@@ -33,6 +33,8 @@ BossMusic="*res://scenes/music/Boss_Music.tscn"
 ForestAmbiance="*res://scenes/music/Forest_Ambiance.tscn"
 MiniBossMusic="*res://scenes/music/MiniBoss_Music.tscn"
 Level2Music="*res://scenes/music/Level2_Music.tscn"
+WaterSplash="*res://scenes/sounds/Water_Splash.tscn"
+WaterStream="*res://scenes/music/Water_Stream.tscn"
 
 [dialogic]
 

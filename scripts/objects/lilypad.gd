@@ -19,6 +19,6 @@ func _on_body_entered(body: Node2D) -> void:
 	sound.play()
 	sprite.play("bounce"+str(type))
 	tween = create_tween()
-	tween.tween_property(self, "position:y", self.position.y + 3, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "position:y",  self.position.y - 3, 1).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position:y", self.position.y + 3, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position:y",  self.position.y - 3, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	

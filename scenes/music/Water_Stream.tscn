@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsn01xad3lwgw"]
+
+[ext_resource type="AudioStream" uid="uid://b7okutt6ofs7o" path="res://assets/music/water_stream.mp3" id="1_l2epm"]
+
+[node name="WaterStream" type="AudioStreamPlayer2D"]
+process_mode = 3
+stream = ExtResource("1_l2epm")
+volume_db = -15.0
+max_distance = 1e+06
+parameters/looping = true
