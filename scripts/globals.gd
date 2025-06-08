@@ -22,7 +22,7 @@ var spider_met = false
 var save_pos = Vector2(0, 0)
 
 var current_wet = 0
-var max_wet = 5
+var max_wet = 3
 
 var current_level = 1
 
