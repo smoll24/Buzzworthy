@@ -42,7 +42,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if Globals.current_dialog >= 2:
+	if Globals.current_dialog >= 3:
 		camera.drag_vertical_offset = 0
 	else:
 		camera.drag_vertical_offset = -1

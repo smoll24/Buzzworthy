@@ -39,18 +39,19 @@ func _ready() -> void:
 
 
 	if current == 0:
-			queue_text(["Isolated deep in the forest, there lives a quiet people ...                           "])
-			queue_text(["A village of mothfolk, hidden away from the rest of the woods ...                      "])
-			queue_text(["Now you will live their story as a prayer is whispered in the wind ...                  "])
+			queue_text(["Isolated deep in the forest, there lives a quiet people...                            "])
+			queue_text(["A village of mothfolk, hidden away from the rest of the woods...                       "])
+			queue_text(["Afraid of the insects that roam the forest, they hide away in their bubble of safety.                  "])
+			queue_text(["And yet, they face a terrible danger they cannot stop.                             "])
+			queue_text(["Now you will live their story as a prayer from a certain Actias is whispered...                  "])
 			queue_text(['A'])
 			Globals.current_dialog = 1
 
 	if current == 1:
-			queue_text(["If there is still kindness listening out among the leaves... please hear me.                     "])
-			queue_text(["Our village is fading. The soil that once nourished us has turned brittle and bare.              "])
-			queue_text(["We have done what we thought we must... We closed our gates, built our walls high…             "])
-			queue_text(["But now, all that remains is silence and more suffering.                         "])
-			queue_text(["Please, if anyone hears this prayer, please help us.                                  "])
+			queue_text(["If anyone hears this... please listen.                "])
+			queue_text(["Our village is fading. The soil that once nourished us has turned brittle and bare.               "])
+			queue_text(["We’ve tried everything but... it just keeps on dying.                         "])
+			queue_text(["Please, if anyone hears this prayer, please help us.                         "])
 			queue_text(['E'])
 			Globals.current_dialog = 2
 
