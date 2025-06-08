@@ -64,6 +64,8 @@ func _process(delta: float) -> void:
 				interact_label.show()
 			elif type == 7 and not Globals.weevil2:
 				interact_label.show()
+			elif type == 20 or type == 21 or type == 23 or type == 23:
+				interact_label.show()
 			else:
 				interact_label.hide()
 		else:
@@ -86,7 +88,7 @@ func _process(delta: float) -> void:
 			elif type == 4 and not Globals.museum:
 				dialog = Dialogic.start("MuseumBeetle")
 			elif type == 4 and Globals.museum and Globals.has_boots:
-				dialog = Dialogic.start("GiveBoots")
+				dialog = Dialogic.start("GivesBoots")
 			elif type == 5 and not Globals.cockroach:
 				dialog = Dialogic.start("Cockroach")
 			elif type == 5 and Globals.cockroach and Globals.has_sword2:

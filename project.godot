@@ -66,6 +66,7 @@ directories/dtl_directory={
 "GiveShield2": "res://assets/dialogic/GiveShield2.dtl",
 "GiveSword": "res://assets/dialogic/GiveSword.dtl",
 "GiveSword2": "res://assets/dialogic/GiveSword2.dtl",
+"GivesBoots": "res://assets/dialogic/GivesBoots.dtl",
 "Lost": "res://assets/characters/Lost.dtl",
 "MiniBossEntrance": "res://assets/characters/MiniBossEntrance.dtl",
 "MiniBossMid": "res://assets/dialogic/MiniBossMid.dtl",
