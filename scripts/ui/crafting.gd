@@ -8,6 +8,8 @@ extends CanvasLayer
 
 @onready var sword = $SwordButton
 @onready var shield = $ShieldButton
+@onready var sword2 = $Sword2Button
+@onready var shield2 = $Shield2Button
 @onready var helmet = $HelmetButton
 @onready var boots = $BootsButton
 @onready var craft = $CraftButton
@@ -23,6 +25,13 @@ var helmet_stones = 5
 
 var boots_logs = 10
 var boots_stones = 10
+
+var sword2_logs = 2
+var sword2_stones = 2
+
+var shield2_logs = 3
+var shield2_stones = 3
+
 
 var previous_node
 var node_focused
@@ -60,6 +69,27 @@ func _process(delta: float) -> void:
 		shield.disabled = true
 	else:
 		shield.disabled = false
+	
+	if not Globals.has_sword2_recipe:
+		sword2.hide()
+	else:
+		sword2.show()
+	
+	if Globals.has_sword2:
+		sword2.disabled = true
+	else:
+		sword2.disabled = false
+	
+	
+	if not Globals.has_shield2_recipe:
+		shield2.hide()
+	else:
+		shield2.show()
+	
+	if Globals.has_shield2:
+		shield2.disabled = true
+	else:
+		shield2.disabled = false
 	
 	
 	if not Globals.has_helmet_recipe:
@@ -122,6 +152,35 @@ func _process(delta: float) -> void:
 			else:
 				craft.disabled = true
 				
+		
+		elif node_focused == sword2:
+			Click.play()
+			icon.play("sword2")
+			previous_node.button_pressed = false
+			sword2.button_pressed = true
+			previous_node = sword2
+			label.text = "Sword 2"
+			log_label.text = str(sword2_logs)
+			stone_label.text = str(sword2_stones)
+			if Globals.logs >= sword2_logs and Globals.stones >= sword2_stones and not Globals.has_sword:
+				craft.disabled = false
+			else:
+				craft.disabled = true
+				
+		elif node_focused == shield2:
+			Click.play()
+			icon.play("shield2")
+			previous_node.button_pressed = false
+			shield2.button_pressed = true
+			previous_node = shield2
+			label.text = "Shield 2"
+			log_label.text = str(shield2_logs)
+			stone_label.text = str(shield2_stones)
+			if Globals.logs >= shield2_logs and Globals.stones >= shield2_stones and not Globals.has_shield:
+				craft.disabled = false
+			else:
+				craft.disabled = true
+				
 		elif node_focused == helmet:
 			Click.play()
 			icon.play("helmet")
@@ -166,14 +225,14 @@ func _process(delta: float) -> void:
 	if shield.visible == false:
 		sword.focus_neighbor_right = $Empty2.get_path()
 		helmet.focus_neighbor_left = $Empty2.get_path()
-		#boots.focus_neighbor_top = $Empty2
+		sword2.focus_neighbor_top = $Empty2.get_path()
 		$Empty5.focus_neighbor_top = $Empty2.get_path()
 		$Empty3.focus_neighbor_left = $Empty2.get_path()
 		$Empty1.focus_neighbor_right = $Empty2.get_path()
 	else: 
 		sword.focus_neighbor_right = shield.get_path()
 		helmet.focus_neighbor_left = shield.get_path()
-		#boots.focus_neighbor_top = $Empty2
+		sword2.focus_neighbor_top = shield.get_path()
 		$Empty5.focus_neighbor_top = shield.get_path()
 		$Empty3.focus_neighbor_left = shield.get_path()
 		$Empty1.focus_neighbor_right = shield.get_path()
@@ -181,29 +240,55 @@ func _process(delta: float) -> void:
 	if helmet.visible == false:
 		shield.focus_neighbor_right = $Empty3.get_path()
 		craft.focus_neighbor_left = $Empty3.get_path()
-		#boots.focus_neighbor_top = $Empty2
+		shield2.focus_neighbor_top = $Empty3.get_path()
 		$Empty6.focus_neighbor_top = $Empty3.get_path()
 		$Empty2.focus_neighbor_right = $Empty3.get_path()
 	else: 
 		shield.focus_neighbor_right = helmet.get_path()
 		craft.focus_neighbor_left = helmet.get_path()
-		#boots.focus_neighbor_top = $Empty2
+		shield2.focus_neighbor_top = helmet.get_path()
 		$Empty6.focus_neighbor_top = helmet.get_path()
 		$Empty2.focus_neighbor_right = helmet.get_path()
 		
 	
 	if boots.visible == false:
-		#shield.focus_neighbor_right = $Empty3
-		sword.focus_neighbor_bottom = $Empty3.get_path()
-		#boots.focus_neighbor_top = $Empty2
+		sword2.focus_neighbor_left = $Empty4.get_path()
+		sword.focus_neighbor_bottom = $Empty4.get_path()
 		$Empty1.focus_neighbor_bottom = $Empty4.get_path()
 		$Empty5.focus_neighbor_left = $Empty4.get_path()
 	else: 
-		#shield.focus_neighbor_right = helmet
+		sword2.focus_neighbor_left = boots.get_path()
 		sword.focus_neighbor_bottom = boots.get_path()
-		#boots.focus_neighbor_top = $Empty2
 		$Empty1.focus_neighbor_bottom = boots.get_path()
 		$Empty5.focus_neighbor_left = boots.get_path()
+		
+	
+	if sword2.visible == false:
+		shield.focus_neighbor_bottom = $Empty5.get_path()
+		boots.focus_neighbor_right = $Empty5.get_path()
+		shield2.focus_neighbor_left = $Empty5.get_path()
+		$Empty2.focus_neighbor_bottom = $Empty5.get_path()
+		$Empty4.focus_neighbor_right = $Empty5.get_path()
+		$Empty6.focus_neighbor_left = $Empty5.get_path()
+	else: 
+		shield.focus_neighbor_bottom = sword2.get_path()
+		boots.focus_neighbor_right = sword2.get_path()
+		shield2.focus_neighbor_left = sword2.get_path()
+		$Empty2.focus_neighbor_bottom = sword2.get_path()
+		$Empty4.focus_neighbor_right = sword2.get_path()
+		$Empty6.focus_neighbor_left = sword2.get_path()
+		
+	
+	if shield2.visible == false:
+		helmet.focus_neighbor_bottom = $Empty6.get_path()
+		sword2.focus_neighbor_right = $Empty6.get_path()
+		$Empty3.focus_neighbor_bottom = $Empty6.get_path()
+		$Empty5.focus_neighbor_right = $Empty6.get_path()
+	else: 
+		helmet.focus_neighbor_bottom = shield2.get_path()
+		sword2.focus_neighbor_right = shield2.get_path()
+		$Empty3.focus_neighbor_bottom = shield2.get_path()
+		$Empty5.focus_neighbor_right = shield2.get_path()
 	
 
 func _on_craft_button_pressed() -> void:

@@ -63,13 +63,14 @@ script = ExtResource("1_v82of")
 metadata/_edit_use_anchors_ = true
 
 [node name="ProgressBar" type="AnimatedSprite2D" parent="."]
-position = Vector2(97, 29)
+position = Vector2(87, 43)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_exla2")
 frame = 4
 
 [node name="MoistureBar" type="AnimatedSprite2D" parent="."]
 process_mode = 3
+visible = false
 modulate = Color(0.2295, 0.767267, 0.85, 1)
 position = Vector2(98, 51)
 scale = Vector2(0.7, 0.406452)
@@ -147,24 +148,25 @@ theme_override_font_sizes/font_size = 32
 text = "10"
 vertical_alignment = 1
 
-[node name="Equipment" type="VBoxContainer" parent="."]
-modulate = Color(1, 1, 1, 0.67451)
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 4.0
-offset_top = -180.0
-offset_right = 54.0
-offset_bottom = 180.0
-grow_vertical = 2
-alignment = 1
+[node name="Equipment" type="HBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0.615686)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -296.0
+offset_top = 1.0
+offset_right = -84.0
+offset_bottom = 47.0
+grow_horizontal = 2
+scale = Vector2(0.6, 0.6)
+theme_override_constants/separation = 15
 
 [node name="Sword" type="TextureRect" parent="Equipment"]
-visible = false
 layout_mode = 2
 texture = ExtResource("7_q6hqh")
 
 [node name="Sword2" type="TextureRect" parent="Equipment"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_fqfj2")
 

@@ -34,6 +34,10 @@ var has_helmet_recipe = false
 var has_helmet = false
 var has_boots_recipe = false
 var has_boots = false
+var has_sword2_recipe = false
+var has_sword2 = false
+var has_shield2_recipe = false
+var has_shield2 = false
 
 #Trigger to exit cutscene
 var swap = false

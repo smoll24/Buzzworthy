@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b6hmpa7iyf7bb"]
+[gd_scene load_steps=34 format=3 uid="uid://b6hmpa7iyf7bb"]
 
 [ext_resource type="Script" path="res://scripts/ui/crafting.gd" id="1_m4r8l"]
 [ext_resource type="Texture2D" uid="uid://dlragg63llcvu" path="res://assets/ui/crafting_table.png" id="2_c6xpi"]
@@ -24,6 +24,14 @@
 [ext_resource type="Texture2D" uid="uid://c6ilrr8a7dfor" path="res://assets/ui/boot_focused.png" id="15_qhst1"]
 [ext_resource type="Texture2D" uid="uid://c8i38radftlcc" path="res://assets/ui/boots_disabled.png" id="19_nmnbh"]
 [ext_resource type="Texture2D" uid="uid://b2ya46frh665a" path="res://assets/ui/empty.png" id="20_q2ntp"]
+[ext_resource type="Texture2D" uid="uid://5ns3g7h6aqet" path="res://assets/ui/sword2_normal.png" id="22_ors85"]
+[ext_resource type="Texture2D" uid="uid://dahp78efyf6p" path="res://assets/ui/sword2_pressed.png" id="23_hw7im"]
+[ext_resource type="Texture2D" uid="uid://dhcelims1n4pp" path="res://assets/ui/sword2_disabled.png" id="24_q6qrr"]
+[ext_resource type="Texture2D" uid="uid://4mvwn26fqxax" path="res://assets/ui/sword2_focused.png" id="25_ufd6n"]
+[ext_resource type="Texture2D" uid="uid://br4qxr0j4ju61" path="res://assets/ui/shield2_normal.png" id="26_iluy2"]
+[ext_resource type="Texture2D" uid="uid://bsyldlbygl5b0" path="res://assets/ui/shield2_pressed.png" id="27_e5ouh"]
+[ext_resource type="Texture2D" uid="uid://c6qnuijaxi4pq" path="res://assets/ui/shield2_disabled.png" id="28_xnts3"]
+[ext_resource type="Texture2D" uid="uid://jdhe7uye0jmh" path="res://assets/ui/shield2_focused.png" id="29_id3na"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_88bjn"]
 animations = [{
@@ -61,10 +69,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("27_e5ouh")
+}],
+"loop": true,
+"name": &"shield2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("5_kfivc")
 }],
 "loop": true,
 "name": &"sword",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_hw7im")
+}],
+"loop": true,
+"name": &"sword2",
 "speed": 5.0
 }]
 
@@ -131,7 +155,7 @@ offset_bottom = 189.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_left = NodePath("../SwordButton")
 focus_neighbor_right = NodePath("../HelmetButton")
-focus_neighbor_bottom = NodePath("../TextureButton4")
+focus_neighbor_bottom = NodePath("../Sword2Button")
 focus_next = NodePath("../HelmetButton")
 focus_previous = NodePath("../SwordButton")
 toggle_mode = true
@@ -146,7 +170,7 @@ offset_bottom = 189.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_left = NodePath("../ShieldButton")
 focus_neighbor_right = NodePath("../CraftButton")
-focus_neighbor_bottom = NodePath("../TextureButton5")
+focus_neighbor_bottom = NodePath("../Shield2Button")
 focus_next = NodePath("../CraftButton")
 focus_previous = NodePath("../ShieldButton")
 toggle_mode = true
@@ -160,8 +184,8 @@ offset_right = 121.0
 offset_bottom = 269.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_top = NodePath("../SwordButton")
-focus_neighbor_right = NodePath("../TextureButton4")
-focus_next = NodePath("../TextureButton4")
+focus_neighbor_right = NodePath("../Sword2Button")
+focus_next = NodePath("../Sword2Button")
 focus_previous = NodePath("../HelmetButton")
 toggle_mode = true
 texture_normal = ExtResource("20_q2ntp")
@@ -175,8 +199,8 @@ offset_bottom = 269.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_left = NodePath("../BootsButton")
 focus_neighbor_top = NodePath("../ShieldButton")
-focus_neighbor_right = NodePath("../TextureButton5")
-focus_next = NodePath("../TextureButton5")
+focus_neighbor_right = NodePath("../Shield2Button")
+focus_next = NodePath("../Shield2Button")
 focus_previous = NodePath("../BootsButton")
 toggle_mode = true
 texture_normal = ExtResource("20_q2ntp")
@@ -188,11 +212,11 @@ offset_top = 221.0
 offset_right = 281.0
 offset_bottom = 269.0
 scale = Vector2(1.5, 1.5)
-focus_neighbor_left = NodePath("../TextureButton4")
+focus_neighbor_left = NodePath("../Sword2Button")
 focus_neighbor_top = NodePath("../HelmetButton")
 focus_neighbor_right = NodePath("../CraftButton")
 focus_next = NodePath("../CraftButton")
-focus_previous = NodePath("../TextureButton4")
+focus_previous = NodePath("../Sword2Button")
 toggle_mode = true
 texture_normal = ExtResource("20_q2ntp")
 texture_focused = ExtResource("5_53d0i")
@@ -206,7 +230,7 @@ scale = Vector2(1.5, 1.5)
 focus_neighbor_right = NodePath("../ShieldButton")
 focus_neighbor_bottom = NodePath("../BootsButton")
 focus_next = NodePath("../ShieldButton")
-focus_previous = NodePath("../TextureButton5")
+focus_previous = NodePath("../Shield2Button")
 toggle_mode = true
 texture_normal = ExtResource("4_05shr")
 texture_pressed = ExtResource("5_kfivc")
@@ -221,7 +245,7 @@ offset_bottom = 189.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_left = NodePath("../SwordButton")
 focus_neighbor_right = NodePath("../HelmetButton")
-focus_neighbor_bottom = NodePath("../TextureButton4")
+focus_neighbor_bottom = NodePath("../Sword2Button")
 focus_next = NodePath("../HelmetButton")
 focus_previous = NodePath("../SwordButton")
 toggle_mode = true
@@ -238,7 +262,7 @@ offset_bottom = 189.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_left = NodePath("../ShieldButton")
 focus_neighbor_right = NodePath("../CraftButton")
-focus_neighbor_bottom = NodePath("../TextureButton5")
+focus_neighbor_bottom = NodePath("../Shield2Button")
 focus_next = NodePath("../CraftButton")
 focus_previous = NodePath("../ShieldButton")
 toggle_mode = true
@@ -254,8 +278,8 @@ offset_right = 121.0
 offset_bottom = 269.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_top = NodePath("../SwordButton")
-focus_neighbor_right = NodePath("../TextureButton4")
-focus_next = NodePath("../TextureButton4")
+focus_neighbor_right = NodePath("../Sword2Button")
+focus_next = NodePath("../Sword2Button")
 focus_previous = NodePath("../HelmetButton")
 toggle_mode = true
 texture_normal = ExtResource("13_hkw3r")
@@ -263,8 +287,7 @@ texture_pressed = ExtResource("14_xe5nw")
 texture_disabled = ExtResource("19_nmnbh")
 texture_focused = ExtResource("15_qhst1")
 
-[node name="TextureButton4" type="TextureButton" parent="."]
-visible = false
+[node name="Sword2Button" type="TextureButton" parent="."]
 offset_left = 153.0
 offset_top = 221.0
 offset_right = 201.0
@@ -272,28 +295,31 @@ offset_bottom = 269.0
 scale = Vector2(1.5, 1.5)
 focus_neighbor_left = NodePath("../BootsButton")
 focus_neighbor_top = NodePath("../ShieldButton")
-focus_neighbor_right = NodePath("../TextureButton5")
-focus_next = NodePath("../TextureButton5")
+focus_neighbor_right = NodePath("../Shield2Button")
+focus_next = NodePath("../Shield2Button")
 focus_previous = NodePath("../BootsButton")
 toggle_mode = true
-texture_normal = ExtResource("4_05shr")
-texture_focused = ExtResource("5_0newg")
+texture_normal = ExtResource("22_ors85")
+texture_pressed = ExtResource("23_hw7im")
+texture_disabled = ExtResource("24_q6qrr")
+texture_focused = ExtResource("25_ufd6n")
 
-[node name="TextureButton5" type="TextureButton" parent="."]
-visible = false
+[node name="Shield2Button" type="TextureButton" parent="."]
 offset_left = 233.0
 offset_top = 221.0
 offset_right = 281.0
 offset_bottom = 269.0
 scale = Vector2(1.5, 1.5)
-focus_neighbor_left = NodePath("../TextureButton4")
+focus_neighbor_left = NodePath("../Sword2Button")
 focus_neighbor_top = NodePath("../HelmetButton")
 focus_neighbor_right = NodePath("../CraftButton")
 focus_next = NodePath("../CraftButton")
-focus_previous = NodePath("../TextureButton4")
+focus_previous = NodePath("../Sword2Button")
 toggle_mode = true
-texture_normal = ExtResource("4_05shr")
-texture_focused = ExtResource("5_0newg")
+texture_normal = ExtResource("26_iluy2")
+texture_pressed = ExtResource("27_e5ouh")
+texture_disabled = ExtResource("28_xnts3")
+texture_focused = ExtResource("29_id3na")
 
 [node name="NameLabel" type="Label" parent="."]
 offset_left = 457.0
@@ -320,7 +346,7 @@ color = Color(0.308298, 0.169185, 0.0648436, 1)
 position = Vector2(417, 171)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_88bjn")
-animation = &"sword"
+animation = &"shield2"
 
 [node name="LogSprite" type="Sprite2D" parent="."]
 position = Vector2(409, 226)
