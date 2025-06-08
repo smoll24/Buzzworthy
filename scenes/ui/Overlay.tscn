@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cuka1chubvkbq"]
+[gd_scene load_steps=19 format=3 uid="uid://cuka1chubvkbq"]
 
 [ext_resource type="Script" path="res://scripts/ui/overlay.gd" id="1_v82of"]
 [ext_resource type="Texture2D" uid="uid://buimjmv3y4b3y" path="res://assets/ui/health.png" id="2_2q5kd"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b6rkc2lfeulp2" path="res://assets/ui/sword2_icon.png" id="8_fqfj2"]
 [ext_resource type="Texture2D" uid="uid://cjasr4x3vwn6q" path="res://assets/ui/shield_icon.png" id="9_b0fpe"]
 [ext_resource type="Texture2D" uid="uid://153a3mvy18fa" path="res://assets/ui/helmet_icon.png" id="10_5bfmj"]
+[ext_resource type="Texture2D" uid="uid://ddtwglhc7iarb" path="res://assets/ui/shield2_icon.png" id="10_r43go"]
 [ext_resource type="Texture2D" uid="uid://c8nehvd05hhxq" path="res://assets/ui/boots_icon.png" id="11_dm182"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ar4y"]
@@ -162,17 +163,22 @@ scale = Vector2(0.6, 0.6)
 theme_override_constants/separation = 15
 
 [node name="Sword" type="TextureRect" parent="Equipment"]
+visible = false
 layout_mode = 2
 texture = ExtResource("7_q6hqh")
 
 [node name="Sword2" type="TextureRect" parent="Equipment"]
-visible = false
 layout_mode = 2
 texture = ExtResource("8_fqfj2")
 
 [node name="Shield" type="TextureRect" parent="Equipment"]
+visible = false
 layout_mode = 2
 texture = ExtResource("9_b0fpe")
+
+[node name="Shield2" type="TextureRect" parent="Equipment"]
+layout_mode = 2
+texture = ExtResource("10_r43go")
 
 [node name="Helmet" type="TextureRect" parent="Equipment"]
 layout_mode = 2

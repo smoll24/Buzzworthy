@@ -5,7 +5,7 @@
 [node name="Heartbeat" type="AudioStreamPlayer2D"]
 process_mode = 3
 stream = ExtResource("1_r4kvf")
-volume_db = 13.0
+volume_db = 5.0
 autoplay = true
 max_distance = 500.0
 parameters/looping = true

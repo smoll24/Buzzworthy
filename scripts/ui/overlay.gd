@@ -25,22 +25,30 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#if Globals.has_sword:
-		#sword.show()
-	#else:
-		#sword.hide()
-	#if Globals.has_shield:
-		#shield.show()
-	#else:
-		#shield.hide()
-	#if Globals.has_helmet:
-		#helmet.show()
-	#else:
-		#helmet.hide()
-	#if Globals.has_boots:
-		#boots.show()
-	#else:
-		#boots.hide()
+	if Globals.has_sword and not Globals.has_sword2:
+		sword.show()
+	else:
+		sword.hide()
+	if Globals.has_shield and not Globals.has_shield2:
+		shield.show()
+	else:
+		shield.hide()
+	if Globals.has_helmet:
+		helmet.show()
+	else:
+		helmet.hide()
+	if Globals.has_boots:
+		boots.show()
+	else:
+		boots.hide()
+	if Globals.has_sword2:
+		sword2.show()
+	else:
+		sword2.hide()
+	if Globals.has_shield2:
+		shield2.show()
+	else:
+		shield2.hide()
 	
 	
 	timer += delta
