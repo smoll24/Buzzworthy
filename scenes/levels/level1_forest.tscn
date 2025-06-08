@@ -1633,7 +1633,7 @@ scale = Vector2(-1, -1)
 position = Vector2(-1290, 892)
 
 [node name="StinkBug" parent="." instance=ExtResource("6_xccdj")]
-position = Vector2(1885, 1303)
+position = Vector2(1560, 984)
 rotation = 3.14159
 scale = Vector2(-1, -1)
 
@@ -1887,7 +1887,7 @@ position = Vector2(-3725, 1987)
 type = 13
 
 [node name="HelmetRecipe" parent="." instance=ExtResource("27_487p5")]
-position = Vector2(2032, 1274)
+position = Vector2(1464, 984)
 type = 12
 
 [node name="Webs" type="Node2D" parent="."]

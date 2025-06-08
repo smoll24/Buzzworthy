@@ -27,17 +27,24 @@ var max_wet = 3
 var current_level = 1
 
 var has_sword_recipe = true
-var has_sword = false
+var has_sword = true
 var has_shield_recipe = true
-var has_shield = false
+var has_shield = true
 var has_helmet_recipe = false
-var has_helmet = false
+var has_helmet = true
 var has_boots_recipe = false
-var has_boots = false
+var has_boots = true
 var has_sword2_recipe = false
-var has_sword2 = false
+var has_sword2 = true
 var has_shield2_recipe = false
-var has_shield2 = false
+var has_shield2 = true
+
+var helped_stinkbug = false
+var helped_clickbug = false
+var helped_spider = false
+var helped_museum = false
+var helped_cockroach = false
+var helped_weevil = false
 
 
 var stinkbug = false

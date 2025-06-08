@@ -2,16 +2,21 @@ ClickBug: How are ya upside down?
 Player: You're the one who's upside down.
 ClickBug: Nuh-uh, I’m not. You are!
 ClickBug: Oh, FLOOD IT!
-ClickBug: That usually works... Fools [color=cyan]Shyla[/color] all the time!
+set {flipped} = 1
+ClickBug: You're no fun, that usually works... Fools [color=cyan]Shyla[/color] all the time!\
+Anyway, the name's [color=cyan]Eridae[/color].
 ClickBug: Huh? Stop pranking [color=cyan]Shyla[/color], y’say? \
 Why should I listen to you?\
 He’s got the funniest reactions!
 Player: He didn’t really seem to think so.
 ClickBug: Bugger, I never meant to hurt his feelings!\
 I guess I’ll talk to him about it.
-ClickBug: Anyways, kinda a warm skill, right? Bet you can’t do anything like it. \
+ClickBug: Anyways, kinda a warm skill, right? \
+Bet you can’t do anything like it. \
 [color=yellow]Watch this![/color]
+set {flipped} = -1
 ClickBug: [wave amp=20 freq=4]OWW! My head...[/wave]
+set {flipped} = 1
 ClickBug: All these [color=yellow]pesky pebbles and sticks[/color] everywhere! \
 Someone really ought to [color=yellow]pick ‘em up sometime[/color] to clean up this forest, an’ it better be [i]real[/i] soon.
 ClickBug: Wish I had some [color=yellow]protective gear[/color]... but welp! \

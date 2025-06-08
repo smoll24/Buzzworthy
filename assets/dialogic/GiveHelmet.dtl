@@ -1,3 +1,10 @@
 ClickBug: What's up?
 - Give Helmet
+	set {Helmet} = true
+	ClickBug: No way. You made this for me? \
+I mean, of course you did, because I’m so awesome. The awesomest.
+	ClickBug: Oh right, thanks. You prolly just saved my brain from any more damage.
+	Player: You should thank Shyla as well. He’s the one who gave me the recipe, after all.
+	ClickBug: ...It was Shyla’s recipe?
+	ClickBug: Suppose I’ll have to thank him too.
 - Nevermind

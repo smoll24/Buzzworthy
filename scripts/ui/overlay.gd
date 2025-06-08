@@ -26,6 +26,26 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if Dialogic.VAR.Sword2:
+		Globals.helped_cockroach = true
+		Globals.has_sword2 = false
+	if Dialogic.VAR.Sword:
+		Globals.helped_spider = true
+		Globals.has_sword = false
+	if Dialogic.VAR.Shield2:
+		Globals.helped_weevil = true
+		Globals.has_shield2 = false
+	if Dialogic.VAR.Shield:
+		Globals.helped_stinkbug = true
+		Globals.has_shield = false
+	if Dialogic.VAR.Boots:
+		Globals.helped_museum = true
+		Globals.has_boots = false
+	if Dialogic.VAR.Helmet:
+		Globals.helped_clickbug = true
+		Globals.has_helmet = false
+	
 	if Globals.has_sword and not Globals.has_sword2:
 		sword.show()
 	else:

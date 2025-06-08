@@ -1,3 +1,12 @@
 Spider: What's up?
 - Give Sword
+	set {Sword} = true
+	Spider: What a wonder! This is... exquisite.\
+For me, dear?
+	Player: In return for your kind hospitality.
+	Spider: Oh my silk! You shouldn’t have. \
+But I’m so, so grateful that you did.
+	Spider: You’ve got the kind of heart this forest needs more of. \
+One that gives without waiting for a web to be spun in return.
+	Spider: Thank you, my sweet little mothling.
 - Nevermind

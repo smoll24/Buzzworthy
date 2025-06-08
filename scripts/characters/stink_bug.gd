@@ -31,6 +31,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	move_label(delta)
 	
+	if type == 2:
+		$AnimatedSprite2D.scale.y = Dialogic.VAR.flipped
+	
 	if in_body:
 		if can_talk:
 			if type == 1 and not Globals.stinkbug:
