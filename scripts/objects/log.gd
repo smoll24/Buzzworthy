@@ -13,6 +13,8 @@ var tween
 #shield recipe = 11
 #helmet recipe = 12
 #boots recipe = 13
+#sword2 recipe = 14
+#shield2 recipe = 15
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,6 +48,10 @@ func _on_body_entered(body: Node2D) -> void:
 		Globals.has_helmet_recipe = true
 	elif type == 13:
 		Globals.has_boots_recipe = true
+	elif type == 14:
+		Globals.has_sword2_recipe = true
+	elif type == 15:
+		Globals.has_shield2_recipe = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	in_body = true

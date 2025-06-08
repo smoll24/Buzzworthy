@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dkjdwfhfs38d4"]
+[gd_scene load_steps=29 format=4 uid="uid://dkjdwfhfs38d4"]
 
 [ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="1_1okjv"]
 [ext_resource type="Script" path="res://scripts/levels/test_scene.gd" id="1_gyqdb"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b0cf1bgfyik24" path="res://scenes/objects/Lilypad.tscn" id="24_ccwje"]
 [ext_resource type="PackedScene" uid="uid://dvfocfu10x6hw" path="res://scenes/objects/Waterleaf.tscn" id="25_k6llp"]
 [ext_resource type="PackedScene" uid="uid://bdsc11w7e8uh1" path="res://scenes/objects/Helicopter.tscn" id="25_waf5p"]
+[ext_resource type="PackedScene" uid="uid://bxh8gsfflps5t" path="res://scenes/characters/Stink_Bug.tscn" id="26_3st4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j54b3"]
 texture = ExtResource("1_1okjv")
@@ -232,10 +233,10 @@ scale = Vector2(-1, 1)
 position = Vector2(302, 31)
 
 [node name="HealingPlant" parent="." instance=ExtResource("7_48ecj")]
-position = Vector2(40, 300)
+position = Vector2(354, 299)
 
 [node name="StatePlant" parent="." instance=ExtResource("8_a8270")]
-position = Vector2(-49, 297)
+position = Vector2(205, 296)
 
 [node name="PausePlant2" parent="." instance=ExtResource("9_0o3qe")]
 position = Vector2(862, 322)
@@ -265,10 +266,10 @@ position = Vector2(204, 234)
 position = Vector2(102, 176)
 
 [node name="Helicopter" parent="." instance=ExtResource("25_waf5p")]
-position = Vector2(0, 200)
+position = Vector2(323, 147)
 
 [node name="Player" parent="." instance=ExtResource("2_phqok")]
-position = Vector2(344, 253)
+position = Vector2(35, 290)
 
 [node name="Cobweb" parent="." instance=ExtResource("23_jykni")]
 modulate = Color(1, 1, 1, 0.54902)
@@ -305,3 +306,6 @@ position = Vector2(-193, 307)
 
 [node name="DamagePlant2" parent="." instance=ExtResource("6_pkyvs")]
 position = Vector2(-277, 300)
+
+[node name="StinkBug" parent="." instance=ExtResource("26_3st4m")]
+position = Vector2(-70, 303)
