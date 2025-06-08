@@ -39,6 +39,17 @@ var has_sword2 = false
 var has_shield2_recipe = false
 var has_shield2 = false
 
+
+var stinkbug = false
+var clickbug = false
+var spider = false
+var museum = false
+
+var cockroach = false
+var pillbug = false
+var weevil1 = false
+var weevil2 = false
+
 #Trigger to exit cutscene
 var swap = false
 

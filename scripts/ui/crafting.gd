@@ -310,3 +310,11 @@ func _on_craft_button_pressed() -> void:
 		Globals.has_boots = true
 		Globals.stones -= boots_stones
 		Globals.logs -= boots_logs
+	if previous_node == sword2:
+		Globals.has_sword2 = true
+		Globals.stones -= sword2_stones
+		Globals.logs -= sword2_logs
+	elif previous_node == shield2:
+		Globals.has_shield2 = true
+		Globals.stones -= shield2_stones
+		Globals.logs -= shield2_logs

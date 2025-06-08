@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bodmq0acgkncu"]
+[gd_scene load_steps=35 format=4 uid="uid://bodmq0acgkncu"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_1_forest.gd" id="1_bcayv"]
 [ext_resource type="Texture2D" uid="uid://darhyvd5gt6t5" path="res://assets/tilemaps/forest_tilemap.png" id="1_dw1q2"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://nvohyeyt8hpa" path="res://assets/cutscenes/cutscene_textbox.png" id="25_x42lv"]
 [ext_resource type="PackedScene" uid="uid://u884ayt25oyj" path="res://scenes/objects/Totem.tscn" id="25_xw11a"]
 [ext_resource type="FontFile" uid="uid://dy80sxg0xvt4v" path="res://assets/fonts/C&C Red Alert [INET].ttf" id="26_p18cw"]
+[ext_resource type="PackedScene" uid="uid://botpi3o2ff6bw" path="res://scenes/objects/Recipe.tscn" id="27_487p5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dvuqq"]
 texture = ExtResource("1_dw1q2")
@@ -1632,9 +1633,9 @@ scale = Vector2(-1, -1)
 position = Vector2(-1290, 892)
 
 [node name="StinkBug" parent="." instance=ExtResource("6_xccdj")]
-position = Vector2(1931, 1304)
+position = Vector2(1885, 1303)
 rotation = 3.14159
-scale = Vector2(1, -1)
+scale = Vector2(-1, -1)
 
 [node name="ClickBug" parent="." instance=ExtResource("8_tvooy")]
 position = Vector2(543, 1017)
@@ -1856,6 +1857,14 @@ position = Vector2(-3981, 871)
 
 [node name="Stone2" parent="Materials" instance=ExtResource("13_puv3j")]
 position = Vector2(1056, 58)
+
+[node name="BootRecipe" parent="." instance=ExtResource("27_487p5")]
+position = Vector2(-3741, 2026)
+type = 13
+
+[node name="HelmetRecipe" parent="." instance=ExtResource("27_487p5")]
+position = Vector2(2032, 1274)
+type = 12
 
 [node name="Webs" type="Node2D" parent="."]
 
