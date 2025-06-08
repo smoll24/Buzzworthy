@@ -20,6 +20,7 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 	body.velocity.y = jump_velocity
 	body.sprite.frame = 2
 	body.sprite.play("jump")
+	sound.stream_paused = true
 	sound.play()
 	sprite.play("bounce")
 

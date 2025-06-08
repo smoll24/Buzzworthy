@@ -17,6 +17,8 @@ var dialog
 var playing = true
 var debried = false
 var totemed = false
+var fallen = false
+var caved = false
 
 var name_timer = 1
 
@@ -161,3 +163,21 @@ func _on_exit_entrance_body_entered(body: Node2D) -> void:
 	tween.tween_property(fade, "modulate:a", 1, 0.5)
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/cutscenes/Exposition.tscn")
+
+
+func _on_fall_dialogue_body_entered(body: Node2D) -> void:
+	if not fallen:
+		Globals.can_move = false
+		dialog = Dialogic.start("Fall")
+		get_tree().root.add_child(dialog)
+		Dialogic.timeline_ended.connect(dialog_end)
+		fallen = true
+
+
+func _on_cave_dialogue_body_entered(body: Node2D) -> void:
+	if not caved:
+		Globals.can_move = false
+		dialog = Dialogic.start("Scared")
+		get_tree().root.add_child(dialog)
+		Dialogic.timeline_ended.connect(dialog_end)
+		caved = true

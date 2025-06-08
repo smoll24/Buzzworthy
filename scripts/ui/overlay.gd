@@ -11,6 +11,7 @@ extends CanvasLayer
 
 @onready var sword = $Equipment/Sword
 @onready var sword2 = $Equipment/Sword2
+@onready var shield2 = $Equipment/Shield2
 @onready var shield = $Equipment/Shield
 @onready var helmet = $Equipment/Helmet
 @onready var boots = $Equipment/Boots

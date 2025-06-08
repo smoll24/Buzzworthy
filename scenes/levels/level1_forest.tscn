@@ -1664,6 +1664,22 @@ collision_layer = 2
 position = Vector2(20, -35.875)
 shape = SubResource("RectangleShape2D_njef8")
 
+[node name="Fall_Dialogue" type="Area2D" parent="."]
+position = Vector2(2257, -118)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fall_Dialogue"]
+position = Vector2(20, -35.875)
+shape = SubResource("RectangleShape2D_njef8")
+
+[node name="Cave_Dialogue" type="Area2D" parent="."]
+position = Vector2(-2333, 2215)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cave_Dialogue"]
+position = Vector2(20, -35.875)
+shape = SubResource("RectangleShape2D_njef8")
+
 [node name="RainPlants" type="Node2D" parent="."]
 
 [node name="RainPlant" parent="RainPlants" instance=ExtResource("8_77jgw")]
@@ -2070,6 +2086,8 @@ shape = SubResource("RectangleShape2D_n47e0")
 
 [connection signal="body_entered" from="Debris_Dialog" to="." method="_on_debris_dialog_body_entered"]
 [connection signal="body_entered" from="Totem_Dialog" to="." method="_on_totem_dialog_body_entered"]
+[connection signal="body_entered" from="Fall_Dialogue" to="." method="_on_fall_dialogue_body_entered"]
+[connection signal="body_entered" from="Cave_Dialogue" to="." method="_on_cave_dialogue_body_entered"]
 [connection signal="body_entered" from="CaveTheshold" to="." method="_on_cave_theshold_body_entered"]
 [connection signal="body_exited" from="CaveTheshold" to="." method="_on_cave_theshold_body_exited"]
 [connection signal="body_entered" from="Exit_Entrance" to="." method="_on_exit_entrance_body_entered"]

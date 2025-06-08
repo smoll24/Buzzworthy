@@ -142,10 +142,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hcfie"]
-size = Vector2(103, 53.5)
+size = Vector2(187, 61.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r18kr"]
-size = Vector2(46, 41)
+size = Vector2(72, 35.5)
 
 [node name="Queen" type="CharacterBody2D"]
 collision_layer = 64
@@ -175,7 +175,7 @@ frame_progress = 0.159733
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-5.5, 3.25)
+position = Vector2(-47.5, 7.25)
 shape = SubResource("RectangleShape2D_hcfie")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -183,7 +183,7 @@ collision_layer = 64
 collision_mask = 128
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-28, 4.5)
+position = Vector2(-68, 0.25)
 shape = SubResource("RectangleShape2D_r18kr")
 
 [node name="Wasps" parent="." instance=ExtResource("13_q7n8k")]

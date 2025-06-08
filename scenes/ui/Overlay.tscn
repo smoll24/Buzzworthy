@@ -71,9 +71,8 @@ frame = 4
 
 [node name="MoistureBar" type="AnimatedSprite2D" parent="."]
 process_mode = 3
-visible = false
 modulate = Color(0.2295, 0.767267, 0.85, 1)
-position = Vector2(98, 51)
+position = Vector2(87, 70)
 scale = Vector2(0.7, 0.406452)
 sprite_frames = SubResource("SpriteFrames_exla2")
 frame = 4
