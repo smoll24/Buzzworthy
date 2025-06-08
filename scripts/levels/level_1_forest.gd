@@ -19,6 +19,7 @@ var debried = false
 var totemed = false
 var fallen = false
 var caved = false
+var spidered = false
 
 var name_timer = 1
 
@@ -100,6 +101,14 @@ func _process(delta: float) -> void:
 		
 func dialog_end():
 	Globals.can_move = true
+	
+func dialog_end_spider():
+	Globals.can_move = true
+	heartbeat.stop()
+	tween = create_tween()
+	tween.tween_property(Level1Music, "volume_db", 0, 2)
+	tween.parallel().tween_property(vignette, "modulate:a", 0, 0.5)
+	tween.parallel().tween_property(dark, "modulate:a", 0, 0.5)
 
 func respawn():
 	Globals.can_move = false
@@ -127,12 +136,12 @@ func _on_cave_theshold_body_entered(body: CharacterBody2D) -> void:
 		tween.parallel().tween_property(vignette, "modulate:a", 1, 2)
 
 
-func _on_cave_theshold_body_exited(body: Node2D) -> void:
-	heartbeat.stop()
-	tween = create_tween()
-	tween.tween_property(Level1Music, "volume_db", 0, 2)
-	tween.parallel().tween_property(vignette, "modulate:a", 0, 0.5)
-	tween.parallel().tween_property(dark, "modulate:a", 0, 0.5)
+#func _on_cave_theshold_body_exited(body: Node2D) -> void:
+	#heartbeat.stop()
+	#tween = create_tween()
+	#tween.tween_property(Level1Music, "volume_db", 0, 2)
+	#tween.parallel().tween_property(vignette, "modulate:a", 0, 0.5)
+	#tween.parallel().tween_property(dark, "modulate:a", 0, 0.5)
 
 
 func _on_debris_dialog_body_entered(body: Node2D) -> void:
@@ -181,3 +190,12 @@ func _on_cave_dialogue_body_entered(body: Node2D) -> void:
 		get_tree().root.add_child(dialog)
 		Dialogic.timeline_ended.connect(dialog_end)
 		caved = true
+
+
+func _on_spider_dialogue_body_entered(body: Node2D) -> void:
+	if not spidered:
+		Globals.can_move = false
+		dialog = Dialogic.start("SpiderIntro")
+		get_tree().root.add_child(dialog)
+		Dialogic.timeline_ended.connect(dialog_end_spider)
+		spidered = true

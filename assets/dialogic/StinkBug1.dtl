@@ -1,9 +1,15 @@
-StinkBug: [wave amp=20 freq=4]You… want to talk to me?[/wave]\
+StinkBug: [wave amp=20 freq=4]You... want to talk to me? [color=cyan]Shyla[/color]?[/wave]\
 R-really?
-StinkBug: H-hold on. This isn’t a prank… right Palp promise?
-StinkBug: P-phew. W-wow. I can’t believe it. Uh, s-sorry for suspecting you.
+Player: You seem nice and harmless enough, [color=cyan]Shyla[/color]. \
+My name is [color=cyan]Actias[/color]. \
+Why wouldn't I want to talk to you?
+StinkBug: H-hold on. This isn’t a prank... right? \
+Palp promise?
+Player: Palp? Uh, sure, promise.
+StinkBug: P-phew. W-wow. I can’t believe it. \
+Uh, s-sorry for suspecting you.
 StinkBug: It’s just, well, m-most keep away. \
-Except [color=cyan]Click Bug[/color], and that’s just because he likes to p-prank me.
+Except that [color=yellow]click beetle, Eridae[/color], and that’s just because he likes to p-prank me.
 StinkBug: Everybug says I smell! And all sorts of other hurtful things. \
 The w-worst part, though, is it’s true. I do.
 StinkBug: But it’s not my fault, I swear. \
@@ -11,9 +17,17 @@ When I get scared, I can’t help it!
 StinkBug: I w-wish I had a [color=yellow]thicker exoskeleton[/color]...\
 Maybe then the others would see I can be strong and fierce like them...
 StinkBug: Sorry. I-I didn’t mean to ramble.
-StinkBug: Oh-oh. You’re looking for the queen…?
-StinkBug: You’re headed in the right direction. I’m not sure that’s a good idea though…
-StinkBug: Forget I said that last part! Why should you care what a bug like me thinks?
-StinkBug: Well… thanks for talking, I really appreciate it. Be safe!
+Player: That’s not your fault. Stop apologizing.
+StinkBug: Sorry.
+Player: I would like to hear what you have to say, anyway. \
+You know far more about this place than I do. \
+Do you know where I could find the [color=yellow]Vespula Queen[/color]?
+StinkBug: Oh-oh. You’re looking for the [color=yellow]Queen[/color]...?
+StinkBug: You’re headed in the right direction. \
+I’m not sure that’s a good idea though...
+StinkBug: Forget I said that last part! \
+Why should you care what a bug like me thinks?
+StinkBug: Well... thanks for talking, I really appreciate it. Be safe!
 StinkBug: Wait!
-StinkBug: Another traveller dropped  [color=yellow]this[/color] when they smelled me. I tried to give it back… but… Well, I think you’ll need it more than I do.
+StinkBug: Another traveller dropped [color=yellow]a crafting recipe[/color] when they smelled me. \
+I tried to give it back... but... Well, I think you’ll need it more than I do.

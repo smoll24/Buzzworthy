@@ -78,6 +78,7 @@ directories/dtl_directory={
 "PillBug": "res://assets/dialogic/PillBug.dtl",
 "Scared": "res://assets/dialogic/Scared.dtl",
 "Spider": "res://assets/dialogic/Spider.dtl",
+"SpiderIntro": "res://assets/dialogic/SpiderIntro.dtl",
 "StinkBug1": "res://assets/dialogic/StinkBug1.dtl",
 "Totem": "res://assets/dialogic/Totem.dtl",
 "Wake": "res://assets/dialogic/Wake.dtl",
