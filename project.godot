@@ -49,6 +49,7 @@ directories/dch_directory={
 "Nardi": "res://assets/characters/Nardi.dch",
 "PillBug": "res://assets/dialogic/PillBug.dch",
 "Player": "res://assets/dialogic/Player.dch",
+"Queen": "res://assets/dialogic/Queen.dch",
 "Spider": "res://assets/dialogic/Spider.dch",
 "StinkBug": "res://assets/dialogic/StinkBug.dch",
 "Weevil1": "res://assets/dialogic/Weevil1.dch",
@@ -56,11 +57,14 @@ directories/dch_directory={
 "test_character": "res://assets/dialogic/test_character.dch"
 }
 directories/dtl_directory={
+"BossEntrance": "res://assets/dialogic/BossEntrance.dtl",
+"BossIntro": "res://assets/dialogic/BossIntro.dtl",
 "ClickBug": "res://assets/dialogic/ClickBug.dtl",
 "Cockroach": "res://assets/dialogic/Cockroach.dtl",
 "Courthouse": "res://assets/dialogic/Courthouse.dtl",
 "Debris": "res://assets/dialogic/Debris.dtl",
 "Fall": "res://assets/dialogic/Fall.dtl",
+"FullBugs": "res://assets/dialogic/FullBugs.dtl",
 "GiveHelmet": "res://assets/dialogic/GiveHelmet.dtl",
 "GiveShield": "res://assets/dialogic/GiveShield.dtl",
 "GiveShield2": "res://assets/dialogic/GiveShield2.dtl",
@@ -68,6 +72,7 @@ directories/dtl_directory={
 "GiveSword2": "res://assets/dialogic/GiveSword2.dtl",
 "GivesBoots": "res://assets/dialogic/GivesBoots.dtl",
 "Lost": "res://assets/characters/Lost.dtl",
+"MidBugs": "res://assets/dialogic/MidBugs.dtl",
 "MiniBossEntrance": "res://assets/characters/MiniBossEntrance.dtl",
 "MiniBossMid": "res://assets/dialogic/MiniBossMid.dtl",
 "Moth1": "res://assets/dialogic/Moth1.dtl",
@@ -76,6 +81,7 @@ directories/dtl_directory={
 "Moth4": "res://assets/dialogic/Moth4.dtl",
 "MuseumBeetle": "res://assets/dialogic/MuseumBeetle.dtl",
 "Nest": "res://assets/dialogic/Nest.dtl",
+"NoBugs": "res://assets/dialogic/NoBugs.dtl",
 "PillBug": "res://assets/dialogic/PillBug.dtl",
 "Scared": "res://assets/dialogic/Scared.dtl",
 "Spider": "res://assets/dialogic/Spider.dtl",
@@ -94,6 +100,7 @@ layout/default_style="res://assets/dialogic/dialogic_style.tres"
 variables={
 "Boots": false,
 "Helmet": false,
+"Helped": 0,
 "Shield": false,
 "Shield2": false,
 "Sword": false,

@@ -1,6 +1,7 @@
 StinkBug: What's up?
 - Give Shield
 	set {Shield} = true
+	set {Helped} += 1
 	StinkBug: W-wait... this is for me? A shield? For me?
 	StinkBug: Oh stars, I- I don’t know what to say! \
 I didn’t think anybug would ever...  you made this?

@@ -1,6 +1,7 @@
 Weevil1: What's up?
 - Give Better Shield
 	set {Shield2} = true
+	set {Helped} += 1
 	Weevil1: ...No flippin’ way. You actually made  me a shield? \
 And one as beautiful as this?
 	Weevil1: I can finally go visit my brother! \

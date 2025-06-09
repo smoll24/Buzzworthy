@@ -40,7 +40,7 @@ func _process(delta: float) -> void:
 				interact_label.show()
 			elif type == 1 and Globals.stinkbug and Globals.has_shield:
 				interact_label.show()
-			elif type == 2 and not Globals.clickbug:
+			elif type == 2 and not Globals.clickbug and Globals.stinkbug:
 				interact_label.show()
 			elif type == 2 and Globals.clickbug and Globals.has_helmet:
 				interact_label.show()
@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 				interact_label.show()
 			elif type == 5 and Globals.cockroach and Globals.has_sword2:
 				interact_label.show()
-			elif type == 8 and not Globals.pillbug:
+			elif type == 8 and not Globals.pillbug and Globals.cockroach:
 				interact_label.show()
 			elif type == 6 and Globals.weevil1 and Globals.has_shield2:
 				interact_label.show()

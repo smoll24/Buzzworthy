@@ -1,5 +1,7 @@
 MuseumBeetle: What's up?
 - Give Boots
+	set {Boots} = true
+	set {Helped} += 1
 	MuseumBeetle: W-what- hold still, hold still- are those... authentic wanderer boots?!
 	MuseumBeetle: You’re giving them to me?! But why? \
 Oh, thank you, thank you! This is glorious!
@@ -7,5 +9,4 @@ Oh, thank you, thank you! This is glorious!
 [i]“Gifted by the benevolent Actias, creator of beautiful treasurers!”[/i]
 	MuseumBeetle: Come visit my museum anytime, my friend. \
 You’re always welcome.
-	set {Boots} = true
 - Nevermind

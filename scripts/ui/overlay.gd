@@ -27,6 +27,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	Globals.bugs_helped = Dialogic.VAR.Helped
+	
 	if Dialogic.VAR.Sword2:
 		Globals.helped_cockroach = true
 		Globals.has_sword2 = false

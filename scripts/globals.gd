@@ -45,6 +45,7 @@ var helped_spider = false
 var helped_museum = false
 var helped_cockroach = false
 var helped_weevil = false
+var bugs_helped = 0
 
 
 var stinkbug = false

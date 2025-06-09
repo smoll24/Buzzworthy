@@ -1,6 +1,7 @@
 Spider: What's up?
 - Give Sword
 	set {Sword} = true
+	set {Helped} += 1
 	Spider: What a wonder! This is... exquisite.\
 For me, dear?
 	Player: In return for your kind hospitality.

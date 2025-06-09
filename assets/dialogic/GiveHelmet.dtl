@@ -1,6 +1,7 @@
 ClickBug: What's up?
 - Give Helmet
 	set {Helmet} = true
+	set {Helped} += 1
 	ClickBug: No way. You made this for me? \
 I mean, of course you did, because I’m so awesome. The awesomest.
 	ClickBug: Oh right, thanks. You prolly just saved my brain from any more damage.
