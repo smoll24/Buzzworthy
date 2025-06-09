@@ -7,7 +7,7 @@ Player: How do you even know that for sure?
 Argema: The elders-
 Player: Have you even tried talking to them? \
 The- the other wasp we met...\
-it said something about us having trapped ourselves-
+It said something about us having trapped ourselves-
 Dub: They’re trying to trick us, [color=cyan]Actias[/color], can’t you see?!
 Player: No! No, that’s not it! I know there’s another way, if we could just talk to them- \
 I’ve met others- bugs like us, just trying to survive.
@@ -24,7 +24,7 @@ Player: [i]Yes![/i] Is that so hard to believe?
 Dub: [color=cyan]Actias[/color], come on-
 set {wasp_show} = true
 Queen: You [i]dare[/i] gather arms at [i]MY[/i] gates?
-Player: No, Your Majesty, It’s not what it looks like- we never meant to fight you, we swear. \
+Player: [color=yellow]No![/color] No, Your Majesty, It’s not what it looks like- we never meant to fight you, we swear. \
 Please, I’ve learned so much from the forest, we just want help-
 Queen: You have tresspassed onto my domain. You have come armed with swords and fire, and you tell me this [i]“isn’t what it looks like”[/i]?
 Queen: Your party members regard me with such burning hatred... \

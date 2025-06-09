@@ -90,7 +90,7 @@ func _process(delta: float) -> void:
 		name_timer = 0
 		
 	
-	if Globals.current_health <= 2:
+	if Globals.current_health <= 1:
 		#queen.stop_move()
 		queen.stop_chase()
 		if not helped:

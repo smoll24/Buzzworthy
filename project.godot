@@ -100,13 +100,13 @@ glossary/default_case_sensitive=true
 layout/style_list=["res://assets/dialogic/dialogic_style.tres"]
 layout/default_style="res://assets/dialogic/dialogic_style.tres"
 variables={
-"Boots": false,
-"Helmet": false,
-"Helped": 0,
-"Shield": false,
-"Shield2": false,
-"Sword": false,
-"Sword2": false,
+"Boots": true,
+"Helmet": true,
+"Helped": 6,
+"Shield": true,
+"Shield2": true,
+"Sword": true,
+"Sword2": true,
 "flipped": -1,
 "wasp_show": false
 }

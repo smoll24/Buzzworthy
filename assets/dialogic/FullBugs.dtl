@@ -1,1 +1,19 @@
-Yipppe!!
+[wave amp=20 freq=4][color=yellow]Wait!![/color] Don't hurt them![/wave]
+if {Shield} == true:
+	StinkBug: Your Majesty, wait! This one... this moth... they didn’t raise a wing against me, even when I was nervous and unbearable.\
+They listened to me, and- and they gifted me a [color=yellow]shield[/color]!
+	StinkBug: It's been so useful, and for nothing in return!
+if {Helmet} == true:
+	ClickBug: This moth recognized my awesomeness and gifted me the most amazing [color=yellow]helmet[/color] to protect my noggin, even after I tried to fool them with meh' tricks.
+	ClickBug: TThey even helped me realize I was 'urting [color=cyan]Shyla[/color], an' we're on much better terms now.
+if {Sword} == true:
+	Spider: This little moth was so afraid of me at first, and yet they bestowed upon me the most gracious [color=yellow]sword[/color] to cut down all my spare webs with.
+if {Boots} == true:
+	MuseumBeetle: They created an incredible replica of the authentic [color=yellow]wanderer boots[/color] I have been searching too add to my wonderous collection for so long!
+if {Sword2} == true:
+	Cockroach: They're no cockroach, but this little moth made me a truly AWESOME [color=yellow]sword[/color] that I can totally show off to absolutely everybug!!
+	Cockroach: And... they helped me talk to [color=cyan]Lidia[/color] for the first time too... \
+I really appreciated it.
+if {Shield2} == true:
+	Weevil1: This moth gifted me an elegant and wonderful [color=yellow]shield[/color], and I could finally go up and talk to my brother because of it! \
+We're even re-opening our forge together now.
