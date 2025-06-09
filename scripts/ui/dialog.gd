@@ -69,23 +69,25 @@ func _ready() -> void:
 			
 
 	if current == 4:
-			queue_text(["The moth continues to jounrey on endlessly...              "])
+			queue_text(["The moth continues to journey on endlessly...              "])
 			queue_text(["... until it finally reaches its destination once and for all ...                        "])
 			queue_text(['D'])
 			Globals.current_dialog = 5
 			
 	#Win & travel home
 	if current == 5:
-			queue_text(["Journey on                   "])
-			queue_text(["Yupp                        "])
-			queue_text(['C'])
+			queue_text(["After a long discussion with the Vespula Queen and her wasps, the mothfolk open up their village to the outside world.                     "])
+			queue_text(["The plants that had been previously deprived of any pollinators suddenly found themselves thriving ...                      "])
+			queue_text(["...and the mothfolk were able to return to their peaceful way of life, now with a newly changed view of the forest.                    "])
+			queue_text(["Thank you so much for playing!                        "])
+			queue_text(['E'])
 			Globals.current_dialog = 6
 			
 	#Lose & travel home
 	if current == 6:
-			queue_text(["Journey on                   "])
-			queue_text(["Yupp                        "])
-			queue_text(['C'])
+			queue_text(["And so, having failed their mission and journey, the mothfolk return home, despondent ...                 "])
+			queue_text(["Thank you so much for playing!                        "])
+			queue_text(['E'])
 			Globals.current_dialog = 7
 
 func _process(delta):

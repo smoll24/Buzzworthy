@@ -14,23 +14,23 @@ extends CanvasLayer
 @onready var boots = $BootsButton
 @onready var craft = $CraftButton
 
-var sword_logs = 2
-var sword_stones = 2
+var sword_logs = 10
+var sword_stones = 5
 
-var shield_logs = 3
-var shield_stones = 3
+var shield_logs = 10
+var shield_stones = 5
 
 var helmet_logs = 5
-var helmet_stones = 5
+var helmet_stones = 10
 
-var boots_logs = 10
+var boots_logs = 5
 var boots_stones = 10
 
-var sword2_logs = 2
-var sword2_stones = 2
+var sword2_logs = 5
+var sword2_stones = 15
 
-var shield2_logs = 3
-var shield2_stones = 3
+var shield2_logs = 15
+var shield2_stones = 5
 
 
 var previous_node

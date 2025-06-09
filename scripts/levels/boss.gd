@@ -95,15 +95,22 @@ func _process(delta: float) -> void:
 		queen.stop_chase()
 		if not helped:
 			Globals.can_move = false
+			tween = create_tween()
+			tween.tween_property(BossMusic, "volume_db", -30, 2)
+			$WaspHealth/TextureRect2.hide()
 			if Globals.bugs_helped >= 4:
 				dialog = Dialogic.start("FullBugs")
+				Globals.village_fixed = true
+				Globals.current_dialog = 5
 			elif Globals.bugs_helped == 0:
 				dialog = Dialogic.start("NoBugs")
+				Globals.current_dialog = 6
 			else:
-				dialog = Dialogic.start("MidBugs")
+				dialog = Dialogic.start("FullBugs")
+				Globals.current_dialog = 6
 			
 			get_tree().root.add_child(dialog)
-			Dialogic.timeline_ended.connect(nest_end)
+			Dialogic.timeline_ended.connect(expo)
 			
 			helped = true
 		
@@ -141,3 +148,14 @@ func nest_end():
 	queen.set_move()
 	queen.set_chase()
 	wasp_health.show()
+	
+
+func expo():
+	BossMusic.stream_paused = true
+	Globals.can_move = false
+	name_box.visible = true
+	fade.visible = true
+	tween = create_tween()
+	tween.tween_property(fade, "modulate:a", 1, 2)
+	await get_tree().create_timer(2).timeout
+	get_tree().change_scene_to_file("res://scenes/cutscenes/Exposition.tscn")

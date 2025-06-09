@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 				interact_label.show()
 			elif type == 7 and not Globals.weevil2:
 				interact_label.show()
-			elif type == 20 or type == 21 or type == 23 or type == 23:
+			elif Globals.current_dialog <3 and (type == 20 or type == 21 or type == 22 or type == 23):
 				interact_label.show()
 			else:
 				interact_label.hide()
@@ -101,13 +101,13 @@ func _process(delta: float) -> void:
 				dialog = Dialogic.start("Weevil2")
 			elif type == 8 and not Globals.pillbug:
 				dialog = Dialogic.start("PillBug")
-			elif type == 20:
+			elif type == 20 and Globals.current_dialog <3:
 				dialog = Dialogic.start("Moth1")
-			elif type == 21:
+			elif type == 21 and Globals.current_dialog <3:
 				dialog = Dialogic.start("Moth2")
-			elif type == 22:
+			elif type == 22 and Globals.current_dialog <3:
 				dialog = Dialogic.start("Moth3")
-			elif type == 23:
+			elif type == 23 and Globals.current_dialog <3:
 				dialog = Dialogic.start("Moth4")
 			get_tree().root.add_child(dialog)
 			Dialogic.timeline_ended.connect(dialog_end)

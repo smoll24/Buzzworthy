@@ -31,7 +31,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if self.visible:
-		$Wasps.volume_db = 5
+		$Wasps.volume_db = -10
 	else:
 		$Wasps.volume_db = -50
 	

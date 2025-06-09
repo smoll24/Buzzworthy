@@ -22,6 +22,7 @@ func _ready() -> void:
 	elif Globals.bell3 and id == 4:
 		sound.free()
 		selected = true
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,6 +34,11 @@ func _process(delta: float) -> void:
 			sprite.animation = "ringing"
 	else:
 		sprite.play("default")
+	
+	
+	if Globals.current_dialog > 3:
+		sprite.play("default")
+		$Bells.volume_db = -100
 			
 	
 	if in_body and not selected:

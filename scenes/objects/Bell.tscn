@@ -127,7 +127,6 @@ script = ExtResource("1_jybf8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_8crrs")
-animation = &"ringing"
 autoplay = "ringing"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

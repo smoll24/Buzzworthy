@@ -3,7 +3,7 @@ Dub: [color=cyan]Actias[/color]?! We thought you were gone... I’m so glad you�
 Player: Yes, but- [color=cyan]Argema[/color], you can’t do this.
 Argema: What- [color=cyan]Actias[/color], you’ve seen what they did to our village! \
 This is the only way we save our people.
-Player: How do you even know that for sure?
+Player: How can you know that for sure?
 Argema: The elders-
 Player: Have you even tried talking to them? \
 The- the other wasp we met...\
@@ -26,7 +26,7 @@ set {wasp_show} = true
 Queen: You [i]dare[/i] gather arms at [i]MY[/i] gates?
 Player: [color=yellow]No![/color] No, Your Majesty, It’s not what it looks like- we never meant to fight you, we swear. \
 Please, I’ve learned so much from the forest, we just want help-
-Queen: You have tresspassed onto my domain. You have come armed with swords and fire, and you tell me this [i]“isn’t what it looks like”[/i]?
+Queen: You have trespassed onto my domain. You have come armed with swords and fire, and you tell me this [i]“isn’t what it looks like”[/i]?
 Queen: Your party members regard me with such burning hatred... \
 I know exactly what you bigoted people think of us, and I am not going to let you harm my kind. \
 This is [i]exactly[/i] what it looks like.

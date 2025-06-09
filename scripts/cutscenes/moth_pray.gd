@@ -10,6 +10,7 @@ func _ready() -> void:
 	Globals.current_health = Globals.max_health
 	if not VillageMusic.playing and Globals.current_dialog < 2:
 		VillageMusic.play()
+	ForestAmbiance.stream_paused = true
 	moth.position.y = moth.position.y + 100
 	moth.self_modulate.r = 1.25
 	moth.self_modulate.a = 0
