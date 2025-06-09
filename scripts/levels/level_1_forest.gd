@@ -30,7 +30,8 @@ func _ready() -> void:
 	MiniBossMusic.stream_paused = true
 	ForestAmbiance.stream_paused = true
 	VillageMusic.stream_paused = true
-	Level1Music.play()
+	if not Level1Music.playing:
+		Level1Music.play()
 	ready()
 	
 func ready() -> void:

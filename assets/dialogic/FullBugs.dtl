@@ -1,7 +1,7 @@
 [wave amp=20 freq=4][color=yellow]Wait!![/color] Don't hurt them![/wave]
 if {Shield} == true:
-	StinkBug: Your Majesty, wait! This one... this moth... they didn’t raise a wing against me, even when I was nervous and unbearable.\
-They listened to me, and- and they gifted me a [color=yellow]shield[/color]!
+	StinkBug: Your Majesty, wait! This one... this moth... they didn’t raise a wing against me, even when I was nervous and unbearable.
+	StinkBug: They listened to me, and- and they gifted me a [color=yellow]shield[/color]!
 	StinkBug: It's been so useful, and for nothing in return!
 if {Helmet} == true:
 	ClickBug: This moth recognized my awesomeness and gifted me the most amazing [color=yellow]helmet[/color] to protect my noggin, even after I tried to fool them with meh' tricks.
@@ -15,16 +15,15 @@ if {Sword2} == true:
 	Cockroach: And... they helped me talk to [color=cyan]Lidia[/color] for the first time too... \
 I really appreciated it.
 if {Shield2} == true:
-	Weevil1: This moth gifted me an elegant and wonderful [color=yellow]shield[/color], which allowed me to finally go up and talk to my brother!\
-We're even re-opening our forge together now.
+	Weevil1: This moth gifted me an elegant and wonderful [color=yellow]shield[/color], which allowed me to finally go up and talk to my brother!
+	Weevil1: We're even re-opening our forge together now.
 Queen: . . .
 if {Helped} >= 4:
 	Queen: …It seems I was perhaps too quick to judge you. \
-My apologies. 
+My apologies.
 	Queen: As Queen, I must set a better example.
-	Queen: From your friends’ testimonials, I can tell you are a kind soul. \
-Your generosity fostered a community ready to rally by your side.
-	Queen:  To unify the forest is a feat even I would struggle to accomplish. \
+	Queen: From your friends’ testimonials, I can tell you are a kind soul. 
+	Queen: To unify the forest is a feat even I would struggle to accomplish. \
 You should be proud of yourself.
 	Queen: Let us put an end to our warring. \
 As you suggested, a discussion is long due.
@@ -33,10 +32,10 @@ I hope we can all share the lessons we’ve learned.
 if {Helped} < 4:
 	Queen: You’ve grown, over your journey...
 	Queen: But not nearly enough.
-	Queen: I do not expect you to shoulder the full burden of your people’s mistakes. \
-But I do expect you to shoulder yours.
-	Queen: Yet, your prejudice survives. \
-Why else would you withhold your materials? \
+	Queen: I do not expect you to shoulder the full burden of your people’s mistakes. 
+	Queen: But I do expect you to shoulder yours.
+	Queen: Yet, your prejudice survives.
+	Queen: Why else would you withhold your materials? \
 You believed you needed them to defeat me.
-	Queen: Leave, now, while I am still giving you the chance. \
-Flee back to your dying village.
+	Queen: Leave, now, while I am still giving you the chance. 
+	Queen: Flee back to your dying village.

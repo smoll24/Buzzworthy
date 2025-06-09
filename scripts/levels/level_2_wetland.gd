@@ -21,8 +21,10 @@ func _ready() -> void:
 	Globals.current_dialog = 4
 	Level1Music.stream_paused = true
 	VillageMusic.stream_paused = true
-	Level2Music.play()
-	WaterStream.play()
+	if not Level2Music.playing:
+		Level2Music.play()
+	if not WaterStream.playing:
+		WaterStream.play()
 	ready()
 
 func _on_dialogic_signal(argument:String):

@@ -7,19 +7,19 @@ ClickBug: You're no fun, that usually works... Fools [color=cyan]Shyla[/color] a
 Anyway, the name's [color=cyan]Eridae[/color].
 Player: What if you stopped doing that?
 ClickBug: Huh? Stop pranking [color=cyan]Shyla[/color], y’say? \
-Why should I listen to you?\
-He’s got the funniest reactions!
+Why should I listen to you?
+ClickBug: He’s got the funniest reactions!
 Player: He didn’t really seem to think so.
-ClickBug: Bugger, I never meant to hurt his feelings!\
-I guess I’ll talk to him about it.
-ClickBug: Anyways, kinda a warm skill, right? \
-Bet you can’t do anything like it. \
+ClickBug: Bugger, I never meant to hurt his feelings!
+ClickBug: I guess I’ll talk to him about it.
+ClickBug: Anyways, kinda a warm skill, right?
+ClickBug: Bet you can’t do anything like it. \
 [color=yellow]Watch this![/color]
 set {flipped} = -1
 ClickBug: [wave amp=20 freq=4]OWW! My head...[/wave]
 set {flipped} = 1
-ClickBug: All these [color=yellow]pesky pebbles and sticks[/color] everywhere! \
-Someone really ought to [color=yellow]pick ‘em up sometime[/color] to clean up this forest, an’ it better be [i]real[/i] soon.
+ClickBug: All these [color=yellow]pesky pebbles and sticks[/color] everywhere!
+ClickBug: Someone really ought to [color=yellow]pick ‘em up sometime[/color] to clean up this forest, an’ it better be [i]real[/i] soon.
 ClickBug: Wish I had some [color=yellow]protective gear[/color]... but welp! \
 What’s a bug to do.
 ClickBug: Wait, are you leaving already? \
@@ -32,5 +32,5 @@ ClickBug: [wave amp=20 freq=4]. . .[/wave]
 ClickBug: Welp, good luck. \
 You’re gonna need it!
 ClickBug: I’d tell you to watch out for the [color=yellow]spider[/color], but you have much bigger worries.
-ClickBug: All this [color=yellow]rain[/color], for one! \
-It’s just been pouring lately an’ I’ve been so [color=yellow]afraid of drowning[/color] that I’ve barely left this spot, you best be careful out there.
+ClickBug: All this [color=yellow]rain[/color], for one!
+ClickBug: It’s just been pouring lately an’ I’ve been so [color=yellow]afraid of drowning[/color] that I’ve barely left this spot, you best be careful out there.

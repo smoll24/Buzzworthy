@@ -3,9 +3,9 @@ StinkBug: What's up?
 	set {Shield} = true
 	set {Helped} += 1
 	StinkBug: W-wait... this is for me? A shield? For me?
-	StinkBug: Oh stars, I- I don’t know what to say! \
-I didn’t think anybug would ever...  you made this?
-	StinkBug: I don’t deserve this. I really don’t... but I-I’ll try to be strong, for once. \
-Maybe this’ll help me stop... y’know, panicking all the time...
-	StinkBug: Thank you. You’re... you’re not like the others! 
+	StinkBug: Oh stars, I- I don’t know what to say! 
+	StinkBug: I didn’t think anybug would ever...  you made this?
+	StinkBug: I don’t deserve this. I really don’t... but I-I’ll try to be strong, for once. 
+	StinkBug: Maybe this’ll help me stop... y’know, panicking all the time...
+	StinkBug: Thank you. You’re... you’re not like the others!
 - Nevermind
