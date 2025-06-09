@@ -25,6 +25,7 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Globals.current_dialog = 3
 	MiniBossMusic.stream_paused = true
 	ForestAmbiance.stream_paused = true
@@ -63,6 +64,9 @@ func ready() -> void:
 	await get_tree().create_timer(5).timeout
 	fade.visible = false
 
+func _on_dialogic_signal(argument:String):
+	if argument == "exit_forest":
+		exit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -161,7 +165,14 @@ func _on_totem_dialog_body_entered(body: Node2D) -> void:
 		totemed = true
 
 
-func _on_exit_entrance_body_entered(body: Node2D) -> void:
+func _on_exit_entrance_body_entered(body: CharacterBody2D) -> void:
+	Globals.can_move = false
+	dialog = Dialogic.start("Exit_Forest")
+	get_tree().root.add_child(dialog)
+	Dialogic.timeline_ended.connect(dialog_end)
+	
+	
+func exit():
 	Globals.can_move = false
 	Globals.save_pos = Vector2(0, 0)
 	Globals.spawn = 0

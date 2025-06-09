@@ -66,6 +66,13 @@ func _ready() -> void:
 			queue_text(["Yupp                        "])
 			queue_text(['C'])
 			Globals.current_dialog = 4
+			
+
+	if current == 4:
+			queue_text(["Journey on                   "])
+			queue_text(["Yupp                        "])
+			queue_text(['C'])
+			Globals.current_dialog = 5
 
 func _process(delta):
 	match current_state:

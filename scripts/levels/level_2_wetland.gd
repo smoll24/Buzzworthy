@@ -17,12 +17,17 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Globals.current_dialog = 4
 	Level1Music.stream_paused = true
 	VillageMusic.stream_paused = true
 	Level2Music.play()
 	WaterStream.play()
 	ready()
+
+func _on_dialogic_signal(argument:String):
+	if argument == "exit_wetlands":
+		exit()
 
 
 func ready() -> void:
@@ -116,13 +121,21 @@ func _on_water_body_exited(body: Node2D) -> void:
 	in_water = false
 
 
-func _on_exit_entrance_body_entered(body: Node2D) -> void:
+func _on_exit_entrance_body_entered(body: CharacterBody2D) -> void:
+	Globals.can_move = false
+	dialog = Dialogic.start("Exit_Wetland")
+	get_tree().root.add_child(dialog)
+	Dialogic.timeline_ended.connect(dialog_end)
+	
+func exit():
 	Globals.can_move = false
 	Globals.save_pos = Vector2(0, 0)
 	Globals.spawn = 0
-	name_box.visible = true
+	fade.modulate.a = 0
 	fade.visible = true
 	tween = create_tween()
 	tween.tween_property(fade, "modulate:a", 1, 0.5)
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/levels/Boss.tscn")
+	WaterStream.stream_paused = true
+	get_tree().change_scene_to_file("res://scenes/cutscenes/Exposition.tscn")
+	

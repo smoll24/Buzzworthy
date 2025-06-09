@@ -5,14 +5,12 @@ extends Node2D
 @onready var fade = $Name/Fade
 @onready var player = $Player
 @onready var wasp = $MudDauber
+@onready var wasp2 = $MudDauber2
+@onready var queen = $Queen
 @onready var overlay = $Overlay
 @onready var vignette = $WaspHealth/TextureRect2
 @onready var wasp_health = $WaspHealth
-@onready var tilemap = $Ground
 
-var texture
-
-@onready var red = "res://assets/tilemaps/forest_red.png"
 
 var tween : Tween
 var tween2 : Tween
@@ -20,13 +18,13 @@ var bossed = false
 var dialog
 var name_timer = 1
 var helped = false
+var wasp_show
+var music_started = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Globals.current_dialog = 2
-	texture = load(red)
-	tilemap.tile_set.get_source(0).texture = texture
-	tilemap.tile_set.get_source(1).texture = texture
+	
+	Globals.current_dialog = 5
 	
 	wasp_health.hide()
 	Globals.can_move = false
@@ -34,6 +32,8 @@ func _ready() -> void:
 	
 	if VillageMusic.playing:
 		VillageMusic.stream_paused = true
+	if Level2Music.playing:
+		Level2Music.stream_paused = true
 	ForestAmbiance.play()
 		
 	$Name/NameBox/Box.self_modulate = Color(1,1,1,1)
@@ -47,6 +47,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	wasp_show = Dialogic.VAR.wasp_show
+	if wasp_show and not music_started:
+		BossMusic.play()
+		music_started = true
+	
+	if not wasp_show:
+		queen.hide()
+		wasp.hide()
+		wasp2.hide()
+	else:
+		queen.show()
+		wasp.show()
+		wasp2.show()
+	
 	if Globals.current_health == 5:
 		vignette.modulate.a = 0.0
 	elif Globals.current_health == 4:
@@ -77,6 +91,8 @@ func _process(delta: float) -> void:
 		
 	
 	if Globals.current_health <= 2:
+		#queen.stop_move()
+		queen.stop_chase()
 		if not helped:
 			Globals.can_move = false
 			if Globals.bugs_helped >= 4:
@@ -114,7 +130,6 @@ func _on_dialog_wasp_entrance_body_entered(body: Node2D) -> void:
 		dialog = Dialogic.start("BossIntro")
 		get_tree().root.add_child(dialog)
 		Dialogic.timeline_ended.connect(nest_end)
-		BossMusic.play()
 		bossed = true
 
 
@@ -123,6 +138,6 @@ func entrance_end():
 	
 func nest_end():
 	Globals.can_move = true
-	wasp.set_move()
-	wasp.set_chase()
+	queen.set_move()
+	queen.set_chase()
 	wasp_health.show()

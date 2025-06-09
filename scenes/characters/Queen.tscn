@@ -142,10 +142,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hcfie"]
-size = Vector2(187, 61.5)
+size = Vector2(72, 34.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r18kr"]
-size = Vector2(72, 35.5)
+size = Vector2(34, 18)
 
 [node name="Queen" type="CharacterBody2D"]
 collision_layer = 64
@@ -155,38 +155,41 @@ hover_height = -100.0
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 0.758333, 0.42, 0.568627)
-position = Vector2(-49, 1)
+position = Vector2(26, 17)
+scale = Vector2(1, 1.5)
 sprite_frames = SubResource("SpriteFrames_6bcxn")
 autoplay = "default"
-frame = 1
-frame_progress = 0.912786
+frame = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(57, 3)
+scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_3yhoi")
 autoplay = "flying"
 frame = 2
 frame_progress = 0.921252
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(-48, -5)
+position = Vector2(27, 10)
+scale = Vector2(1, 1.5)
 sprite_frames = SubResource("SpriteFrames_ww3qx")
 autoplay = "default"
-frame_progress = 0.159733
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-47.5, 7.25)
+position = Vector2(5, 3.25)
 shape = SubResource("RectangleShape2D_hcfie")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, 0)
 collision_layer = 64
 collision_mask = 128
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-68, 0.25)
+visible = false
 shape = SubResource("RectangleShape2D_r18kr")
 
 [node name="Wasps" parent="." instance=ExtResource("13_q7n8k")]
+position = Vector2(0, 1)
 autoplay = true
 parameters/looping = true
 

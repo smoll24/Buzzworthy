@@ -1,0 +1,5 @@
+Are you sure you want to leave this area?\
+You will not be able to return.
+- No, Stay
+- Yes, Leave
+	[signal arg="exit_forest"]

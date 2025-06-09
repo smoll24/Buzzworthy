@@ -30,6 +30,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if self.visible:
+		$Wasps.volume_db = 5
+	else:
+		$Wasps.volume_db = -50
+	
 	to_player = player.global_position.x - global_position.x
 	sprite.flip_h = to_player > 0
 	wings1.flip_h = to_player > 0
@@ -122,6 +127,14 @@ func set_chase():
 	
 func set_move():
 	moving = true
+
+
+func stop_chase():
+	chasing = false
+	
+func stop_move():
+	moving = false
+
 
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	in_body = true

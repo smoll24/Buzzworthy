@@ -22,6 +22,7 @@ Argema: So what, you want us to [i]ask[/i] for help? \
 From [i]wasps[/i]? [i]Seriously[/i]?
 Player: [i]Yes![/i] Is that so hard to believe?
 Dub: [color=cyan]Actias[/color], come on-
+set {wasp_show} = true
 Queen: You [i]dare[/i] gather arms at [i]MY[/i] gates?
 Player: No, Your Majesty, It’s not what it looks like- we never meant to fight you, we swear. \
 Please, I’ve learned so much from the forest, we just want help-
