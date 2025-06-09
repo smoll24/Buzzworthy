@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bpriw6tffq6r8"]
+[gd_scene load_steps=17 format=4 uid="uid://bpriw6tffq6r8"]
 
 [ext_resource type="Script" path="res://scripts/levels/meeting_room.gd" id="1_43nqs"]
 [ext_resource type="Texture2D" uid="uid://dd0vcq81oph13" path="res://icon.svg" id="2_kkoa6"]
@@ -7,6 +7,16 @@
 [ext_resource type="FontFile" uid="uid://dy80sxg0xvt4v" path="res://assets/fonts/C&C Red Alert [INET].ttf" id="5_p4v6p"]
 [ext_resource type="PackedScene" uid="uid://2jc4e4q5f0rc" path="res://scenes/characters/Player.tscn" id="6_cckq2"]
 [ext_resource type="FontFile" uid="uid://b6wpimsx1db6j" path="res://assets/fonts/m3x6.ttf" id="7_2cgf3"]
+[ext_resource type="Shader" path="res://scripts/cutscenes/MothPrayBG.gdshader" id="8_gonni"]
+[ext_resource type="Texture2D" uid="uid://dt11765fx5fws" path="res://assets/cutscenes/mothpray_bg.png" id="9_d87bb"]
+[ext_resource type="PackedScene" uid="uid://c1oaalc83l0ed" path="res://scenes/characters/Moth1.tscn" id="10_uw8at"]
+[ext_resource type="PackedScene" uid="uid://b82prg085h2a0" path="res://scenes/characters/Moth2.tscn" id="11_abrlv"]
+[ext_resource type="PackedScene" uid="uid://0qcrpsbc60i4" path="res://scenes/characters/Moth3.tscn" id="12_i4la4"]
+[ext_resource type="PackedScene" uid="uid://ctdwi6costub5" path="res://scenes/characters/Moth4.tscn" id="13_hwey3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fxswc"]
+shader = ExtResource("8_gonni")
+shader_parameter/tiled_factor = Vector2(1, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jl325"]
 texture = ExtResource("2_kkoa6")
@@ -141,16 +151,19 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_jl325")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pmaf"]
-size = Vector2(27.5, 54.5)
-
 [node name="Meeting Room" type="Node2D"]
 script = ExtResource("1_43nqs")
+
+[node name="MothBG" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fxswc")
+position = Vector2(319, 169.5)
+scale = Vector2(2.2875, 2.33889)
+texture = ExtResource("9_d87bb")
 
 [node name="Front_TilemapLayer" type="TileMapLayer" parent="."]
 visible = false
 position = Vector2(1, 88)
-tile_map_data = PackedByteArray("AAAFAA8AAAADAAIAAAAGAA8AAAADAAIAAAAHAA8AAAADAAIAAAAIAA8AAAADAAIAAAAJAA8AAAADAAIAAAAKAA8AAAADAAIAAAALAA8AAAADAAIAAAAMAA8AAAADAAIAAAANAA8AAAADAAIAAAAOAA8AAAADAAIAAAAPAA8AAAADAAIAAAAQAA8AAAADAAIAAAARAA8AAAADAAIAAAASAA8AAAADAAIAAAATAA8AAAADAAIAAAAUAA8AAAADAAIAAAAVAA8AAAADAAIAAAAWAA8AAAADAAIAAAAXAA8AAAADAAIAAAAYAA8AAAADAAIAAAAZAA8AAAADAAIAAAAaAA8AAAADAAIAAAAbAA8AAAADAAIAAAAcAA8AAAADAAIAAAAdAA8AAAADAAIAAAAeAA8AAAADAAIAAAAfAA8AAAADAAIAAAAgAA8AAAADAAIAAAAEAA8AAAADAAIAAAAEAA4AAAADAAIAAAAEAA0AAAADAAIAAAAEAAwAAAADAAIAAAAEAAsAAAADAAIAAAAEAAoAAAADAAIAAAAEAAkAAAADAAIAAAAhAA8AAAADAAIAAAAhAA4AAAADAAIAAAAhAA0AAAADAAIAAAAhAAwAAAADAAIAAAAhAAsAAAADAAIAAAAhAAoAAAADAAIAAAAhAAkAAAADAAIAAAAhAAgAAAADAAIAAAAhAAcAAAADAAIAAAAhAAYAAAADAAIAAAAhAAUAAAADAAIAAAAhAAQAAAADAAIAAAAhAAMAAAADAAIAAAAEAAgAAAADAAIAAAAEAAcAAAADAAIAAAAEAAYAAAADAAIAAAAEAAUAAAADAAIAAAAEAAQAAAADAAIAAAAEAAMAAAADAAIAAAA=")
+tile_map_data = PackedByteArray("AAATAAoAAAADAAIAAAAUAAoAAAADAAIAAAARAAoAAAADAAIAAAASAAoAAAAEAAIAAAAPAAoAAAADAAIAAAAQAAoAAAAEAAIAAAANAAoAAAADAAIAAAAOAAoAAAAEAAIAAAALAAoAAAADAAIAAAAMAAoAAAAEAAIAAAAJAAoAAAADAAIAAAAKAAoAAAAEAAIAAAAHAAoAAAADAAIAAAAIAAoAAAAEAAIAAAAFAAoAAAADAAIAAAAGAAoAAAAEAAIAAAADAAoAAAADAAIAAAAEAAoAAAAEAAIAAAABAAoAAAADAAIAAAACAAoAAAAEAAIAAAAVAAoAAAAEAAIAAAAWAAoAAAADAAIAAAAXAAoAAAAEAAIAAAAYAAoAAAADAAIAAAAZAAoAAAAEAAIAAAAaAAoAAAADAAIAAAAbAAoAAAAEAAIAAAAcAAoAAAADAAIAAAAdAAoAAAAEAAIAAAAeAAoAAAADAAIAAAAfAAoAAAAEAAIAAAAgAAoAAAADAAIAAAAhAAoAAAAEAAIAAAAiAAoAAAADAAIAAAAjAAoAAAAEAAIAAAAkAAoAAAADAAIAAAAlAAoAAAAEAAIAAAAmAAoAAAADAAIAAAAnAAoAAAAEAAIAAAD//woAAAADAAIAAAAAAAoAAAAEAAIAAAA=")
 tile_set = SubResource("TileSet_30hxu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -158,27 +171,6 @@ visible = false
 position = Vector2(310, 282)
 scale = Vector2(2, 2)
 texture = ExtResource("3_ldaug")
-
-[node name="Left_Home_Entrance" type="Area2D" parent="."]
-position = Vector2(91, 304)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Home_Entrance"]
-shape = SubResource("RectangleShape2D_3pmaf")
-
-[node name="Right_Home_Entrance" type="Area2D" parent="."]
-position = Vector2(515, 302)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Home_Entrance"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_3pmaf")
-
-[node name="Dialog_Entrance" type="Area2D" parent="."]
-position = Vector2(515, 302)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialog_Entrance"]
-position = Vector2(-209, 1)
-shape = SubResource("RectangleShape2D_3pmaf")
 
 [node name="Name" type="CanvasLayer" parent="."]
 
@@ -219,10 +211,10 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Player" parent="." instance=ExtResource("6_cckq2")]
-visible = false
-position = Vector2(271, 304)
+position = Vector2(321, 207)
 
 [node name="Interact_Label" type="Label" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.447059)
 offset_left = 180.0
 offset_top = 208.0
@@ -248,6 +240,16 @@ text = "or ARROW KEYS
 to move"
 horizontal_alignment = 1
 
-[connection signal="body_entered" from="Left_Home_Entrance" to="." method="_on_left_home_entrance_body_entered"]
-[connection signal="body_entered" from="Right_Home_Entrance" to="." method="_on_right_home_entrance_body_entered"]
-[connection signal="body_entered" from="Dialog_Entrance" to="." method="_on_dialog_entrance_body_entered"]
+[node name="Moth1" parent="." instance=ExtResource("10_uw8at")]
+position = Vector2(84, 220)
+
+[node name="Moth2" parent="." instance=ExtResource("11_abrlv")]
+position = Vector2(411, 219)
+scale = Vector2(-1, 1)
+
+[node name="Moth3" parent="." instance=ExtResource("12_i4la4")]
+position = Vector2(557, 223)
+scale = Vector2(-1, 1)
+
+[node name="Moth4" parent="." instance=ExtResource("13_hwey3")]
+position = Vector2(232, 222)

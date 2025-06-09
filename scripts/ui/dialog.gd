@@ -56,23 +56,37 @@ func _ready() -> void:
 			Globals.current_dialog = 2
 
 	if current == 2:
-			queue_text(["Aaaand they died, L + ratio ...                    "])
-			queue_text(["Truly very sad innit ...                         "])
+			queue_text(["And so the poor moths, out of their depth against the wasp, scattered in fear ...                    "])
+			queue_text(["Alone in the wilderness amongst all that they fear, will they be able to survive ...?                         "])
 			queue_text(['B'])
 			Globals.current_dialog = 3
 
 	if current == 3:
-			queue_text(["Journey on                   "])
-			queue_text(["Yupp                        "])
+			queue_text(["And so the little moth continues on its journey towards the Wasp Queen ...                   "])
+			queue_text(["... as the biome transforms into something they've never seen before ...                        "])
 			queue_text(['C'])
 			Globals.current_dialog = 4
 			
 
 	if current == 4:
+			queue_text(["The moth continues to jounrey on endlessly...              "])
+			queue_text(["... until it finally reaches its destination once and for all ...                        "])
+			queue_text(['D'])
+			Globals.current_dialog = 5
+			
+	#Win & travel home
+	if current == 5:
 			queue_text(["Journey on                   "])
 			queue_text(["Yupp                        "])
 			queue_text(['C'])
-			Globals.current_dialog = 5
+			Globals.current_dialog = 6
+			
+	#Lose & travel home
+	if current == 6:
+			queue_text(["Journey on                   "])
+			queue_text(["Yupp                        "])
+			queue_text(['C'])
+			Globals.current_dialog = 7
 
 func _process(delta):
 	match current_state:
@@ -121,6 +135,14 @@ func display_text():
 		tween2.tween_property(fade, "modulate:a", 1, 0.5)
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://scenes/levels/level2_wetland.tscn")
+		
+		
+	if next_text == 'D':
+		tween2 = create_tween()
+		tween2.tween_property(fade, "modulate:a", 1, 0.5)
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file("res://scenes/levels/Boss.tscn")
+		
 	
 	if next_text == 'E':
 		tween2 = create_tween()

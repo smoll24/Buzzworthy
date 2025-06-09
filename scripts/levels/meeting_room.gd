@@ -16,17 +16,10 @@ var name_timer = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Globals.can_move = true
+	Globals.can_move = false
 	if not VillageMusic.playing:
 		VillageMusic.play()
 	$Name/NameBox/Box.self_modulate = Color(1.5,1.5,1.5,1)
-	print(Globals.spawn)
-	if Globals.spawn == 1:
-		player.position.x = left.position.x + 30
-		player.face_right()
-	elif Globals.spawn == 2:
-		player.position.x = right.position.x - 30
-		player.face_left()
 	name_group.visible = true
 	name_box.visible = true
 	name_box.modulate.a = 0
@@ -50,7 +43,6 @@ func _process(delta: float) -> void:
 		tween2.tween_property(name_box, "modulate:a", 0, 1)
 
 	if name_timer >= 6:
-		#THIS IS TEMP REMOVE LATER PLS
 		Globals.can_move = false
 		dialog = Dialogic.start("Courthouse")
 		get_tree().root.add_child(dialog)
@@ -58,38 +50,7 @@ func _process(delta: float) -> void:
 		courted = true
 		name_timer = 0
 
-func _on_left_home_entrance_body_entered(body: Node2D) -> void:
-	Globals.can_move = false
-	Globals.spawn = 3
-	name_box.visible = true
-	fade.visible = true
-	tween = create_tween()
-	tween.tween_property(fade, "modulate:a", 1, 0.5)
-	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/levels/MothVillage.tscn")
-
-func _on_right_home_entrance_body_entered(body: Node2D) -> void:
-	Globals.can_move = false
-	Globals.spawn = 2
-	name_box.visible = true
-	fade.visible = true
-	tween = create_tween()
-	tween.tween_property(fade, "modulate:a", 1, 0.5)
-	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/levels/MiniBoss.tscn")
-
-func _on_dialog_entrance_body_entered(body: Node2D) -> void:
-	if not courted:
-		Globals.can_move = false
-		dialog = Dialogic.start("Courthouse")
-		get_tree().root.add_child(dialog)
-		Dialogic.timeline_ended.connect(dialog_end)
-		courted = true
-	
 func dialog_end():
-	#Globals.can_move = true
-	
-	#THIS IS TEMP
 	Globals.can_move = false
 	Globals.spawn = 2
 	name_box.visible = true

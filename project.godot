@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="TGC_GameJam"
+config/name="Buzzworthy"
 run/main_scene="res://scenes/levels/Menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/characters/mcdialogueicon.png"
 
 [autoload]
 
